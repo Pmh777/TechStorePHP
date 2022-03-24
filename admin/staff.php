@@ -76,10 +76,10 @@
                       <td>Quản lý</td>
                       <td>
                         <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-pause"></i> Chi tiết
+                          <i class="ft-edit"></i> Chi tiết
                         </button>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
-                          Xoá <i class="ft-command"></i>
+                          <i class="ft-delete"></i> Xoá
                         </button>
                       </td>
 
@@ -94,10 +94,10 @@
                       <td>asd@98asdb81i1eqweb123</td>
                       <td>Nhân viên</td>
                       <td> <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-pause"></i> Chi tiết
+                          <i class="ft-edit"></i> Chi tiết
                         </button>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
-                          Xoá <i class="ft-command"></i>
+                          <i class="ft-delete"></i> Xoá
                         </button>
                       </td>
                     </tr>
@@ -111,10 +111,10 @@
                       <td>asd@98asdb81i1eqweb123</td>
                       <td>Nhân viên</td>
                       <td> <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-pause"></i> Chi tiết
+                          <i class="ft-edit"></i> Chi tiết
                         </button>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
-                          Xoá <i class="ft-command"></i>
+                          <i class="ft-delete"></i> Xoá
                         </button>
                       </td>
                     </tr>
@@ -178,10 +178,10 @@
                       <td>Việt Nam</td>
                       <td>asd@98asdb81i1eqweb123</td>
                       <td> <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-pause"></i> Chi tiết
+                          <i class="ft-edit"></i> Chi tiết
                         </button>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
-                          Xoá <i class="ft-command"></i>
+                          <i class="ft-delete"></i> Xoá
                         </button>
                       </td>
                     </tr>
@@ -195,10 +195,10 @@
                       <td>Việt Nam</td>
                       <td>asd@98asdb81i1eqweb123</td>
                       <td> <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-pause"></i> Chi tiết
+                          <i class="ft-edit"></i> Chi tiết
                         </button>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
-                          Xoá <i class="ft-command"></i>
+                          <i class="ft-delete"></i> Xoá
                         </button>
                       </td>
                     </tr>
@@ -212,10 +212,10 @@
                       <td>Việt Nam</td>
                       <td>asd@98asdb81i1eqweb123</td>
                       <td> <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-pause"></i> Chi tiết
+                          <i class="ft-edit"></i> Chi tiết
                         </button>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
-                          Xoá <i class="ft-command"></i>
+                          <i class="ft-delete"></i> Xoá
                         </button>
                       </td>
                     </tr>
