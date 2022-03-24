@@ -3,31 +3,13 @@
     <div class="row">
       <div class="col-sm-6 col-lg-3 p-b-50">
         <h4 class="stext-301 cl0 p-b-30">
-          Categories
+          Danh mục sản phẩm
         </h4>
 
         <ul>
           <li class="p-b-10">
             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Women
-            </a>
-          </li>
-
-          <li class="p-b-10">
-            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Men
-            </a>
-          </li>
-
-          <li class="p-b-10">
-            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Shoes
-            </a>
-          </li>
-
-          <li class="p-b-10">
-            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Watches
+              Tên danh mục
             </a>
           </li>
         </ul>
@@ -35,25 +17,25 @@
 
       <div class="col-sm-6 col-lg-3 p-b-50">
         <h4 class="stext-301 cl0 p-b-30">
-          Help
+          Giúp đở
         </h4>
 
         <ul>
           <li class="p-b-10">
             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Track Order
+              Theo dõi đơn hàng
             </a>
           </li>
 
           <li class="p-b-10">
             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Returns
+              Đổi trả
             </a>
           </li>
 
           <li class="p-b-10">
             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Shipping
+              Giao hàng
             </a>
           </li>
 
@@ -67,12 +49,11 @@
 
       <div class="col-sm-6 col-lg-3 p-b-50">
         <h4 class="stext-301 cl0 p-b-30">
-          GET IN TOUCH
+          Liên lạc
         </h4>
 
         <p class="stext-107 cl7 size-201">
-          Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96
-          716 6879
+          +84 793 960 152
         </p>
 
         <div class="p-t-27">
@@ -92,7 +73,7 @@
 
       <div class="col-sm-6 col-lg-3 p-b-50">
         <h4 class="stext-301 cl0 p-b-30">
-          Newsletter
+          Bản tin
         </h4>
 
         <form>
@@ -103,7 +84,7 @@
 
           <div class="p-t-18">
             <button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-              Subscribe
+              Đăng ký
             </button>
           </div>
         </form>
@@ -137,10 +118,7 @@
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
         Copyright &copy;<script>
         document.write(new Date().getFullYear());
-        </script> All rights reserved |Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-          href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com"
-          target="_blank">ThemeWagon</a>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </script> Vua Hai Tac Co.op
 
       </p>
     </div>
