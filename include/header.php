@@ -90,21 +90,7 @@
 
               <li>
                 <a href="product.php">Sản phẩm</a>
-                <ul class="sub-menu">
-                  <li><a href="index.php">Danh muc 1</a></li>
-                  <li><a href="index.php">Danh muc 2</a></li>
-                  <li><a href="index.php">Danh muc 3</a></li>
-                </ul>
               </li>
-
-              <li class="label1" data-label1="hot">
-                <a href="shoping-cart.php">Tin tức</a>
-              </li>
-
-              <li>
-                <a href="blog.php">Bài viết</a>
-              </li>
-
               <li>
                 <a href="about.php">Về chúng tôi</a>
               </li>
@@ -205,19 +191,6 @@
 
         <li>
           <a href="product.php">Sản phẩm</a>
-          <ul class="sub-menu">
-            <li><a href="index.php">Danh muc 1</a></li>
-            <li><a href="index.php">Danh muc 2</a></li>
-            <li><a href="index.php">Danh muc 3</a></li>
-          </ul>
-        </li>
-
-        <li>
-          <a href="shoping-cart.php" class="label1 rs1" data-label1="hot">Tin tức</a>
-        </li>
-
-        <li>
-          <a href="blog.php">Bài viết</a>
         </li>
 
         <li>
@@ -246,3 +219,5 @@
       </div>
     </div>
   </header>
+
+  
