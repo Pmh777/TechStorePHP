@@ -1,7 +1,6 @@
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
-<!-- Navigation -->
-<?php include_once("./inc/navigation-admin.php"); ?>
+
 <!-- Navbar -->
 <?php include_once("./inc/navbar-admin.php"); ?>
 <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -75,9 +74,10 @@
                       <td>asd@98asdb81i1eqweb123</td>
                       <td>Quản lý</td>
                       <td>
-                        <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-edit"></i> Chi tiết
-                        </button>
+                        <a href="info-detail.php">
+                          <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
+                            <i class="ft-edit"></i> Chi tiết
+                          </button></a>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
                           <i class="ft-delete"></i> Xoá
                         </button>
@@ -93,9 +93,11 @@
                       <td>truongduy.op@gmail.com</td>
                       <td>asd@98asdb81i1eqweb123</td>
                       <td>Nhân viên</td>
-                      <td> <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-edit"></i> Chi tiết
-                        </button>
+                      <td>
+                        <a href="info-detail.php">
+                          <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
+                            <i class="ft-edit"></i> Chi tiết
+                          </button></a>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
                           <i class="ft-delete"></i> Xoá
                         </button>
@@ -110,9 +112,10 @@
                       <td>truongduy.kp@gmail.com</td>
                       <td>asd@98asdb81i1eqweb123</td>
                       <td>Nhân viên</td>
-                      <td> <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-edit"></i> Chi tiết
-                        </button>
+                      <td> <a href="info-detail.php">
+                          <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
+                            <i class="ft-edit"></i> Chi tiết
+                          </button></a>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
                           <i class="ft-delete"></i> Xoá
                         </button>
@@ -177,9 +180,10 @@
                       <td>truongduy.fu@gmail.com</td>
                       <td>Việt Nam</td>
                       <td>asd@98asdb81i1eqweb123</td>
-                      <td> <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-edit"></i> Chi tiết
-                        </button>
+                      <td> <a href="info-detail.php">
+                          <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
+                            <i class="ft-edit"></i> Chi tiết
+                          </button></a>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
                           <i class="ft-delete"></i> Xoá
                         </button>
@@ -194,9 +198,10 @@
                       <td>truongduy.fp@gmail.com</td>
                       <td>Việt Nam</td>
                       <td>asd@98asdb81i1eqweb123</td>
-                      <td> <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-edit"></i> Chi tiết
-                        </button>
+                      <td> <a href="info-detail.php">
+                          <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
+                            <i class="ft-edit"></i> Chi tiết
+                          </button></a>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
                           <i class="ft-delete"></i> Xoá
                         </button>
@@ -211,9 +216,10 @@
                       <td>truongduy.fw@gmail.com</td>
                       <td>Việt Nam</td>
                       <td>asd@98asdb81i1eqweb123</td>
-                      <td> <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                          <i class="ft-edit"></i> Chi tiết
-                        </button>
+                      <td> <a href="info-detail.php">
+                          <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
+                            <i class="ft-edit"></i> Chi tiết
+                          </button></a>
                         <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
                           <i class="ft-delete"></i> Xoá
                         </button>

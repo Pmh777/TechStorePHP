@@ -1,7 +1,6 @@
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navigation -->
-<?php include_once("./inc/navigation-admin.php"); ?>
 <!-- Navbar -->
 <?php include_once("./inc/navbar-admin.php"); ?>
 <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -48,7 +47,7 @@
               <div class="card-footer border-top-blue-grey border-top-lighten-5 text-muted">
                 <span class="float-left">3 hours ago</span>
                 <span class="float-right">
-                  <a href="#" class="card-link">Sửa sản phẩm
+                  <a href="product-detail.php" class="card-link">Sửa sản phẩm
                     <i class="la la-angle-right"></i>
                   </a>
                 </span>
@@ -82,7 +81,7 @@
                   <li class="list-group-item">Tên danh mục</li>
                 </ul>
                 <div class="card-body">
-                  <a href="#" class="card-link">Thêm danh mục</a>
+                  <a href="create-cate.php" class="card-link">Thêm danh mục</a>
                   <a href="#" class="card-link">Xoá danh mục</a>
                 </div>
               </div>

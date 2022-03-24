@@ -1,7 +1,6 @@
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
-<!-- Navigation -->
-<?php include_once("./inc/navigation-admin.php"); ?>
+
 <!-- Navbar -->
 <?php include_once("./inc/navbar-admin.php"); ?>
 <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -19,18 +18,15 @@
                 <div class="form-body">
                   <div class="form-group">
                     <label for="donationinput1" class="sr-only">Tên sản phẩm</label>
-                    <input type="text" id="donationinput1" class="form-control" placeholder="Tên sản phẩm"
-                      name="fname" />
+                    <input type="text" id="donationinput1" class="form-control" placeholder="Tên sản phẩm" name="fname" />
                   </div>
                   <div class="form-group">
                     <label for="donationinput2" class="sr-only">Giá sản phẩm</label>
-                    <input type="number" id="donationinput2" class="form-control" placeholder="Giá sản phẩm"
-                      name="lanme" />
+                    <input type="number" id="donationinput2" class="form-control" placeholder="Giá sản phẩm" name="lanme" />
                   </div>
                   <div class="form-group">
                     <label for="exampleColorInput" class="form-label">Màu sắc</label>
-                    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c"
-                      title="Choose your color">
+                    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
                   </div>
 
                   <div class="form-group">
@@ -40,8 +36,7 @@
 
                   <div class="form-group">
                     <label for="donationinput7" class="sr-only">Mô tả</label>
-                    <textarea id="donationinput7" rows="5" class="form-control square" name="message"
-                      placeholder="Mô tả"></textarea>
+                    <textarea id="donationinput7" rows="5" class="form-control square" name="message" placeholder="Mô tả"></textarea>
                   </div>
                   <div>
                     <label for="formFileLg" class="form-label">Thêm ảnh</label>
