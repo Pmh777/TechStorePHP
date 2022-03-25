@@ -63,12 +63,7 @@
       <section id="content-types">
         <div class="row">
           <div class="col-12 mt-3 mb-1">
-            <h4 class="text-uppercase">Content Types</h4>
-            <p>
-              Cards support a wide variety of content, including images,
-              text, list groups, links, and more. Mix and match multiple
-              content types to create the card you need.
-            </p>
+            <h4 class="text-uppercase">Quản lý sản phẩm</h4>
           </div>
         </div>
         <div class="row match-height">
