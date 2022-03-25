@@ -1,7 +1,6 @@
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
-<!-- Navigation -->
-<?php include_once("./inc/navigation-admin.php"); ?>
+
 <!-- Navbar -->
 <?php include_once("./inc/navbar-admin.php"); ?>
 <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -19,8 +18,7 @@
                 <div class="form-body">
                   <div class="form-group">
                     <label for="donationinput1" class="sr-only">Họ và tên</label>
-                    <input type="text" id="donationinput1" class="form-control" placeholder="Tên sản phẩm"
-                      name="fname" />
+                    <input type="text" id="donationinput1" class="form-control" placeholder="Tên sản phẩm" name="fname" />
                   </div>
                   <div class="form-group">
                     <label for="donationinput2" class="sr-only">Giới tính</label>
@@ -31,8 +29,7 @@
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                        checked>
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                       <label class="form-check-label" for="flexRadioDefault2">
                         Nữ
                       </label>
@@ -40,20 +37,17 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleColorInput" class="form-label">Ngày sinh</label>
-                    <input type="date" class="form-control form-control-color" id="exampleColorInput"
-                      value="22-Dec-2000" title="Choose your color">
+                    <input type="date" class="form-control form-control-color" id="exampleColorInput" value="22-Dec-2000" title="Choose your color">
                   </div>
 
                   <div class="form-group">
                     <label for="donationinput4" class="sr-only">Số diện thoại</label>
-                    <input type="text" id="donationinput4" class="form-control" placeholder="Số điện thoại"
-                      name="phone" />
+                    <input type="text" id="donationinput4" class="form-control" placeholder="Số điện thoại" name="phone" />
                   </div>
 
                   <div class="form-group">
                     <label for="donationinput7" class="sr-only">Email</label>
-                    <input type="email" id="donationinput4" class="form-control" placeholder="example@exampl.com"
-                      name="phone" />
+                    <input type="email" id="donationinput4" class="form-control" placeholder="example@exampl.com" name="phone" />
                   </div>
                   <div class="form-group">
                     <label for="donationinput7" class="sr-only">Mật khẩu</label>
