@@ -2520,6 +2520,11 @@ input.num-product::-webkit-inner-spin-button {
   height: 40px;
 }
 
+.size-signin {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ Width ]*/
 .size-201 {
