@@ -29,6 +29,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Quản lý danh mục</h4>
+                            </br>
+                            <a href="add-category.php"> <button class="btn btn-primary btn-min-width mr-0 mb-0"
+                                    type="submit">Thêm mới</button></a>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">

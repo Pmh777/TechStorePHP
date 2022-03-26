@@ -29,6 +29,9 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Quản lý banner</h4>
+                            </br>
+                            <a href="add-banner.php"> <button class="btn btn-primary btn-min-width mr-0 mb-0"
+                                    type="submit">Thêm mới</button></a>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -68,11 +71,11 @@
                                             <td>2</td>
                                             <td>Hiển thị</td>
                                             <td>
-                                                <a href="banner-detail.php">
+                                                <a href="edit-banner.php">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-edit"></i>
                                                     </button></a>
-                                                <a href="banner-detail.php">
+                                                <a href="remove-banner.php">
                                                     <button type="button"
                                                         class="btn btn-danger btn-min-width mr-1 mb-1">
                                                         <i class="ft-delete"></i>

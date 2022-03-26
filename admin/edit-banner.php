@@ -17,7 +17,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item active">Thêm sản phẩm
+                            <li class="breadcrumb-item active">Cập nhật banner
                             </li>
                         </ol>
                     </div>
@@ -31,46 +31,26 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Thêm sản phẩm</h4>
+                                <h4 class="card-title">Cập nhật banner</h4>
                             </div>
                             <div class="card-block">
                                 <div class="card-body">
-                                    <h5 class="mt-2">Tên</h5>
+                                    <h5 class="mt-2">Tiêu đề</h5>
                                     <fieldset class="form-group">
                                         <input type="text" class="form-control" id="basicInput">
                                     </fieldset>
-                                    <h5 class="mt-2">Danh mục</h5>
-                                    <fieldset class="form-group">
-                                        <select class="custom-select" id="customSelect">
-                                            <option selected="">Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </fieldset>
-                                    <h5 class="mt-2">Thương hiệu</h5>
-                                    <fieldset class="form-group">
-                                        <select class="custom-select" id="customSelect">
-                                            <option selected="">Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </fieldset>
-                                    <h5 class="mt-2">Màu sắc</h5>
-                                    <fieldset class="form-group">
-                                        <select class="custom-select" id="customSelect">
-                                            <option selected="">Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </fieldset>
-                                    <h5 class="mt-2">Mô tả</h5>
+                                    <h5 class="mt-2">Nội dung</h5>
                                     <fieldset class="form-group">
                                         <textarea class="form-control" id="basicTextarea" rows="3"></textarea>
                                     </fieldset>
-
+                                    <h5 class="mt-2">Trạng thái</h5>
+                                    <fieldset class="form-group">
+                                        <select class="custom-select" id="customSelect">
+                                            <option selected="">Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                        </select>
+                                    </fieldset>
                                 </div>
                             </div>
                         </div>
@@ -82,13 +62,9 @@
                             </div>
                             <div class="card-block">
                                 <div class="card-body">
-                                    <h5 class="mt-2">Số lượng</h5>
+                                    <h5 class="mt-2">Vị trí</h5>
                                     <fieldset class="form-group">
-                                        <input type="text" class="form-control" id="basicInput">
-                                    </fieldset>
-                                    <h5 class="mt-2">Giá</h5>
-                                    <fieldset class="form-group">
-                                        <input type="text" class="form-control" id="basicInput">
+                                        <input type="number" class="form-control" id="basicInput">
                                     </fieldset>
                                     <h5 class="mt-2">Ảnh</h5>
                                     <fieldset class="form-group">
@@ -100,9 +76,8 @@
                     </div>
                 </div>
                 <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit">Xác
-                        nhận</button>
-                <a href="#"> <button class="btn btn-secondary btn-min-width mr-0 mb-0"
-                        >Hủy</button></a>
+                    nhận</button>
+                <a href="#"> <button class="btn btn-secondary btn-min-width mr-0 mb-0">Hủy</button></a>
                 <!-- </section> -->
             </form>
         </div>

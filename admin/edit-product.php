@@ -17,7 +17,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item active">Thêm sản phẩm
+                            <li class="breadcrumb-item active">Cập nhật sản phẩm
                             </li>
                         </ol>
                     </div>
@@ -31,7 +31,7 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Thêm sản phẩm</h4>
+                                <h4 class="card-title">Cập nhật sản phẩm</h4>
                             </div>
                             <div class="card-block">
                                 <div class="card-body">
