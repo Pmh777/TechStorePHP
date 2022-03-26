@@ -15,27 +15,70 @@
 <!-- Content page -->
 <section class="bg0 p-t-104 p-b-116">
     <div class="container">
-        <div class="size-signin bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-            <form>
-                <h4 class="mtext-105 cl2 txt-center p-b-30">
-                    Sign In
-                </h4>
+        <nav>
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab"
+                    aria-controls="nav-login" aria-selected="true">Login</a>
+                <a class="nav-item nav-link" id="nav-register-tab" data-toggle="tab" href="#nav-register" role="tab"
+                    aria-controls="nav-register" aria-selected="false">Register</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                <div class="container ">
+                    <div class="size-signin p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+                        <form>
+                            <h4 class="mtext-105 cl2 txt-center p-b-30">
+                                Login
+                            </h4>
 
-                <div class="bor8 m-b-20 how-pos4-parent">
-                    <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="email" name="email"
-                        placeholder="Email">
+                            <div class="bor8 m-b-20 how-pos4-parent">
+                                <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="email" name="email"
+                                    placeholder="Email">
+                            </div>
+
+                            <div class="bor8 m-b-20 how-pos4-parent">
+                                <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="password" name="password"
+                                    placeholder="Password">
+                            </div>
+
+                            <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+                                Login
+                            </button>
+                        </form>
+                    </div>
                 </div>
+            </div>
+            <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
+                <div class="container ">
+                    <div class="size-signin p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+                        <form>
+                            <h4 class="mtext-105 cl2 txt-center p-b-30">
+                                Register
+                            </h4>
+                            <div class="bor8 m-b-20 how-pos4-parent">
+                                <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="text" name="Name"
+                                    placeholder="Name">
+                            </div>
+                            <div class="bor8 m-b-20 how-pos4-parent">
+                                <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="email" name="email"
+                                    placeholder="Email">
+                            </div>
 
-                <div class="bor8 m-b-20 how-pos4-parent">
-                    <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="password" name="password"
-                        placeholder="Password">
+                            <div class="bor8 m-b-20 how-pos4-parent">
+                                <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="password" name="password"
+                                    placeholder="Password">
+                            </div>
+
+                            <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+                                Register
+                            </button>
+                        </form>
+                    </div>
                 </div>
-
-                <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-                    Login
-                </button>
-            </form>
+            </div>
         </div>
+
     </div>
 </section>
 
