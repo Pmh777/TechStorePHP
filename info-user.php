@@ -24,36 +24,35 @@
     </nav>
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <div class="container center_div">
-          <div class="row">
-            <label for="staticEmail" class="col-sm-2 col-form-label"> <b>Họ và Tên:</b> </label>
-            <div class="col-sm-10">
-              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Trần Văn A">
+        <div class="container ">
+          <div class="size-210 bor10 mx-auto p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md align-items-center">
+            <div class="row ">
+              <label for="staticEmail" class="col-sm-2 col-form-label"> <b>Họ và Tên:</b> </label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Trần Văn A">
+              </div>
+            </div>
+            <div class="row">
+              <label for="staticEmail" class="col-sm-2 col-form-label"> <b>Số điện thoại:</b> </label>
+              <div class="col-sm-10">
+                <input type="number" readonly class="form-control-plaintext" id="staticEmail" value="0793960152">
+              </div>
+            </div>
+            <div class="row">
+              <label for="staticEmail" class="col-sm-2 col-form-label"> <b>Email:</b> </label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                  value="truongduy.fu@gmail.com">
+              </div>
+            </div>
+            <div class="row">
+              <label for="staticEmail" class="col-sm-2 col-form-label"> <b>Địa chỉ:</b> </label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Việt Nam">
+              </div>
             </div>
           </div>
-          <div class="row">
-            <label for="staticEmail" class="col-sm-2 col-form-label"> <b>Số điện thoại:</b> </label>
-            <div class="col-sm-10">
-              <input type="number" readonly class="form-control-plaintext" id="staticEmail" value="0793960152">
-            </div>
-          </div>
-          <div class="row">
-            <label for="staticEmail" class="col-sm-2 col-form-label"> <b>Email:</b> </label>
-            <div class="col-sm-10">
-              <input type="text" readonly class="form-control-plaintext" id="staticEmail"
-                value="truongduy.fu@gmail.com">
-            </div>
-          </div>
-          <div class="row">
-            <label for="staticEmail" class="col-sm-2 col-form-label"> <b>Địa chỉ:</b> </label>
-            <div class="col-sm-10">
-              <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Việt Nam">
-            </div>
-          </div>
-
         </div>
-
-
       </div>
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
         <div class="container">
