@@ -1,7 +1,5 @@
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
-<!-- Navigation -->
-<?php include_once("./inc/navigation-admin.php"); ?>
 <!-- Navbar -->
 <?php include_once("./inc/navbar-admin.php"); ?>
 <!-- ////////////////////////////////////////////////////////////////////////////-->
