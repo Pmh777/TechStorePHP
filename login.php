@@ -4,81 +4,42 @@
 <?php include_once("include/cart.php"); ?>
 
 
-<!-- Title page -->
-<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
-    <h2 class="ltext-105 cl0 txt-center">
-        Sign In
-    </h2>
-</section>
-
-
 <!-- Content page -->
 <section class="bg0 p-t-104 p-b-116">
     <div class="container">
-        <nav>
-            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab"
-                    aria-controls="nav-login" aria-selected="true">Login</a>
-                <a class="nav-item nav-link" id="nav-register-tab" data-toggle="tab" href="#nav-register" role="tab"
-                    aria-controls="nav-register" aria-selected="false">Register</a>
-            </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
-                <div class="container ">
-                    <div class="size-signin p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-                        <form>
-                            <h4 class="mtext-105 cl2 txt-center p-b-30">
-                                Login
-                            </h4>
+        <div class="flex-w flex-tr">
+            <div class="size-210 bor6 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
 
-                            <div class="bor8 m-b-20 how-pos4-parent">
-                                <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="email" name="email"
-                                    placeholder="Email">
-                            </div>
-
-                            <div class="bor8 m-b-20 how-pos4-parent">
-                                <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="password" name="password"
-                                    placeholder="Password">
-                            </div>
-
-                            <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-                                Login
-                            </button>
-                        </form>
+                <div class="flex-w w-full">
+                    <div class="size-212 p-t-2">
+                        <h1 class="mtext-111 cl2 txt-center p-b-30" style="font-size: 38px;">
+                            Đăng Nhập
+                        </h1>
+                        <hr style="border: 2px solid #000">
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
-                <div class="container ">
-                    <div class="size-signin p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-                        <form>
-                            <h4 class="mtext-105 cl2 txt-center p-b-30">
-                                Register
-                            </h4>
-                            <div class="bor8 m-b-20 how-pos4-parent">
-                                <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="text" name="Name"
-                                    placeholder="Name">
-                            </div>
-                            <div class="bor8 m-b-20 how-pos4-parent">
-                                <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="email" name="email"
-                                    placeholder="Email">
-                            </div>
+            <div class="size-210 bor16 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+                <form>
 
-                            <div class="bor8 m-b-20 how-pos4-parent">
-                                <input class="stext-111 cl2 plh3 size-116 p-l-25 p-r-30" type="password" name="password"
-                                    placeholder="Password">
-                            </div>
-
-                            <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-                                Register
-                            </button>
-                        </form>
+                    <div class="bor8 m-b-20 how-pos4-parent">
+                        <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="email" name="email" placeholder="Email">
+                        <img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
                     </div>
-                </div>
+
+                    <div class="bor8 m-b-20 how-pos4-parent">
+                        <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="password" name="password" placeholder="Password">
+                        <img class="how-pos4 pointer-none" src="images/icons/icon-password.png" alt="ICON">
+                    </div>
+
+                    <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+                        Đăng Nhập
+                    </button>
+                </form>
             </div>
+
+
         </div>
-
     </div>
 </section>
 
