@@ -61,7 +61,7 @@
               Đăng nhập
             </a>
 
-            <a href="#" class="flex-c-m trans-04 p-lr-25">
+            <a href="register.php" class="flex-c-m trans-04 p-lr-25">
               Đăng ký
             </a>
 
