@@ -309,7 +309,7 @@ input[type=text]:placeholder {
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <div>
-      <img class="logo-head" src="theme-assets/images/logo/logo1.png" alt="Logo">
+      <img class="logo-head" src="theme-assets/images/logo/logo.png" alt="Logo">
     </div>
     <!-- Login Form -->
 
