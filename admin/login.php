@@ -292,6 +292,11 @@ input[type=text]:placeholder {
 
 #icon {
   width: 60%;
+
+}
+
+.logo-head {
+  max-width: 100px;
 }
 </style>
 <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -303,8 +308,11 @@ input[type=text]:placeholder {
 
 <div class="wrapper fadeInDown">
   <div id="formContent">
-
+    <div>
+      <img class="logo-head" src="theme-assets/images/logo/logo1.png" alt="Logo">
+    </div>
     <!-- Login Form -->
+
     <form>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="Tên đăng nhập">
       <input type="text" id="password" class="fadeIn third" name="login" placeholder="Mật khẩu">

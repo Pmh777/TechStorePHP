@@ -38,7 +38,7 @@
               <tr class="table_row">
                 <td class="column-1">
                   <div class="how-itemcart1">
-                    <img src="images/item-cart-04.jpg" alt="IMG">
+                    <img src="images/item-cart-04.png" alt="IMG">
                   </div>
                 </td>
                 <td class="column-2">Fresh Strawberries</td>
@@ -62,7 +62,7 @@
               <tr class="table_row">
                 <td class="column-1">
                   <div class="how-itemcart1">
-                    <img src="images/item-cart-05.jpg" alt="IMG">
+                    <img src="images/item-cart-05.png" alt="IMG">
                   </div>
                 </td>
                 <td class="column-2">Lightweight Jacket</td>
@@ -133,10 +133,10 @@
             </div>
 
             <div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
-            <div class="bor8 bg0 m-b-12">
-              <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state"
-                    placeholder="Vui lòng nhập địa chỉ">
-</div>
+              <div class="bor8 bg0 m-b-12">
+                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state"
+                  placeholder="Vui lòng nhập địa chỉ">
+              </div>
             </div>
           </div>
 
