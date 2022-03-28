@@ -66,10 +66,9 @@
                         src="theme-assets/images/logo/avt.jpg" alt="avatar" /><span
                         class="user-name text-bold-700 ml-1">Tên User</span></span></a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="profile.php"><i class="ft-user"></i>Hồ sơ người dùng</a>
-                  <a class="dropdown-item" href="profile.php"><i class="ft-more-vertical"></i>Cập nhật thông tin</a>
-                  <a class="dropdown-item" href="profile.php"><i class="ft-lock"></i>Đổi mật khẩu</a>
-                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="profile.php"><i class="ft-user"></i>Thông tin của tôi</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ft-user"></i>Cập nhật thông tin</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ft-user"></i>Đổi mật khẩu</a>
                   <a class="dropdown-item" href="#"><i class="ft-power"></i> Đăng xuất</a>
                 </div>
               </div>
@@ -120,11 +119,10 @@
                         src="theme-assets/images/logo/avt.jpg" alt="avatar" /><span
                         class="user-name text-bold-700 ml-1">Tên User</span></span></a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="profile.php"><i class="ft-user"></i>Hồ sơ người dùng</a>
-                  <a class="dropdown-item" href="profile.php"><i class="ft-more-vertical"></i>Cập nhật thông tin</a>
-                  <a class="dropdown-item" href="profile.php"><i class="ft-lock"></i>Đổi mật khẩu</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#"><i class="ft-power"></i> Đăng xuất</a>
+                  <a class="dropdown-item" href="profile.php">Thông tin của tôi</a>
+                  <a class="dropdown-item" href="edit-profile.php">Cập nhật thông tin</a>
+                  <a class="dropdown-item" href="change-password.php">Đổi mật khẩu</a>
+                    <a class="dropdown-item" href="#">Đăng xuất</a>
                 </div>
               </div>
             </li>
