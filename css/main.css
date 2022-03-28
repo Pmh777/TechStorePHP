@@ -2608,8 +2608,8 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .size-signin {
-  margin-left: 25%;
-  margin-right: 25%;
+	margin-left: 25%;
+	margin-right: 25%;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -3783,19 +3783,10 @@ body {
 
 /*------------------------------------------------------------------
 /* Responsive Google Maps */
-.map-responsive {
-	position: relative;
-	padding-bottom: 75%;
-	height: 0;
-	overflow: hidden;
-}
 
 .map-responsive iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100% !important;
-	height: 100% !important;
+	height: 400px;
 }
 /* Custom */
 .center_div {
