@@ -6,7 +6,7 @@
 
 
 <!-- Title page -->
-<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.png');">
     <h2 class="ltext-105 cl0 txt-center">
         Liên hệ
     </h2>
@@ -95,12 +95,11 @@
 
 
 <!-- Map -->
-<section class="bg0 p-t-200 p-b-116">
-
+<section class="bg0 p-t-30 p-b-70">
     <div class="map-responsive">
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.420594896581!2d106.78291401462133!3d10.85558006069655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2sHUTECH%20University%20-%20E%20Campus%20(SHTP)!5e0!3m2!1svi!2s!4v1648150060939!5m2!1svi!2s"
-            width="100%" height="100px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.420594896581!2d106.78291401462133!3d10.85558006069655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2sHUTECH%20University%20-%20E%20Campus%20(SHTP)!5e0!3m2!1svi!2s!4v1648437791543!5m2!1svi!2s"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
 </section>

@@ -25,7 +25,7 @@
         <div class="content-body">
             <!-- Table head options start -->
             <div class="row">
-                <div class="col-13">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Quản lý nhân viên</h4>
@@ -64,7 +64,6 @@
                                             <th scope="col">Trạng thái</th>
                                             <th scope="col">Quyền</th>
                                             <th scope="col">#</th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -78,7 +77,7 @@
                                             <td>Hoạt động</td>
                                             <td>nhân viên</td>
 
-                                            <td>
+                                            <td class="inline-block">
                                                 <!-- <a href="detail-product.php">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-info"></i>

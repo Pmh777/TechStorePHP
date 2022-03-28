@@ -13,8 +13,8 @@
   <title>
     Admin - Tech Store
   </title>
-  <link rel="apple-touch-icon" href="theme-assets/images/ico/apple-icon-120.png" />
-  <link rel="shortcut icon" type="image/x-icon" href="theme-assets/images/ico/favicon.ico" />
+  <link rel="apple-touch-icon" href="theme-assets/images/ico/avt.jpg" />
+  <link rel="shortcut icon" type="image/x-icon" href="theme-assets/images/ico/avt.jpg" />
   <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700"
     rel="stylesheet" />
   <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet" />
@@ -58,15 +58,18 @@
 
             <li class="dropdown dropdown-user nav-item">
               <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                <span class="avatar avatar-online"><img src="theme-assets/images/portrait/small/avatar-s-19.png"
+                <span class="avatar avatar-online"><img src="theme-assets/images/logo/avt.jpg"
                     alt="avatar" /><i></i></span></a>
               <div class="dropdown-menu dropdown-menu-right">
                 <div class="arrow_box_right">
                   <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img
-                        src="theme-assets/images/portrait/small/avatar-s-19.png" alt="avatar" /><span
+                        src="theme-assets/images/logo/avt.jpg" alt="avatar" /><span
                         class="user-name text-bold-700 ml-1">Tên User</span></span></a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="profile.php"><i class="ft-user"></i>Hồ sơ người dùng</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ft-more-vertical"></i>Cập nhật thông tin</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ft-lock"></i>Đổi mật khẩu</a>
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#"><i class="ft-power"></i> Đăng xuất</a>
                 </div>
               </div>
@@ -109,17 +112,19 @@
           <ul class="nav navbar-nav float-right">
             <li class="dropdown dropdown-user nav-item">
               <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                <span class="avatar avatar-online"><img src="theme-assets/images/portrait/small/avatar-s-19.png"
+                <span class="avatar avatar-online"><img src="theme-assets/images/logo/avt.jpg"
                     alt="avatar" /><i></i></span></a>
               <div class="dropdown-menu dropdown-menu-right">
                 <div class="arrow_box_right">
                   <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img
-                        src="theme-assets/images/portrait/small/avatar-s-19.png" alt="avatar" /><span
+                        src="theme-assets/images/logo/avt.jpg" alt="avatar" /><span
                         class="user-name text-bold-700 ml-1">Tên User</span></span></a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#"><i class="ft-user"></i> Hồ sơ người dùng</a><a class="dropdown-item"
-                    href="#">
-                    <a class="dropdown-item" href="#"><i class="ft-power"></i> Đăng xuất</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ft-user"></i>Hồ sơ người dùng</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ft-more-vertical"></i>Cập nhật thông tin</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ft-lock"></i>Đổi mật khẩu</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#"><i class="ft-power"></i> Đăng xuất</a>
                 </div>
               </div>
             </li>

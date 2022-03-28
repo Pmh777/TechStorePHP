@@ -5,7 +5,7 @@
 
 
 <!-- Title page -->
-<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-02.jpg');">
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-02.png');">
   <h2 class="ltext-105 cl0 txt-center">
     Blog
   </h2>
@@ -21,7 +21,7 @@
           <!-- item blog -->
           <div class="p-b-63">
             <a href="blog-detail.php" class="hov-img0 how-pos5-parent">
-              <img src="images/blog-04.jpg" alt="IMG-BLOG">
+              <img src="images/blog-04.png" alt="IMG-BLOG">
 
               <div class="flex-col-c-m size-123 bg9 how-pos5">
                 <span class="ltext-107 cl2 txt-center">
@@ -75,7 +75,7 @@
           <!-- item blog -->
           <div class="p-b-63">
             <a href="blog-detail.php" class="hov-img0 how-pos5-parent">
-              <img src="images/blog-05.jpg" alt="IMG-BLOG">
+              <img src="images/blog-05.png" alt="IMG-BLOG">
 
               <div class="flex-col-c-m size-123 bg9 how-pos5">
                 <span class="ltext-107 cl2 txt-center">
@@ -129,7 +129,7 @@
           <!-- item blog -->
           <div class="p-b-63">
             <a href="blog-detail.php" class="hov-img0 how-pos5-parent">
-              <img src="images/blog-06.jpg" alt="IMG-BLOG">
+              <img src="images/blog-06.png" alt="IMG-BLOG">
 
               <div class="flex-col-c-m size-123 bg9 how-pos5">
                 <span class="ltext-107 cl2 txt-center">
@@ -249,7 +249,7 @@
             <ul>
               <li class="flex-w flex-t p-b-30">
                 <a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-                  <img src="images/product-min-01.jpg" alt="PRODUCT">
+                  <img src="images/product-min-01.png" alt="PRODUCT">
                 </a>
 
                 <div class="size-215 flex-col-t p-t-8">
@@ -265,7 +265,7 @@
 
               <li class="flex-w flex-t p-b-30">
                 <a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-                  <img src="images/product-min-02.jpg" alt="PRODUCT">
+                  <img src="images/product-min-02.png" alt="PRODUCT">
                 </a>
 
                 <div class="size-215 flex-col-t p-t-8">
@@ -281,7 +281,7 @@
 
               <li class="flex-w flex-t p-b-30">
                 <a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-                  <img src="images/product-min-03.jpg" alt="PRODUCT">
+                  <img src="images/product-min-03.png" alt="PRODUCT">
                 </a>
 
                 <div class="size-215 flex-col-t p-t-8">
@@ -438,54 +438,3 @@
 
 <!-- Footer -->
 <?php include_once("include/footer.php"); ?>
-
-
-<!-- Back to top -->
-<div class="btn-back-to-top" id="myBtn">
-  <span class="symbol-btn-back-to-top">
-    <i class="zmdi zmdi-chevron-up"></i>
-  </span>
-</div>
-
-<!--===============================================================================================-->
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/select2/select2.min.js"></script>
-<script>
-  $(".js-select2").each(function() {
-    $(this).select2({
-      minimumResultsForSearch: 20,
-      dropdownParent: $(this).next('.dropDownSelect2')
-    });
-  })
-</script>
-<!--===============================================================================================-->
-<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script>
-  $('.js-pscroll').each(function() {
-    $(this).css('position', 'relative');
-    $(this).css('overflow', 'hidden');
-    var ps = new PerfectScrollbar(this, {
-      wheelSpeed: 1,
-      scrollingThreshold: 1000,
-      wheelPropagation: false,
-    });
-
-    $(window).on('resize', function() {
-      ps.update();
-    })
-  });
-</script>
-<!--===============================================================================================-->
-<script src="js/main.js"></script>
-
-</body>
-
-</html>
