@@ -86,8 +86,7 @@
               <i class="zmdi zmdi-shopping-cart"></i>
             </div>
 
-            <a href="login.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
-              data-notify="0">
+            <a href="login.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
               <i class="zmdi zmdi-face"></i>
             </a>
           </div>
@@ -113,8 +112,7 @@
           <i class="zmdi zmdi-shopping-cart"></i>
         </div>
 
-        <a href="login.php" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
-          data-notify="0">
+        <a href="login.php" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti">
           <i class="zmdi zmdi-face"></i>
         </a>
       </div>
