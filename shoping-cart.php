@@ -38,7 +38,7 @@
               <tr class="table_row">
                 <td class="column-1">
                   <div class="how-itemcart1">
-                    <img src="images/item-cart-04.jpg" alt="IMG">
+                    <img src="images/item-cart-04.png" alt="IMG">
                   </div>
                 </td>
                 <td class="column-2">Fresh Strawberries</td>
@@ -62,7 +62,7 @@
               <tr class="table_row">
                 <td class="column-1">
                   <div class="how-itemcart1">
-                    <img src="images/item-cart-05.jpg" alt="IMG">
+                    <img src="images/item-cart-05.png" alt="IMG">
                   </div>
                 </td>
                 <td class="column-2">Lightweight Jacket</td>
@@ -133,10 +133,10 @@
             </div>
 
             <div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
-            <div class="bor8 bg0 m-b-12">
-              <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state"
-                    placeholder="Vui lòng nhập địa chỉ">
-</div>
+              <div class="bor8 bg0 m-b-12">
+                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state"
+                  placeholder="Vui lòng nhập địa chỉ">
+              </div>
             </div>
           </div>
 
@@ -168,54 +168,3 @@
 
 <!-- Footer -->
 <?php include_once("include/footer.php"); ?>
-
-
-<!-- Back to top -->
-<div class="btn-back-to-top" id="myBtn">
-  <span class="symbol-btn-back-to-top">
-    <i class="zmdi zmdi-chevron-up"></i>
-  </span>
-</div>
-
-<!--===============================================================================================-->
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/select2/select2.min.js"></script>
-<script>
-$(".js-select2").each(function() {
-  $(this).select2({
-    minimumResultsForSearch: 20,
-    dropdownParent: $(this).next('.dropDownSelect2')
-  });
-})
-</script>
-<!--===============================================================================================-->
-<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<script>
-$('.js-pscroll').each(function() {
-  $(this).css('position', 'relative');
-  $(this).css('overflow', 'hidden');
-  var ps = new PerfectScrollbar(this, {
-    wheelSpeed: 1,
-    scrollingThreshold: 1000,
-    wheelPropagation: false,
-  });
-
-  $(window).on('resize', function() {
-    ps.update();
-  })
-});
-</script>
-<!--===============================================================================================-->
-<script src="js/main.js"></script>
-
-</body>
-
-</html>

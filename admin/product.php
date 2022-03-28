@@ -73,7 +73,7 @@
                                             <td>Đen</td>
                                             <td>Hiển thị</td>
                                             <td>
-                                                <a href="detail-product.php">
+                                                <a href="product-detail.php">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-info"></i>
                                                     </button></a>
