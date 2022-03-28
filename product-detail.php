@@ -20,34 +20,31 @@
             <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
             <div class="slick3 gallery-lb">
-              <div class="item-slick3" data-thumb="images/product-detail-01.jpg">
+              <div class="item-slick3" data-thumb="images/product-detail-01.png">
                 <div class="wrap-pic-w pos-relative">
-                  <img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+                  <img src="images/product-detail-01.png" alt="IMG-PRODUCT">
 
-                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                    href="images/product-detail-01.jpg">
+                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.png">
                     <i class="fa fa-expand"></i>
                   </a>
                 </div>
               </div>
 
-              <div class="item-slick3" data-thumb="images/product-detail-02.jpg">
+              <div class="item-slick3" data-thumb="images/product-detail-02.png">
                 <div class="wrap-pic-w pos-relative">
-                  <img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
+                  <img src="images/product-detail-02.png" alt="IMG-PRODUCT">
 
-                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                    href="images/product-detail-02.jpg">
+                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.png">
                     <i class="fa fa-expand"></i>
                   </a>
                 </div>
               </div>
 
-              <div class="item-slick3" data-thumb="images/product-detail-03.jpg">
+              <div class="item-slick3" data-thumb="images/product-detail-03.png">
                 <div class="wrap-pic-w pos-relative">
-                  <img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
+                  <img src="images/product-detail-03.png" alt="IMG-PRODUCT">
 
-                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                    href="images/product-detail-03.jpg">
+                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.png">
                     <i class="fa fa-expand"></i>
                   </a>
                 </div>
@@ -98,8 +95,7 @@
           <!--  -->
           <div class="flex-w flex-m p-l-100 p-t-40 respon7">
             <div class="flex-m bor9 p-r-10 m-r-11">
-              <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100"
-                data-tooltip="Add to Wishlist">
+              <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
                 <i class="zmdi zmdi-favorite"></i>
               </a>
             </div>
@@ -112,8 +108,7 @@
               <i class="fa fa-twitter"></i>
             </a>
 
-            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
-              data-tooltip="Google Plus">
+            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
               <i class="fa fa-google-plus"></i>
             </a>
           </div>
@@ -217,7 +212,7 @@
                   <!-- Review -->
                   <div class="flex-w flex-t p-b-68">
                     <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-                      <img src="images/avatar-01.jpg" alt="AVATAR">
+                      <img src="images/avatar-01.png" alt="AVATAR">
                     </div>
 
                     <div class="size-207">
@@ -269,8 +264,7 @@
                     <div class="row p-b-25">
                       <div class="col-12 p-b-5">
                         <label class="stext-102 cl3" for="review">Đánh giá của bạn</label>
-                        <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="review"
-                          name="review"></textarea>
+                        <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="review" name="review"></textarea>
                       </div>
 
                       <div class="col-sm-6 p-b-5">
@@ -297,22 +291,14 @@
     </div>
   </div>
 
-  <div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
-    <span class="stext-107 cl6 p-lr-25">
-      Mã: DT-01
-    </span>
 
-    <span class="stext-107 cl6 p-lr-25">
-      Danh mục: Điện thoại
-    </span>
-  </div>
 </section>
 
 
 <!-- Related Products -->
-<section class="sec-relate-product bg0 p-t-45 p-b-105">
+<section class="sec-relate-product bg0 p-t-45 p-b-50">
   <div class="container">
-    <div class="p-b-45">
+    <div class="p-b-35">
       <h3 class="ltext-106 cl5 txt-center">
         Sản phẩm tương tự
       </h3>
@@ -325,10 +311,9 @@
           <!-- Block2 -->
           <div class="block2">
             <div class="block2-pic hov-img0">
-              <img src="images/product-01.jpg" alt="IMG-PRODUCT">
+              <img src="images/product-01.png" alt="IMG-PRODUCT">
 
-              <a href="#"
-                class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+              <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                 Xem nhanh
               </a>
             </div>
