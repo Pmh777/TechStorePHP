@@ -25,7 +25,7 @@
         <div class="content-body">
             <!-- Table head options start -->
             <div class="row">
-                <div class="col-12">
+                <div class="col-13">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Quản lý nhân viên</h4>
@@ -64,7 +64,7 @@
                                             <th scope="col">Trạng thái</th>
                                             <th scope="col">Quyền</th>
                                             <th scope="col">#</th>
-                                            <th scope="col"></th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
