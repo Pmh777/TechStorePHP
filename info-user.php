@@ -16,15 +16,19 @@
   <div class="container">
     <div class="row">
       <div class="col-2 bor6">
-        <div class="nav flex-column nav-pills filter-tope-group" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-          <a class="nav-link stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-            aria-controls="v-pills-home" aria-selected="true">Thông tin</a>
-          <a class="nav-link stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-            aria-controls="v-pills-profile" aria-selected="false">Cập nhật thông tin</a>
-          <a class="nav-link stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" id="v-pills-orderhistory-tab" data-toggle="pill" href="#v-pills-orderhistory" role="tab"
-            aria-controls="v-pills-orderhistory" aria-selected="false">Lịch sử đơn hàng</a>
-          <a class="nav-link stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
-            aria-controls="v-pills-messages" aria-selected="false">Đổi mật khẩu</a>
+        <div class="nav flex-column filter-tope-group" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" id="v-pills-home-tab"
+            data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Thông
+            tin</a>
+          <a class="nav-link stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" id="v-pills-profile-tab" data-toggle="pill"
+            href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Cập nhật thông
+            tin</a>
+          <a class="nav-link stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" id="v-pills-orderhistory-tab"
+            data-toggle="pill" href="#v-pills-orderhistory" role="tab" aria-controls="v-pills-orderhistory"
+            aria-selected="false">Lịch sử đơn hàng</a>
+          <a class="nav-link stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" id="v-pills-messages-tab"
+            data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
+            aria-selected="false">Đổi mật khẩu</a>
         </div>
       </div>
       <div class="col-10 bor16">
@@ -43,8 +47,7 @@
                 <div class="row">
                   <label for="staticEmail" class="col col-form-label "> <b>Số điện thoại:</b> </label>
                   <div class="col-6">
-                    <input type="number" readonly class="form-control-plaintext" id="staticEmail"
-                      value="0793960152">
+                    <input type="number" readonly class="form-control-plaintext" id="staticEmail" value="0793960152">
                   </div>
                 </div>
                 <div class="row">
@@ -93,7 +96,8 @@
               </form>
             </div>
           </div>
-          <div class="tab-pane fade" id="v-pills-orderhistory" role="tabpanel" aria-labelledby="v-pills-orderhistory-tab">
+          <div class="tab-pane fade" id="v-pills-orderhistory" role="tabpanel"
+            aria-labelledby="v-pills-orderhistory-tab">
             <div class="container size-210 mx-auto p-lr-20 p-t-55 p-b-70 p-lr-15-lg w-full-md">
               <div class="container">
                 <h4 style="text-align: center; margin-bottom:30px">Lịch sử mua hàng</h4>

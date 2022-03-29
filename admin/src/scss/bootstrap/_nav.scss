@@ -78,10 +78,12 @@
 
   .nav-link.active,
   .show > .nav-link {
-    color: $nav-pills-link-active-color;
-    background-color: $nav-pills-link-active-bg;
+    color: #333;
+    background-color: #fff;
+    border-color: #797979;
   }
 }
+
 
 
 //
