@@ -167,6 +167,17 @@
         });
     });
 
+    var isotopeA = $('.filter-tope-group a');
+    $(isotopeA).each(function(){
+        $(this).on('click', function(){
+            for(var i=0; i<isotopeA.length; i++) {
+                $(isotopeA[i]).removeClass('how-active1');
+            }
+            
+            $(this).addClass('how-active1');
+        });
+    });
+
     /*==================================================================
     [ Filter / Search product ]*/
     $('.js-show-filter').on('click',function(){
