@@ -224,7 +224,8 @@
           <div class="block2-pic hov-img0">
             <img src="images/product-02.png" alt="IMG-PRODUCT">
 
-            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+            <a href="#"
+              class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
               Xem nhanh
             </a>
           </div>
@@ -255,7 +256,8 @@
           <div class="block2-pic hov-img0">
             <img src="images/product-03.png" alt="IMG-PRODUCT">
 
-            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+            <a href="#"
+              class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
               Xem nhanh
             </a>
           </div>
@@ -286,7 +288,8 @@
           <div class="block2-pic hov-img0">
             <img src="images/product-04.png" alt="IMG-PRODUCT">
 
-            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+            <a href="#"
+              class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
               Xem nhanh
             </a>
           </div>
@@ -317,7 +320,8 @@
           <div class="block2-pic hov-img0">
             <img src="images/product-05.png" alt="IMG-PRODUCT">
 
-            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+            <a href="#"
+              class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
               Xem nhanh
             </a>
           </div>
@@ -348,7 +352,8 @@
           <div class="block2-pic hov-img0">
             <img src="images/product-08.png" alt="IMG-PRODUCT">
 
-            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+            <a href="#"
+              class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
               Xem nhanh
             </a>
           </div>
@@ -379,7 +384,8 @@
           <div class="block2-pic hov-img0">
             <img src="images/product-07.png" alt="IMG-PRODUCT">
 
-            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+            <a href="#"
+              class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
               Xem nhanh
             </a>
           </div>
@@ -410,7 +416,8 @@
           <div class="block2-pic hov-img0">
             <img src="images/product-01.png" alt="IMG-PRODUCT">
 
-            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+            <a href="#"
+              class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
               Xem nhanh
             </a>
           </div>
