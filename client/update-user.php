@@ -1,7 +1,7 @@
-<?php include_once("include/header.php"); ?>
+<?php include_once("./include/header.php"); ?>
 
 <!-- Cart -->
-<?php include_once("include/cart.php"); ?>
+<?php include_once("./include/cart.php"); ?>
 
 
 
@@ -92,4 +92,4 @@
     </div>
   </div>
 </section>
-<?php include_once("include/footer.php"); ?>
+<?php include_once("./include/footer.php"); ?>

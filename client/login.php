@@ -1,7 +1,7 @@
-<?php include_once("include/header.php"); ?>
+<?php include_once("./include/header.php"); ?>
 
 <!-- Cart -->
-<?php include_once("include/cart.php"); ?>
+<?php include_once("./include/cart.php"); ?>
 
 
 <!-- Content page -->
@@ -28,8 +28,7 @@
           </div>
 
           <div class="bor8 m-b-20 how-pos4-parent">
-            <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="password" name="password"
-              placeholder="Password">
+            <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="password" name="password" placeholder="Password">
             <img class="how-pos4 pointer-none" src="images/icons/icon-password.png" alt="ICON">
           </div>
 
@@ -44,4 +43,4 @@
 
 
 <!-- Footer -->
-<?php include_once("include/footer.php"); ?>
+<?php include_once("./include/footer.php"); ?>

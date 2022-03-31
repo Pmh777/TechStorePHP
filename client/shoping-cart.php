@@ -1,7 +1,7 @@
-<?php include_once("include/header.php"); ?>
+<?php include_once("./include/header.php"); ?>
 
 <!-- Cart -->
-<?php include_once("include/cart.php"); ?>
+<?php include_once("./include/cart.php"); ?>
 
 
 <!-- breadcrumb -->
@@ -134,8 +134,7 @@
 
             <div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
               <div class="bor8 bg0 m-b-12">
-                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state"
-                  placeholder="Vui lòng nhập địa chỉ">
+                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state" placeholder="Vui lòng nhập địa chỉ">
               </div>
             </div>
           </div>
@@ -167,4 +166,4 @@
 
 
 <!-- Footer -->
-<?php include_once("include/footer.php"); ?>
+<?php include_once("./include/footer.php"); ?>
