@@ -8,34 +8,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--===============================================================================================-->
-  <link rel="icon" type="image/png" href="./client/images/icons/favicon.png" />
+  <link rel="icon" type="image/png" href="images/icons/favicon.png" />
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./fonts/iconic/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./fonts/linearicons-v1.0.0/icon-font.min.css">
+  <link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./vendor/animate/animate.css">
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./vendor/css-hamburgers/hamburgers.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./vendor/animsition/css/animsition.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./vendor/select2/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./vendor/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./vendor/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./vendor/MagnificPopup/magnific-popup.css">
+  <link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./vendor/perfect-scrollbar/perfect-scrollbar.css">
+  <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="./css/util.css">
-  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
   <!--===============================================================================================-->
 </head>
 
@@ -50,27 +50,27 @@
         <nav class="limiter-menu-desktop container">
 
           <!-- Logo desktop -->
-          <a href="./#" class="logo">
-            <img src="./images/icons/logo-01.png" alt="IMG-LOGO">
+          <a href="#" class="logo">
+            <img src="images/icons/logo-01.png" alt="IMG-LOGO">
           </a>
 
           <!-- Menu desktop -->
           <div class="menu-desktop">
             <ul class="main-menu">
               <li>
-                <a href="./index.php">Trang chủ</a>
+                <a href="index.php">Trang chủ</a>
 
               </li>
 
               <li>
-                <a href="./product.php">Sản phẩm</a>
+                <a href="product.php">Sản phẩm</a>
               </li>
               <li>
-                <a href="./about.php">Về chúng tôi</a>
+                <a href="about.php">Về chúng tôi</a>
               </li>
 
               <li>
-                <a href="./contact.php">Liên hệ</a>
+                <a href="contact.php">Liên hệ</a>
               </li>
             </ul>
           </div>
@@ -86,7 +86,7 @@
               <i class="zmdi zmdi-shopping-cart"></i>
             </div>
 
-            <a href="./login.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
+            <a href="login.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
               <i class="zmdi zmdi-face"></i>
             </a>
           </div>
@@ -98,7 +98,7 @@
     <div class="wrap-header-mobile">
       <!-- Logo moblie -->
       <div class="logo-mobile">
-        <a href="./index.php"><img src="./images/icons/logo-01.png" alt="IMG-LOGO"></a>
+        <a href="index.php"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
       </div>
 
       <!-- Icon header -->
@@ -112,7 +112,7 @@
           <i class="zmdi zmdi-shopping-cart"></i>
         </div>
 
-        <a href="./login.php" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti">
+        <a href="login.php" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti">
           <i class="zmdi zmdi-face"></i>
         </a>
       </div>
@@ -131,22 +131,22 @@
 
       <ul class="main-menu-m">Trang chủ
         <li>
-          <a href="./index.php">Home</a>
+          <a href="index.php">Home</a>
           <span class="arrow-main-menu-m">
             <i class="fa fa-angle-right" aria-hidden="true"></i>
           </span>
         </li>
 
         <li>
-          <a href="./product.php">Sản phẩm</a>
+          <a href="product.php">Sản phẩm</a>
         </li>
 
         <li>
-          <a href="./about.php">Về chúng tôi</a>
+          <a href="about.php">Về chúng tôi</a>
         </li>
 
         <li>
-          <a href="./contact.php">Liên hệ</a>
+          <a href="contact.php">Liên hệ</a>
         </li>
       </ul>
     </div>
@@ -155,7 +155,7 @@
     <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
       <div class="container-search-header">
         <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-          <img src="./images/icons/icon-close2.png" alt="CLOSE">
+          <img src="images/icons/icon-close2.png" alt="CLOSE">
         </button>
 
         <form class="wrap-search-header flex-w p-l-15">

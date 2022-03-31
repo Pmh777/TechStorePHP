@@ -1,7 +1,7 @@
-<?php include_once("./include/header.php"); ?>
+<?php include_once("include/header.php"); ?>
 
 <!-- Cart -->
-<?php include_once("./include/cart.php"); ?>
+<?php include_once("include/cart.php"); ?>
 
 
 
@@ -24,12 +24,14 @@
                     </h4>
 
                     <div class="bor8 m-b-20 how-pos4-parent">
-                        <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Địa chỉ email của bạn">
+                        <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email"
+                            placeholder="Địa chỉ email của bạn">
                         <img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
                     </div>
 
                     <div class="bor8 m-b-30">
-                        <textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="Bạn cần giúp đỡ về vấn đề gì?"></textarea>
+                        <textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg"
+                            placeholder="Bạn cần giúp đỡ về vấn đề gì?"></textarea>
                     </div>
 
                     <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
@@ -95,8 +97,10 @@
 <!-- Map -->
 <section class="bg0 p-t-30 p-b-70">
     <div class="map-responsive">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.420594896581!2d106.78291401462133!3d10.85558006069655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2sHUTECH%20University%20-%20E%20Campus%20(SHTP)!5e0!3m2!1svi!2s!4v1648437791543!5m2!1svi!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.420594896581!2d106.78291401462133!3d10.85558006069655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2sHUTECH%20University%20-%20E%20Campus%20(SHTP)!5e0!3m2!1svi!2s!4v1648437791543!5m2!1svi!2s"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
 </section>
-<?php include_once("./include/footer.php"); ?>
+<?php include_once("include/footer.php"); ?>

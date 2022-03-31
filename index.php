@@ -1,7 +1,7 @@
-<?php include_once("./include/header.php"); ?>
+<?php include_once("include/header.php"); ?>
 
 <!-- Cart -->
-<?php include_once("./include/cart.php"); ?>
+<?php include_once("include/cart.php"); ?>
 
 
 
@@ -214,7 +214,7 @@
       </div>
 
       <!-- Filter -->
-      <?php include_once("client/include/filter.php"); ?>
+      <?php include_once("include/filter.php"); ?>
     </div>
 
     <div class="row isotope-grid">
@@ -448,4 +448,4 @@
 
 
 <!-- Footer -->
-<?php include_once("./include/footer.php"); ?>
+<?php include_once("include/footer.php"); ?>
