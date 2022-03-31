@@ -24,7 +24,8 @@
                 <div class="wrap-pic-w pos-relative">
                   <img src="images/product-detail-01.png" alt="IMG-PRODUCT">
 
-                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.png">
+                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
+                    href="images/product-detail-01.png">
                     <i class="fa fa-expand"></i>
                   </a>
                 </div>
@@ -34,7 +35,8 @@
                 <div class="wrap-pic-w pos-relative">
                   <img src="images/product-detail-02.png" alt="IMG-PRODUCT">
 
-                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.png">
+                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
+                    href="images/product-detail-02.png">
                     <i class="fa fa-expand"></i>
                   </a>
                 </div>
@@ -44,7 +46,8 @@
                 <div class="wrap-pic-w pos-relative">
                   <img src="images/product-detail-03.png" alt="IMG-PRODUCT">
 
-                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.png">
+                  <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
+                    href="images/product-detail-03.png">
                     <i class="fa fa-expand"></i>
                   </a>
                 </div>
@@ -95,7 +98,8 @@
           <!--  -->
           <div class="flex-w flex-m p-l-100 p-t-40 respon7">
             <div class="flex-m bor9 p-r-10 m-r-11">
-              <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
+              <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100"
+                data-tooltip="Add to Wishlist">
                 <i class="zmdi zmdi-favorite"></i>
               </a>
             </div>
@@ -108,7 +112,8 @@
               <i class="fa fa-twitter"></i>
             </a>
 
-            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
+              data-tooltip="Google Plus">
               <i class="fa fa-google-plus"></i>
             </a>
           </div>
@@ -264,7 +269,8 @@
                     <div class="row p-b-25">
                       <div class="col-12 p-b-5">
                         <label class="stext-102 cl3" for="review">Đánh giá của bạn</label>
-                        <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="review" name="review"></textarea>
+                        <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="review"
+                          name="review"></textarea>
                       </div>
 
                       <div class="col-sm-6 p-b-5">
@@ -313,7 +319,8 @@
             <div class="block2-pic hov-img0">
               <img src="images/product-01.png" alt="IMG-PRODUCT">
 
-              <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+              <a href="#"
+                class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                 Xem nhanh
               </a>
             </div>
