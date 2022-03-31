@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^example.com
+RewriteCond %{REQUEST_URI} !^/MySite
+RewriteRule ^(.*)$ /MySite/
