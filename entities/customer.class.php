@@ -62,4 +62,12 @@ class Customer
     return $result;
   }
 
+  public static function findCustomer(int $id)
+  {
+    $db = new Db();
+    $sql = "SELECT * FROM customer WHERE customer_id='$id'";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
+
 }
