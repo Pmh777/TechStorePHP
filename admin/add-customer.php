@@ -81,7 +81,7 @@ if (isset($_POST["btnsubmit"])) {
                                         <h5 class="mt-2">Ngày sinh</h5>
                                         <fieldset class="form-group">
                                             <input type="date" id="basicInput" format="dd-mm-YYYY" name="txtbirthday" 
-                                            value="<?php echo isset($_POST["txtbirthday"]) ? $_POST["txtbirthday"] : ""; ?>" ?>
+                                            value="<?php echo isset($_POST["txtbirthday"]) ? $_POST["txtbirthday"] : ""; ?>"
                                                 class="form-control">
                                         </fieldset>
                                         <h5 class="mt-2">Số điện thoại</h5>
@@ -124,7 +124,7 @@ if (isset($_POST["btnsubmit"])) {
                     <!-- <button type="submit" class="btn btn-primary" name="btnsubmit">Xác nhận</button> -->
                     <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit" name="btnsubmit">Xác
                         nhận</button>
-                    <a href="#"> <button class="btn btn-secondary btn-min-width mr-0 mb-0">Hủy</button></a>
+                  
                     <!-- </section> -->
             </form>
         </div>

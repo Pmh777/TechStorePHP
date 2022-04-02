@@ -34,7 +34,7 @@ class Customer
     $result = $db->select_to_array($sql);
     return $result;
   }
-  public function createCustomer()
+  public static function createCustomer()
   {
     $date = date("Y-m-d H:i:s");
     $db = new Db();
@@ -43,7 +43,7 @@ class Customer
     $result = $db->query_execute($sql);
     return $result;
   }
-  public function updateCustomer(int $id)
+  public static function updateCustomer(int $id)
   {
     $date = date("Y-m-d H:i:s");
     $db = new Db();
@@ -56,12 +56,12 @@ class Customer
   public static function findCustomer(int $id)
   {
     $db = new Db();
-    $sql = "SELECT customer WHERE customer_id='$id'";
+    $sql = "SELECT customer WHERE customer_id=".$id;
     $result = $db->query_execute($sql);
     return $result;
   }
 
-  public function deleteCustomer(int $id)
+  public static function deleteCustomer(int $id)
   {
     $db = new Db();
     $sql = "DELETE FROM customer WHERE customer_id='$id'";
