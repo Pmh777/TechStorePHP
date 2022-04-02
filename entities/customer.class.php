@@ -26,6 +26,14 @@ class Customer
     $this->status = $status;
     $this->created_at = $created_at;
   }
+  
+  public static function list_customer()
+  {
+    $db = new Db();
+    $sql = "SELECT * FROM customer";
+    $result = $db->select_to_array($sql);
+    return $result;
+  }
   public function createCustomer()
   {
     $date = date("Y-m-d H:i:s");
@@ -35,16 +43,22 @@ class Customer
     $result = $db->query_execute($sql);
     return $result;
   }
-  public function updateCustomer($id)
+  public function updateCustomer(int $id)
   {
-  
- 
+    $date = date("Y-m-d H:i:s");
+    $db = new Db();
+    $sql = "UPDATE customer
+            SET (name='$this->name', phone='$this->phone', birthday='$this->birthday', gender='$this->gender', email='$this->email', address='$this->address', password='$this->password', status='1', created_at='$date')
+            WHERE customer_id='$id'";
+    $result = $db->query_execute($sql);
+    return $result;
   }
-  public static function list_customer()
+
+  public function deleteCustomer(int $id)
   {
     $db = new Db();
-    $sql = "SELECT * FROM customer";
-    $result = $db->select_to_array($sql);
+    $sql = "DELETE FROM customer WHERE customer_id='$id'";
+    $result = $db->query_execute($sql);
     return $result;
   }
 
