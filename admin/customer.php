@@ -89,7 +89,7 @@ $customer = Customer::list_customer();?>
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-info"></i>
                                                     </button></a> -->
-                                                <a href="edit-employee.php?id=<?php echo $item["customer_id"]; ?>">
+                                                <a href="edit-customer.php?id=<?php echo $item["customer_id"]; ?>">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-edit"></i>
                                                     </button></a>

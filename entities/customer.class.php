@@ -53,6 +53,13 @@ class Customer
     $result = $db->query_execute($sql);
     return $result;
   }
+  public static function findCustomer(int $id)
+  {
+    $db = new Db();
+    $sql = "SELECT customer WHERE customer_id='$id'";
+    $result = $db->query_execute($sql);
+    return $result;
+  }
 
   public function deleteCustomer(int $id)
   {

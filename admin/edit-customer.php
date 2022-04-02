@@ -1,8 +1,15 @@
-
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/customer.class.php"); ?>
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->
-<?php include_once("./inc/navbar-admin.php"); ?>
+<?php include_once("./inc/navbar-admin.php");
+$id = isset($_GET['id'])?$_GET['id']:'';
+echo "<pre>";
+var_dump($id);
+echo "<pre>";
+
+// $customer = Customer::findCustomer((int)$id); ?>
+
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 <!-- body -->
 <div class="app-content content">
