@@ -1,5 +1,7 @@
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/customer.class.php"); ?>
 <!-- Header -->
-<?php include_once("./inc/header-admin.php"); ?>
+<?php include_once("./inc/header-admin.php"); 
+$customer = Customer::list_customer();?>
 
 <!-- Navbar -->
 <?php include_once("./inc/navbar-admin.php"); ?>
@@ -53,36 +55,54 @@
                         <div class="card-content collapse show">
                             <div class="table-responsive">
                                 <table class="table">
-                                    <thead class="thead-dark">
+                                <thead class="thead-dark">
                                         <tr>
-                                            <th scope="col">Stt</th>
+                                        <th scope="col">ID</th>
                                             <th scope="col">Họ và Tên</th>
                                             <th scope="col">Số điện thoại</th>
                                             <th scope="col">Ngày sinh</th>
                                             <th scope="col">Giới tính</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">Địa chỉ</th>
-                                            <th scope="col">#</th>
+                                            <th scope="col"></th>
 
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ( $customer as $item) : ?>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Truong Loc</td>
-                                            <td>0793960152</td>
-                                            <td>22/11/2000</td>
-                                            <td>Nam</td>
-                                            <td>truongduy.fu@gmail.com</td>
-                                            <td>Việt Nam</td>
-                                            <td> <a href="edit-customer.php">
+                                            <th scope="row"><?php echo $item["customer_id"]; ?></th>
+                                            <td><?php echo $item["name"]; ?></td>
+                                            <td><?php echo $item["phone"]; ?></td>
+                                            <td><?php echo $item["birthday"]; ?></td>
+                                            <td>
+                                                <?php if($item["gender"] == 1) echo 'Nam';
+                                                elseif($item["gender"] == 2) echo 'Nữ';
+                                                else echo 'Khác';
+                                                ?>
+                                            </td>
+                                            <td><?php echo $item["email"]; ?></td>
+                                            <td><?php echo $item["address"]; ?></td>
+
+                                            <td class="inline-block">
+                                                <!-- <a href="detail-product.php">
+                                                    <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
+                                                        <i class="ft-info"></i>
+                                                    </button></a> -->
+                                                <a href="edit-employee.php?id=<?php echo $item["customer_id"]; ?>">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-edit"></i>
                                                     </button></a>
-                                                <button type="button" class="btn btn-danger btn-min-width mr-1 mb-1">
-                                                    <i class="ft-delete"></i>
+                                                <a href="remove-product.php">
+                                                    <button type="button"
+                                                        class="btn btn-danger btn-min-width mr-1 mb-1">
+                                                        <i class="ft-delete"></i>
+                                                    </button>
+                                                </a>
                                             </td>
+
                                         </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

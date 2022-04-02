@@ -1,3 +1,4 @@
+
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->
@@ -17,7 +18,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item active">Cập nhật khách hàng
+                            <li class="breadcrumb-item active">Cập nhật thông tin khách hàng
                             </li>
                         </ol>
                     </div>
@@ -31,7 +32,7 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Cập nhật khách hàng</h4>
+                                    <h4 class="card-title">Cập nhật thông tin khách hàng</h4>
                                 </div>
                                 <div class="card-block">
                                     <div class="card-body">
