@@ -29,9 +29,8 @@ class Banner
   }
   public function createBanner()
   {
-
-    $file_temp = $this->picture['tmp_name'];
-    $user_file = $this->picture['name'];
+    $file_temp = $this->photo['tmp_name'];
+    $user_file = $this->photo['name'];
     $timestamp = date("Y").date("m").date("d").date("h").date("i").date("s");
     $filepath = "/admin/theme-assets/images/slider/".$user_file.$timestamp;
     if(move_uploaded_file($file_temp,$filepath)==false)

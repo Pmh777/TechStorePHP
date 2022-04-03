@@ -75,7 +75,7 @@ $banner = Banner::list_banner();
                                             <td><?php echo $item["caption"]; ?></td>
                                             <td><?php echo $item["content"]; ?></td>
                                             <td>
-                                            <img src="/admin/theme-assets/images/slider/<?php echo $item["photo"]?>" alt="image">
+                                            <img src="/techstorePHP/admin/theme-assets/images/slider/<?php echo $item["photo"]?>" alt="image">
                                             </td>
                                             <td><?php echo $item["number_order"]; ?></td>
                                             <td><?php echo $item["status"]; ?></td>
