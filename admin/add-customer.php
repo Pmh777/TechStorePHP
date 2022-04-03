@@ -1,5 +1,5 @@
 <?php require_once("/xampp/htdocs/TechStorePHP/entities/customer.class.php"); 
-
+$date = date("Y-m-d H:i:s");
 if (isset($_POST["btnsubmit"])) {
     $customer_id = "";
     $name = $_POST["txtname"];
@@ -33,9 +33,9 @@ if (isset($_POST["btnsubmit"])) {
             <div class="content-header-left col-md-4 col-12 mb-2">
                 <?php
                 if (isset($_GET["inserted"])) {
-                    echo "<h2>Thêm sản phẩm thành công</h2>";
+                    echo "<h2>Thêm khách hàng thành công</h2>";
                 } else if (isset($_GET["failure"])) {
-                echo "<h2>Thêm sản phẩm thất bại</h2>";
+                echo "<h2>Thêm khách hàng thất bại</h2>";
                 }
                 ?>
                 <h3 class="content-header-title"></h3>
@@ -66,13 +66,12 @@ if (isset($_POST["btnsubmit"])) {
                                     <div class="card-body">
                                         <h5 class="mt-2">Họ và tên</h5>
                                         <fieldset class="form-group">
-                                            <input type="text" class="form-control" id="basicInput" name="txtname"
+                                            <input type="text" class="form-control" id="basicInput" name="txtname" required                                       
                                             value="<?php echo isset($_POST["txtname"]) ? $_POST["txtname"] : ""; ?>">
                                         </fieldset>
                                         <h5 class="mt-2">Giới tính</h5>
                                         <fieldset class="form-group" class="form-control" id="basicInput">
-                                            <select class="custom-select" id="customSelect" name="txtgender">
-                                                <option selected="">Chọn giới tính</option>
+                                            <select class="custom-select" id="customSelect" placeholder="Chọn giới tính" name="txtgender" required>
                                                 <option value="1">Nam</option>
                                                 <option value="2">Nữ</option>
                                                 <option value="3">Khác</option>
@@ -80,13 +79,13 @@ if (isset($_POST["btnsubmit"])) {
                                         </fieldset>
                                         <h5 class="mt-2">Ngày sinh</h5>
                                         <fieldset class="form-group">
-                                            <input type="date" id="basicInput" format="dd-mm-YYYY" name="txtbirthday" 
-                                            value="<?php echo isset($_POST["txtbirthday"]) ? $_POST["txtbirthday"] : ""; ?>" ?>
+                                            <input type="date" id="basicInput" required  name="txtbirthday" max="<?= date('Y-m-d'); ?>"
+                                            value="<?php echo isset($_POST["txtbirthday"]) ? $_POST["txtbirthday"] : ""; ?>"
                                                 class="form-control">
                                         </fieldset>
                                         <h5 class="mt-2">Số điện thoại</h5>
                                         <fieldset class="form-group">
-                                            <input type="tel" class="form-control" name="txtphone"
+                                            <input type="tel" class="form-control" name="txtphone" required pattern="[0-9]{9}"
                                             value="<?php echo isset($_POST["txtphone"]) ? $_POST["txtphone"] : ""; ?>" id="basicInput" 
                                             >
                                         </fieldset>
@@ -103,17 +102,17 @@ if (isset($_POST["btnsubmit"])) {
                                     <div class="card-body">
                                         <h5 class="mt-2">Email</h5>
                                         <fieldset class="form-group">
-                                            <input type="email" class="form-control" id="basicInput" name="txtemail"
+                                            <input type="email" class="form-control" id="basicInput" name="txtemail" required
                                             value="<?php echo isset($_POST["txtemail"]) ? $_POST["txtemail"] : ""; ?>">
                                         </fieldset>
                                         <h5 class="mt-2">Địa chỉ</h5>
                                         <fieldset class="form-group">
-                                            <input type="text" class="form-control" id="basicInput" name="txtaddress"
+                                            <input type="text" class="form-control" id="basicInput" name="txtaddress" required
                                             value="<?php echo isset($_POST["txtaddress"]) ? $_POST["txtaddress"] : ""; ?>">
                                         </fieldset>
                                         <h5 class="mt-2">Mật khẩu</h5>
                                         <fieldset class="form-group">
-                                            <input type="text" class="form-control" id="basicInput" name="txtpassword"
+                                            <input type="text" class="form-control" id="basicInput" name="txtpassword" required
                                             value="<?php echo isset($_POST["txtpassword"]) ? $_POST["txtpassword"] : ""; ?>">
                                         </fieldset>
                                     </div>
