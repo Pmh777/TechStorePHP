@@ -43,18 +43,17 @@ class Customer
     $result = $db->query_execute($sql);
     return $result;
   }
-  public function updateCustomer(int $id)
+  public static function updateCustomer(int $id, string $name, string $phone, string $birthday, string $gender, string $email, string $address, string $password, string $status)
   {
-    $date = date("Y-m-d H:i:s");
     $db = new Db();
     $sql = "UPDATE customer
-            SET (name='$this->name', phone='$this->phone', birthday='$this->birthday', gender='$this->gender', email='$this->email', address='$this->address', password='$this->password', status='1', created_at='$date')
+            SET name='$name', phone='$phone', birthday='$birthday', gender='$gender', email='$email', address='$address', password='$password', status='$status'
             WHERE customer_id='$id'";
     $result = $db->query_execute($sql);
     return $result;
   }
 
-  public function deleteCustomer(int $id)
+  public static function deleteCustomer(int $id)
   {
     $db = new Db();
     $sql = "DELETE FROM customer WHERE customer_id='$id'";

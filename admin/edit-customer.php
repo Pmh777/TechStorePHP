@@ -4,7 +4,28 @@ if (isset($_GET["id"])) {
 
     $customer = Customer::findCustomer($id);
 
-}?>
+}
+if(isset($_POST["update"])){
+    $id = $_GET["id"];
+    $name = $_POST["name"];
+    $phone = $_POST["phone"];
+    $birthday = $_POST["birthday"];
+    $gender = $_POST["gender"];
+    $email = $_POST["email"];
+    $address = $_POST["address"];
+    $password = $_POST["password"];
+    $status = $_POST["status"];
+
+    $result = Customer::updateCustomer($id, $name, $phone, $birthday, $gender, $email, $address, $password, $status);
+    if ($result) {
+        echo "<script>alert('Update thành công');</script>";
+        echo "<script>window.location.href='/TechStorePHP/admin/customer.php';</script>";
+    } else {
+        echo "<script>alert('Update thất bại');</script>";
+        echo "<script>window.location.href='/TechStorePHP/admin/customer.php';</script>";
+    }
+}
+?>
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->
@@ -32,7 +53,7 @@ if (isset($_GET["id"])) {
             </div>
         </div>
         <div class="content-body">
-            <form action="welcome.php" method="post">
+            <form action="edit-customer.php?id=<?php echo $_GET["id"]; ?>" method="post">
                 <section class="textarea-select">
                     <div class="row match-height">
                         <div class="col-lg-6 col-md-12">
@@ -44,11 +65,11 @@ if (isset($_GET["id"])) {
                                     <div class="card-body">
                                         <h5 class="mt-2">Họ và tên</h5>
                                         <fieldset class="form-group">
-                                            <input type="text" class="form-control" id="basicInput" value="<?php if(isset($customer['name'])) echo($customer['name']);?>">
+                                            <input type="text" class="form-control" id="basicInput" name="name" value="<?php if(isset($customer['name'])) echo($customer['name']);?>">
                                         </fieldset>
                                         <h5 class="mt-2">Giới tính</h5>
                                         <fieldset class="form-group" class="form-control" id="basicInput">
-                                            <select class="custom-select" id="customSelect">
+                                            <select class="custom-select" id="customSelect" name="gender">
                                                 <option selected>Chọn giới tính</option>
                                                 <option value="1"<?=$customer['gender'] == '1' ? ' selected="selected"' : '';?>>Nam</option>
                                                 <option value="2"<?=$customer['gender'] == '2' ? ' selected="selected"' : '';?>>Nữ</option>
@@ -62,7 +83,7 @@ if (isset($_GET["id"])) {
                                         </fieldset>
                                         <h5 class="mt-2">Số điện thoại</h5>
                                         <fieldset class="form-group">
-                                            <input type="tel" class="form-control" id="basicInput" value="<?php if(isset($customer['phone'])) echo($customer['phone']);?>">
+                                            <input type="tel" class="form-control" id="basicInput" name="phone" value="<?php if(isset($customer['phone'])) echo($customer['phone']);?>">
                                         </fieldset>
                                     </div>
                                 </div>
@@ -77,19 +98,19 @@ if (isset($_GET["id"])) {
                                     <div class="card-body">
                                         <h5 class="mt-2">Email</h5>
                                         <fieldset class="form-group">
-                                            <input type="email" class="form-control" id="basicInput" value="<?php if(isset($customer['email'])) echo($customer['email']);?>">
+                                            <input type="email" class="form-control" id="basicInput" name="email" value="<?php if(isset($customer['email'])) echo($customer['email']);?>">
                                         </fieldset>
                                         <h5 class="mt-2">Địa chỉ</h5>
                                         <fieldset class="form-group">
-                                            <input type="text" class="form-control" id="basicInput" value="<?php if(isset($customer['address'])) echo($customer['address']);?>">
+                                            <input type="text" class="form-control" id="basicInput" name="address" value="<?php if(isset($customer['address'])) echo($customer['address']);?>">
                                         </fieldset>
                                         <h5 class="mt-2">Mật khẩu</h5>
                                         <fieldset class="form-group">
-                                            <input type="text" class="form-control" id="basicInput" value="<?php if(isset($customer['password'])) echo($customer['password']);?>">
+                                            <input type="text" class="form-control" id="basicInput" name="password" value="<?php if(isset($customer['password'])) echo($customer['password']);?>">
                                         </fieldset>
                                         <h5 class="mt-2">Trạng thái</h5>
                                         <fieldset class="form-group">
-                                            <select class="custom-select" id="customSelect">
+                                            <select class="custom-select" id="customSelect" name="status">
                                                 <option selected>Chọn trạng thái</option>
                                                 <option value="1"<?=$customer['status'] == '1' ? ' selected="selected"' : '';?>>Có</option>
                                                 <option value="2"<?=$customer['status'] == '2' ? ' selected="selected"' : '';?>>Không</option>
@@ -100,7 +121,7 @@ if (isset($_GET["id"])) {
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit">Cập nhật</button>
+                    <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit" name="update">Cập nhật</button>
                     <a href="/customer.php"> <button class="btn btn-secondary btn-min-width mr-0 mb-0">Hủy</button></a>
                     <!-- </section> -->
             </form>

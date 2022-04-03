@@ -33,9 +33,11 @@ if (isset($_POST["btnsubmit"])) {
             <div class="content-header-left col-md-4 col-12 mb-2">
                 <?php
                 if (isset($_GET["inserted"])) {
-                    echo "<h2>Thêm sản phẩm thành công</h2>";
+                    echo "<h2>Thêm custommer thành công</h2>";
+                    echo "<script>window.location.href='/TechStorePHP/admin/customer.php';</script>";
                 } else if (isset($_GET["failure"])) {
-                echo "<h2>Thêm sản phẩm thất bại</h2>";
+                    echo "<h2>Thêm custommer thất bại</h2>";
+                    echo "<script>window.location.href='/TechStorePHP/admin/customer.php';</script>";
                 }
                 ?>
                 <h3 class="content-header-title"></h3>
