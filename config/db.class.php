@@ -35,5 +35,13 @@ class Db
     }
     return $rows;
   }
+  public function select_to_object($queryString)
+  {
+    $result = $this->query_execute($queryString);
+    if ($result == false) {
+      return false;
+    }
+    return $result->fetch_assoc();
+  }
 }
 ?>

@@ -1,45 +1,48 @@
 <?php IDEA:
 require_once('/xampp/htdocs/TechStorePHP/config/db.class.php');
-class Customer
+class Banner
 {
-  public $customer_id;
-  public $name;
-  public $phone;
-  public $birthday;
-  public $gender;
-  public $email;
-  public $address;
-  public $password;
+  public $id;
+  public $caption;
+  public $content;
+  public $photo;
+  public $number_order;
   public $status;
-  public $created_at;
+  public $create_at;
 
-  public function __construct($customer_id, $name, $phone, $birthday, $gender, $email, $address,$password, $status, $created_at)
+  public function __construct($id, $caption, $content, $photo, $number_order, $create_at)
   {
-    $this->customer_id = $customer_id;
-    $this->name = $name;
-    $this->phone = $phone;
-    $this->birthday = $birthday;
-    $this->gender = $gender;
-    $this->email = $email;
-    $this->address = $address;
-    $this->password = $password;
-    $this->status = $status;
-    $this->created_at = $created_at;
+    $this->id = $id;
+    $this->caption = $caption;
+    $this->content = $content;
+    $this->photo = $photo;
+    $this->number_order = $number_order;
+    $this->create_at = $create_at;
   }
   
-  public static function list_customer()
+  public static function list_banner()
   {
     $db = new Db();
-    $sql = "SELECT * FROM customer";
+    $sql = "SELECT * FROM banner";
     $result = $db->select_to_array($sql);
     return $result;
   }
-  public function createCustomer()
+  public function createBanner()
   {
+
+    $file_temp = $this->picture['tmp_name'];
+    $user_file = $this->picture['name'];
+    $timestamp = date("Y").date("m").date("d").date("h").date("i").date("s");
+    $filepath = "/admin/theme-assets/images/slider/".$user_file.$timestamp;
+    if(move_uploaded_file($file_temp,$filepath)==false)
+    {
+      return false;
+    }
+
     $date = date("Y-m-d H:i:s");
     $db = new Db();
-    $sql = "INSERT INTO customer(name, phone, birthday, gender, email, address,password,status,created_at) 
-    VALUES ('$this->name', '$this->phone', '$this->birthday', '$this->gender', '$this->email', '$this->address', '$this->password', '1','$date')";
+    $sql = "INSERT INTO banner(caption, content, photo, number_order, status, create_at) 
+    VALUES ('$this->caption', '$this->content', '$filepath', '$this->number_order','1','$date')";
     $result = $db->query_execute($sql);
     return $result;
   }

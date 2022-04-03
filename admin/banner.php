@@ -1,5 +1,9 @@
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/banner.class.php"); ?>
 <!-- Header -->
-<?php include_once("./inc/header-admin.php"); ?>
+<!-- Header -->
+<?php include_once("./inc/header-admin.php"); 
+$banner = Banner::list_banner();
+?>
 <!-- Navbar -->
 <?php include_once("./inc/navbar-admin.php"); ?>
 <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -55,8 +59,9 @@
                                 <table class="table">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th scope="col">#</th>
+                                            <th scope="col">ID</th>
                                             <th scope="col">Tiêu đề</th>
+                                            <th scope="col">Nội dung</th>
                                             <th scope="col">Ảnh</th>
                                             <th scope="col">Vị trí</th>
                                             <th scope="col">Trạng thái</th>
@@ -64,18 +69,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ( $banner as $item) : ?>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Xu hướng</td>
-                                            <td></td>
-                                            <td>2</td>
-                                            <td>Hiển thị</td>
+                                        <th scope="row"><?php echo $item["id"]; ?></th>
+                                            <td><?php echo $item["caption"]; ?></td>
+                                            <td><?php echo $item["content"]; ?></td>
+                                            <td>
+                                            <img src="/admin/theme-assets/images/slider/<?php echo $item["photo"]?>" alt="image">
+                                            </td>
+                                            <td><?php echo $item["number_order"]; ?></td>
+                                            <td><?php echo $item["status"]; ?></td>
                                             <td>
                                                 <a href="edit-banner.php">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-edit"></i>
                                                     </button></a>
-                                                <a href="remove-banner.php">
+                                                <a href="delete-banner.php">
                                                     <button type="button"
                                                         class="btn btn-danger btn-min-width mr-1 mb-1">
                                                         <i class="ft-delete"></i>
@@ -84,7 +93,7 @@
                                             </td>
 
                                         </tr>
-                                       
+                                    <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

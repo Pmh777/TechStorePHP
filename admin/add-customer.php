@@ -19,7 +19,8 @@ if (isset($_POST["btnsubmit"])) {
     } else {
         header("Location: add-customer.php?inserted");
     }
-}?>
+}
+?>
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->

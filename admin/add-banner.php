@@ -1,3 +1,23 @@
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/banner.class.php"); 
+if (isset($_POST["btnsubmit"])) {
+    $id = "";
+    $caption = $_POST["txtcaption"];
+    $content = $_POST["txtcontent"];
+    $number_order = $_POST["txtnumber_order"];
+    $status = "";
+    $create_at = "";
+    $photo = $_FILES["txtpic"];
+
+    $newBanner = new Banner($id,$caption, $content, $number_order, $photo,$status,$create_at);
+    $result = $newBanner->createBanner();
+    if (!$result) {
+        header("Location: add-banner.php?failure");
+    } else {
+        header("Location: add-banner.php?inserted");
+    }
+}
+?>
+
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->
@@ -9,6 +29,13 @@
         <div class="content-wrapper-before"></div>
         <div class="content-header row">
             <div class="content-header-left col-md-4 col-12 mb-2">
+            <?php
+                if (isset($_GET["inserted"])) {
+                    echo "<h2>Thêm banner thành công</h2>";
+                } else if (isset($_GET["failure"])) {
+                echo "<h2>Thêm banner thất bại</h2>";
+                }
+                ?>
                 <h3 class="content-header-title"></h3>
             </div>
             <div class="content-header-right col-md-8 col-12">
@@ -25,7 +52,7 @@
             </div>
         </div>
         <div class="content-body">
-            <form action="welcome.php" method="post">
+            <form method="post">
                 <!-- <section class="textarea-select"> -->
                 <div class="row match-height">
                     <div class="col-lg-6 col-md-12">
@@ -37,11 +64,13 @@
                                 <div class="card-body">
                                     <h5 class="mt-2">Tiêu đề</h5>
                                     <fieldset class="form-group">
-                                        <input type="text" class="form-control" id="basicInput">
+                                        <input type="text" class="form-control" id="basicInput" name="txtcaption"
+                                        value="<?php echo isset($_POST["txtcaption"]) ? $_POST["txtcaption"] : ""; ?>">
                                     </fieldset>
                                     <h5 class="mt-2">Nội dung</h5>
                                     <fieldset class="form-group">
-                                        <textarea class="form-control" id="basicTextarea" rows="3"></textarea>
+                                        <textarea class="form-control" id="basicTextarea" rows="3" name="txtcontent"
+                                        value="<?php echo isset($_POST["txtcontent"]) ? $_POST["txtcontent"] : ""; ?>"></textarea>
                                     </fieldset>
 
                                 </div>
@@ -57,18 +86,20 @@
                                 <div class="card-body">
                                     <h5 class="mt-2">Vị trí</h5>
                                     <fieldset class="form-group">
-                                        <input type="number" class="form-control" id="basicInput">
+                                        <input type="number" class="form-control" id="basicInput" name="txtnumber_order"
+                                        value="<?php echo isset($_POST["txtnumber_order"]) ? $_POST["txtnumber_order"] : ""; ?>">
                                     </fieldset>
                                     <h5 class="mt-2">Ảnh</h5>
                                     <fieldset class="form-group">
-                                        <input type="file" class="form-control" id="basicInput">
+                                        <input type="file" class="form-control" id="basicInput" name="txtpic" accept=".PNG,.GIF,.JPG"
+                                        value="<?php echo isset($_POST["txtpic"]) ? $_POST["txtpic"] : ""; ?>">
                                     </fieldset>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit">Xác
+                <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit" name="btnsubmit">Xác
                     nhận</button>
                 <a href="#"> <button class="btn btn-secondary btn-min-width mr-0 mb-0">Hủy</button></a>
                 <!-- </section> -->
