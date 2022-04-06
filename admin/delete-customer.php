@@ -2,7 +2,6 @@
 <?php
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-        $customer = Customer::findCustomer($id);
         $result = Customer::deleteCustomer($id);
         if($result){
             echo "<script>alert('Xóa thành công');</script>";
@@ -13,3 +12,4 @@
             echo "<script>window.location.href='/TechStorePHP/admin/customer.php';</script>";
         }
     }
+?>

@@ -77,11 +77,11 @@
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-info"></i>
                                                     </button></a>
-                                                <a href="edit-product.php">
+                                                <a href="edit-product.php?id=<?php echo $item["product_id"]; ?>">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-edit"></i>
                                                     </button></a>
-                                                <a href="remove-product.php">
+                                                <a href="delete-product.php?id=<?php echo $item["product_id"]; ?>">
                                                     <button type="button"
                                                         class="btn btn-danger btn-min-width mr-1 mb-1">
                                                         <i class="ft-delete"></i>

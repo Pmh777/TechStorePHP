@@ -1,3 +1,29 @@
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/product.class.php"); 
+$category = Category::list_category();
+$brand = Brand::list_Brand();
+if (isset($_GET["id"])) {
+    $id = $_GET['id'];
+
+    $customer = Customer::findCustomer($id);
+
+}
+if(isset($_POST["update"])){
+    $id = $_GET["id"];
+    $category_id = $_POST["category_id"];
+    $brand_id = $_POST["brand_id"];
+    $name = $_POST["name"];
+
+    $result = Product::updateProduct($id, $category_id, $brand_id, $name);
+    if ($result) {
+        echo "<script>alert('Update thành công');</script>";
+        echo "<script>window.location.href='/TechStorePHP/admin/product.php';</script>";
+    } else {
+        echo "<script>alert('Update thất bại');</script>";
+        echo "<script>window.location.href='/TechStorePHP/admin/product.php';</script>";
+    }
+}
+?>
+
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->
@@ -43,27 +69,28 @@
                                     <fieldset class="form-group">
                                         <select class="custom-select" id="customSelect">
                                             <option selected="">Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <?php foreach ( $category as $item) : ?>
+                                                <option value="<?php echo $item["id"]; ?>"><?php echo $item["name"]; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </fieldset>
                                     <h5 class="mt-2">Thương hiệu</h5>
                                     <fieldset class="form-group">
                                         <select class="custom-select" id="customSelect">
                                             <option selected="">Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <?php foreach ( $brand as $item) : ?>
+                                                <option value="<?php echo $item["id"]; ?>"><?php echo $item["name"]; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </fieldset>
                                     <h5 class="mt-2">Màu sắc</h5>
                                     <fieldset class="form-group">
                                         <select class="custom-select" id="customSelect">
                                             <option selected="">Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <option value="1">Đen</option>
+                                            <option value="2">Trắng</option>
+                                            <option value="3">Đỏ</option>
+                                            <option value="4">Vàng</option>
                                         </select>
                                     </fieldset>
                                     <h5 class="mt-2">Mô tả</h5>
