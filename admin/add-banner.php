@@ -3,12 +3,11 @@ if (isset($_POST["btnsubmit"])) {
     $id = "";
     $caption = $_POST["txtcaption"];
     $content = $_POST["txtcontent"];
-    $number_order = $_POST["txtnumber_order"];
     $status = "";
     $create_at = "";
     $photo = $_FILES["txtpic"];
 
-    $newBanner = new Banner($id,$caption, $content, $number_order, $photo,$status,$create_at);
+    $newBanner = new Banner($id,$caption, $content, $photo,$status,$create_at);
     $result = $newBanner->createBanner();
     if (!$result) {
         header("Location: add-banner.php?failure");
@@ -35,7 +34,7 @@ if (isset($_POST["btnsubmit"])) {
                 } else if (isset($_GET["failure"])) {
                 echo "<h2>Thêm banner thất bại</h2>";
                 }
-                ?>
+            ?>
                 <h3 class="content-header-title"></h3>
             </div>
             <div class="content-header-right col-md-8 col-12">
@@ -52,7 +51,7 @@ if (isset($_POST["btnsubmit"])) {
             </div>
         </div>
         <div class="content-body">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <!-- <section class="textarea-select"> -->
                 <div class="row match-height">
                     <div class="col-lg-6 col-md-12">
@@ -83,15 +82,10 @@ if (isset($_POST["btnsubmit"])) {
                                 <h4 class="card-title"></h4>
                             </div>
                             <div class="card-block">
-                                <div class="card-body">
-                                    <h5 class="mt-2">Vị trí</h5>
-                                    <fieldset class="form-group">
-                                        <input type="number" class="form-control" id="basicInput" name="txtnumber_order"
-                                        value="<?php echo isset($_POST["txtnumber_order"]) ? $_POST["txtnumber_order"] : ""; ?>">
-                                    </fieldset>
+                                <div class="card-body">  
                                     <h5 class="mt-2">Ảnh</h5>
                                     <fieldset class="form-group">
-                                        <input type="file" class="form-control" id="basicInput" name="txtpic" accept=".PNG,.GIF,.JPG"
+                                        <input type="file" class="form-control-file" id="txtpic" name="txtpic" accept=".PNG,.GIF,.JPG"
                                         value="<?php echo isset($_POST["txtpic"]) ? $_POST["txtpic"] : ""; ?>">
                                     </fieldset>
                                 </div>

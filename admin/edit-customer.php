@@ -70,7 +70,6 @@ if(isset($_POST["update"])){
                                         <h5 class="mt-2">Giới tính</h5>
                                         <fieldset class="form-group" class="form-control" id="basicInput">
                                             <select class="custom-select" id="customSelect" name="gender">
-                                                <option selected>Chọn giới tính</option>
                                                 <option value="1"<?=$customer['gender'] == '1' ? ' selected="selected"' : '';?>>Nam</option>
                                                 <option value="2"<?=$customer['gender'] == '2' ? ' selected="selected"' : '';?>>Nữ</option>
                                                 <option value="3"<?=$customer['gender'] == '3' ? ' selected="selected"' : '';?>>Khác</option>

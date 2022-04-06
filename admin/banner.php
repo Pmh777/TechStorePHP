@@ -63,7 +63,6 @@ $banner = Banner::list_banner();
                                             <th scope="col">Tiêu đề</th>
                                             <th scope="col">Nội dung</th>
                                             <th scope="col">Ảnh</th>
-                                            <th scope="col">Vị trí</th>
                                             <th scope="col">Trạng thái</th>
                                             <th scope="col"></th>
                                         </tr>
@@ -77,14 +76,13 @@ $banner = Banner::list_banner();
                                             <td>
                                             <img src="/techstorePHP/admin/theme-assets/images/slider/<?php echo $item["photo"]?>" alt="image">
                                             </td>
-                                            <td><?php echo $item["number_order"]; ?></td>
                                             <td><?php echo $item["status"]; ?></td>
                                             <td>
-                                                <a href="edit-banner.php">
+                                                <a href="edit-banner.php?id=<?php echo $item["id"]; ?>">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-edit"></i>
                                                     </button></a>
-                                                <a href="delete-banner.php">
+                                                <a href="delete-banner.php?id=<?php echo $item["id"]; ?>">
                                                     <button type="button"
                                                         class="btn btn-danger btn-min-width mr-1 mb-1">
                                                         <i class="ft-delete"></i>
