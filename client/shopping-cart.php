@@ -48,9 +48,8 @@
               <div class="wrap-table-shopping-cart">
               <table class="table-shopping-cart">
               <tr class="table_head">
-                  <th class="column-1">Số thứ tự</th>
-                  <th class="column-2">Tên sản phẩm</th>
-                  <th class="column-2"></th>
+                  <th class="column-1">STT</th>
+                  <th class="column-2">Sản phẩm</th>
                   <th class="column-3">Giá</th>
                   <th class="column-4">Số lượng</th>
                   <th class="column-5">Thành tiền</th>
@@ -59,11 +58,6 @@
               <tr class="table_row">
                 <td class="column-1">'.($i+1).'</td> 
                 <td class="column-2">'.$_SESSION['cart'][$i][1].'</td>
-                <td class="column-2">
-                  <div class="how-itemcart1">
-                        <img src="images/'.$_SESSION['cart'][$i][0].'" alt="IMG">
-                  </div>
-                </td>
                 <td class="column-3">'.$_SESSION['cart'][$i][2].'</td>
                 <td class="column-4">'.$_SESSION['cart'][$i][3].'</td>
                 <td class="column-5">'.$total.'</td>

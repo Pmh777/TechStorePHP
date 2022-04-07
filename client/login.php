@@ -1,3 +1,26 @@
+<?php
+require_once("/xampp/htdocs/TechStorePHP/entities/customer.class.php");
+ session_start();
+
+ if (isset($_POST["submit"]) && $_POST["email"] != '' && $_POST["password"] != '') {
+    $email = $_POST["email"];
+     $password = $_POST["password"];
+     $encryptPassword = md5($password);
+     $user = Customer::checkAccount($email,$encryptPassword);
+     if ($user > 0) {
+         $_SESSION["user"] = $user;
+         header("location:index.php");
+     } else {
+         $_SESSION["notification"] = "Thông tin đăng nhập không chính xác!";
+         header("location:login.php");
+     }
+ } else {
+     $_SESSION["notification"] = "Vui lòng nhập đầy đủ thông tin!";
+    //  header("location:login.php");
+ }
+?>
+
+
 <?php include_once("include/header.php"); ?>
 
 <!-- Cart -->
@@ -20,8 +43,11 @@
         </div>
       </div>
       <div class="size-210 bor16 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-        <form>
-
+      <form  method="POST">
+          <p><?php if (isset($_SESSION["notification"])) {
+								echo $_SESSION["notification"];
+								unset($_SESSION["notification"]);
+							} ?></p>
           <div class="bor8 m-b-20 how-pos4-parent">
             <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="email" name="email" placeholder="Email">
             <img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
@@ -32,10 +58,8 @@
               placeholder="Password">
             <img class="how-pos4 pointer-none" src="images/icons/icon-password.png" alt="ICON">
           </div>
-
-          <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-            Đăng Nhập
-          </button>
+          <input type="submit" name="submit" value="Đăng nhập" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+         
         </form>
       </div>
     </div>

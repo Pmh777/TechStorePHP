@@ -1,12 +1,10 @@
 <?php require_once("/xampp/htdocs/TechStorePHP/entities/product.class.php"); ?>
-<?php require_once("/xampp/htdocs/TechStorePHP/entities/brand.class.php"); ?>
-<?php require_once("/xampp/htdocs/TechStorePHP/entities/category.class.php"); ?>
+
 <!-- Header -->
 <?php include_once("./inc/header-admin.php");
 $product = Product::list_product();
 ?>
-<?php $brand = Brand::list_brand(); ?>
-<?php  $category = Category::list_category(); ?>
+
 
 
 
@@ -65,9 +63,9 @@ $product = Product::list_product();
                                 <table class="table">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th scope="col">ID</th>
+                                            <th scope="col">Mã sản phẩm</th>
                                             <th scope="col">Thương hiệu</th>
-                                            <th scope="col">Loại sản phẩm</th>
+                                            <th scope="col">Danh mục</th>
                                             <th scope="col">Tên sản phẩm</th>
                                             <th scope="col"></th>
                                         </tr>
@@ -76,9 +74,9 @@ $product = Product::list_product();
                                     <?php foreach ( $product as $item) : ?>
                                         <tr>
                                             <th scope="row"><?php echo $item["product_id"]; ?></th>
-                                            <td><?php echo $item["category_id"]; ?></td>
-                                            <td><?php echo $item["brand_id"]; ?></td>
-                                            <td><?php echo $item["name"]; ?></td>
+                                            <td><?php echo $item["category_name"]; ?></td>
+                                            <td><?php echo $item["brand_name"]; ?></td>
+                                            <td><?php echo $item["product_name"]; ?></td>
                                             
                                             <td>
                                                 <a href="edit-product.php?product_id=<?php echo $item["product_id"]; ?>">

@@ -33,8 +33,6 @@ $storehouse = Storehouse::list_storehouse();
                         <div class="card-header">
                             <h4 class="card-title">Quản lý kho</h4>
                             </br>
-                            <a href="add-product.php"> <button class="btn btn-primary btn-min-width mr-0 mb-0"
-                                    type="submit">Thêm mới</button></a>
                             <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -58,15 +56,10 @@ $storehouse = Storehouse::list_storehouse();
                                 <table class="table">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th scope="col-3">ID</th>
-                                            <th scope="col-3">Thương hiệu</th>
-                                            <th scope="col-3">Loại sản phẩm</th>
+                                            <th scope="col-3">Mã sản phẩm</th>
                                             <th scope="col-3">Tên</th>
-                                            <th scope="col-3">Màu sắc</th>
-                                            <th scope="col-3">Giá</th>
-                                            <th scope="col-3">Số lượng</th>
-                                            <th scope="col-3">Hình ảnh</th>
-                                            <th scope="col-3">Mô tả</th>
+                                            <th scope="col-3">Danh mục</th>
+                                            <th scope="col-3">Thương hiệu</th>
                                             <th scope="col-1"></th>
                                         </tr>
                                     </thead>
@@ -74,25 +67,14 @@ $storehouse = Storehouse::list_storehouse();
                                     <?php foreach ( $storehouse as $item) : ?>
                                         <tr>
                                             <th scope="row"><?php echo $item["product_id"]; ?></th>
-                                            <td><?php echo $item["product_id"]; ?></td>
-                                            <td><?php echo $item["product_id"]; ?></td>
-                                            <td><?php echo $item["product_id"]; ?></td>
-                                            <td><?php echo $item["color_id"]; ?></td>
-                                            <td><?php echo $item["price"]; ?></td>
-                                            <td><?php echo $item["quantity"]; ?></td>
-                                            <td><?php echo $item["image"]; ?></td>
-                                            <td><?php echo $item["description"]; ?></td>
+                                            <td><?php echo $item["product_name"]; ?></td>
+                                            <td><?php echo $item["category_name"]; ?></td>
+                                            <td><?php echo $item["brand_name"]; ?></td>
                                             <td>
-                                                <a href="edit-product.php">
+                                                <a href="import-products.php?product_id=<?php echo $item["product_id"]; ?>"">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                                                        <i class="ft-edit"></i>
+                                                        <i class="ft-plus"></i>
                                                     </button></a>
-                                                <a href="remove-product.php">
-                                                    <button type="button"
-                                                        class="btn btn-danger btn-min-width mr-1 mb-1">
-                                                        <i class="ft-delete"></i>
-                                                    </button>
-                                                </a>
                                             </td>
 
                                         </tr>
