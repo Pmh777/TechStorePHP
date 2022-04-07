@@ -11,7 +11,7 @@
         <div class="card">
           <div class="card-content">
             <div class="card-body">
-              <h4 class="card-title">Thêm sản phẩm</h4>
+              <h4 class="card-title">Thêm sản phẩm kho</h4>
             </div>
             <div class="card-body">
               <form class="form">

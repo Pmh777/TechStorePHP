@@ -78,7 +78,7 @@ if(isset($_POST["update"])){
                                         <h5 class="mt-2">Ngày sinh</h5>
                                         <fieldset class="form-group">
                                             <input type="date" id="basicInput" format="Y-m-d" name="birthday"
-                                                class="form-control" value="<?php if(isset($customer['birthday'])) echo date('Y-m-d',strtotime($customer["birthday"])) ?>">
+                                                class="form-control" value="<?php if(isset($customer['birthday'])) echo(date_format(date_create($customer['birthday']) , 'd/m/Y')) ?>">
                                         </fieldset>
                                         <h5 class="mt-2">Số điện thoại</h5>
                                         <fieldset class="form-group">

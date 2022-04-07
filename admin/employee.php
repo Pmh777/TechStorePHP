@@ -75,7 +75,7 @@ $employee = Employee::list_employee();
                                             <th scope="row"><?php echo $item["employee_id"]; ?></th>
                                             <td><?php echo $item["name"]; ?></td>
                                             <td><?php echo $item["phone"]; ?></td>
-                                            <td><?php echo $item["birthday"]; ?></td>
+                                            <td><?php echo (date_format(date_create($item['birthday']) , 'd/m/Y')); ?></td>
                                             <td>
                                                 <?php if($item["gender"] == 1) echo 'Nam';
                                                 elseif($item["gender"] == 2) echo 'Nữ';

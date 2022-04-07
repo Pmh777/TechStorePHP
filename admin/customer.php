@@ -62,8 +62,8 @@ $customer = Customer::list_customer();?>
                                             <th scope="col">Số điện thoại</th>
                                             <th scope="col">Ngày sinh</th>
                                             <th scope="col">Giới tính</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Địa chỉ</th>
+                                            <!-- <th scope="col">Email</th> -->
+                                            <!-- <th scope="col">Địa chỉ</th> -->
                                             <th scope="col"></th>
 
                                         </tr>
@@ -74,15 +74,15 @@ $customer = Customer::list_customer();?>
                                             <th scope="row"><?php echo $item["customer_id"]; ?></th>
                                             <td><?php echo $item["name"]; ?></td>
                                             <td><?php echo $item["phone"]; ?></td>
-                                            <td><?php echo $item["birthday"]; ?></td>
+                                            <td><?php echo (date_format(date_create($item['birthday']) , 'd/m/Y')); ?></td>
                                             <td>
                                                 <?php if($item["gender"] == 1) echo 'Nam';
                                                 elseif($item["gender"] == 2) echo 'Nữ';
                                                 else echo 'Khác';
                                                 ?>
                                             </td>
-                                            <td><?php echo $item["email"]; ?></td>
-                                            <td><?php echo $item["address"]; ?></td>
+                                            <!-- <td><?php echo $item["email"]; ?></td>
+                                            <td><?php echo $item["address"]; ?></td> -->
 
                                             <td class="inline-block">
                                                 <!-- <a href="detail-product.php">

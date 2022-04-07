@@ -5,7 +5,8 @@ if (isset($_POST["btnsubmit"])) {
     $content = $_POST["txtcontent"];
     $status = "";
     $create_at = "";
-    $photo = $_FILES["txtpic"];
+    $photo = "";
+    // $photo = $_FILES["txtpic"];
 
     $newBanner = new Banner($id,$caption, $content, $photo,$status,$create_at);
     $result = $newBanner->createBanner();
@@ -83,11 +84,11 @@ if (isset($_POST["btnsubmit"])) {
                             </div>
                             <div class="card-block">
                                 <div class="card-body">  
-                                    <h5 class="mt-2">Ảnh</h5>
+                                    <!-- <h5 class="mt-2">Ảnh</h5>
                                     <fieldset class="form-group">
                                         <input type="file" class="form-control-file" id="txtpic" name="txtpic" accept=".PNG,.GIF,.JPG"
                                         value="<?php echo isset($_POST["txtpic"]) ? $_POST["txtpic"] : ""; ?>">
-                                    </fieldset>
+                                    </fieldset> -->
                                 </div>
                             </div>
                         </div>

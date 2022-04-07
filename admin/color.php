@@ -1,8 +1,7 @@
-<?php require_once("/xampp/htdocs/TechStorePHP/entities/banner.class.php"); ?>
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/color.class.php"); ?>
 <!-- Header -->
-<!-- Header -->
-<?php include_once("./inc/header-admin.php"); 
-$banner = Banner::list_banner();
+<?php include_once("./inc/header-admin.php");
+$color = Color::list_color();
 ?>
 <!-- Navbar -->
 <?php include_once("./inc/navbar-admin.php"); ?>
@@ -20,7 +19,7 @@ $banner = Banner::list_banner();
                     <div class="breadcrumb-wrapper mr-1">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Banner</li>
+                            <li class="breadcrumb-item active">Màu sắc</li>
                         </ol>
                     </div>
                 </div>
@@ -32,11 +31,11 @@ $banner = Banner::list_banner();
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Quản lý banner</h4>
+                            <h4 class="card-title">Quản lý màu sắc</h4>
                             </br>
-                            <a href="add-banner.php"> <button class="btn btn-primary btn-min-width mr-0 mb-0"
+                            <a href="add-color.php"> <button class="btn btn-primary btn-min-width mr-0 mb-0"
                                     type="submit">Thêm mới</button></a>
-                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                         
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
                                     <li>
@@ -60,33 +59,21 @@ $banner = Banner::list_banner();
                                     <thead class="thead-dark">
                                         <tr>
                                             <th scope="col">ID</th>
-                                            <th scope="col">Tiêu đề</th>
-                                            <th scope="col">Nội dung</th>
-                                            <th scope="col">Ảnh</th>
-                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col">Tên</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ( $banner as $item) : ?>
+                                    <?php foreach ( $color as $item) : ?>
                                         <tr>
-                                        <th scope="row"><?php echo $item["id"]; ?></th>
-                                            <td><?php echo $item["caption"]; ?></td>
-                                            <td><?php echo $item["content"]; ?></td>
+                                            <th scope="row"><?php echo $item["color_id"]; ?></th>
+                                            <td><?php echo $item["name"]; ?></td>
                                             <td>
-                                            <img src="/techstorePHP/admin/theme-assets/images/slider/<?php echo $item["photo"]?>" alt="image">
-                                            </td>
-                                            <td>
-                                            <?php if($item["status"] == 1) echo 'Hiển thị';
-                                                elseif($item["status"] == 0) echo 'Ẩn';
-                                                ?>
-                                            </td>
-                                            <td>
-                                                <a href="edit-banner.php?id=<?php echo $item["id"]; ?>">
+                                                <a href="edit-color.php?color_id=<?php echo $item["color_id"]; ?>">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-edit"></i>
                                                     </button></a>
-                                                <a href="delete-banner.php?id=<?php echo $item["id"]; ?>">
+                                                <a href="delete-color.php?color_id=<?php echo $item["color_id"]; ?>">
                                                     <button type="button"
                                                         class="btn btn-danger btn-min-width mr-1 mb-1">
                                                         <i class="ft-delete"></i>

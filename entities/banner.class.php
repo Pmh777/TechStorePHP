@@ -27,19 +27,19 @@ class Banner
   }
   public function createBanner()
   {
-    $file_temp = $this->photo['tmp_name'];
-    $user_file = $this->photo['name'];
-    $timestamp = date("Y").date("m").date("d").date("h").date("i").date("s");
-    $filepath = "admin/banner".$timestamp.$user_file;
-    if(move_uploaded_file($file_temp,$filepath)==false)
-    {
-      return false;
-    }
+    // $file_temp = $this->photo['tmp_name'];
+    // $user_file = $this->photo['name'];
+    // $timestamp = date("Y").date("m").date("d").date("h").date("i").date("s");
+    // $filepath = "admin/banner".$timestamp.$user_file;
+    // if(move_uploaded_file($file_temp,$filepath)==false)
+    // {
+    //   return false;
+    // }
     
     $date = date("Y-m-d H:i:s");
     $db = new Db();
     $sql = "INSERT INTO banner(caption, content, photo, status, create_at) 
-    VALUES ('$this->caption', '$this->content', '$filepath','1','$date')";
+    VALUES ('$this->caption', '$this->content', '1','1','$date')";
     $result = $db->query_execute($sql);
     return $result;
   }
