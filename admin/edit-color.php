@@ -1,23 +1,22 @@
-<?php require_once("/xampp/htdocs/TechStorePHP/entities/category.class.php"); 
-if (isset($_GET["category_id"])) {
-    $category_id = $_GET['category_id'];
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/color.class.php"); 
+if (isset($_GET["color_id"])) {
+    $color_id = $_GET['color_id'];
 
-    $category = Category::findCategory($category_id);
+    $color = Color::findColor($color_id);
 
 }
 if(isset($_POST["update"])){
-    $category_id = $_GET["category_id"];
+    $color_id = $_GET["color_id"];
     $name = $_POST["name"];
-    $status = $_POST["status"];
-    $create_at = "";
+    $code = "";
 
-    $result = Category::updateCategory($category_id,  $name,  $status, $create_at);
+    $result = Color::updateColor($color_id,  $name, $code);
     if ($result) {
         echo "<script>alert('Update thành công');</script>";
-        echo "<script>window.location.href='/TechStorePHP/admin/category.php';</script>";
+        echo "<script>window.location.href='/TechStorePHP/admin/color.php';</script>";
     } else {
         echo "<script>alert('Update thất bại');</script>";
-        echo "<script>window.location.href='/TechStorePHP/admin/category.php';</script>";
+        echo "<script>window.location.href='/TechStorePHP/admin/color.php';</script>";
     }
 }
 ?>
@@ -40,7 +39,7 @@ if(isset($_POST["update"])){
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item active">Cập nhật danh mục
+                            <li class="breadcrumb-item active">Cập nhật thương hiệu
                             </li>
                         </ol>
                     </div>
@@ -48,27 +47,20 @@ if(isset($_POST["update"])){
             </div>
         </div>
         <div class="content-body">
-            <form action="edit-category.php?category_id=<?php echo $_GET["category_id"]; ?>" method="post">
+            <form action="edit-color.php?color_id=<?php echo $_GET["color_id"]; ?>" method="post">
                 <!-- <section class="textarea-select"> -->
                 <div class="row match-height">
                     <div class="col-lg-6 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Cập nhật danh mục</h4>
+                                <h4 class="card-title">Cập nhật thương hiệu</h4>
                             </div>
                             <div class="card-block">
                                 <div class="card-body">
                                     <h5 class="mt-2">Tên</h5>
                                     <fieldset class="form-group">
                                         <input type="text" class="form-control" id="basicInput" name="name"
-                                        value="<?php if(isset($category['name'])) echo($category['name']);?>">
-                                    </fieldset>
-                                    <h5 class="mt-2">Trạng thái</h5>
-                                    <fieldset class="form-group">
-                                        <select class="custom-select" id="customSelect" name="status"> 
-                                            <option value="1"<?=$category['status'] == '1' ? ' selected="selected"' : '';?>>Hiển thị</option>
-                                            <option value="0"<?=$category['status'] == '0' ? ' selected="selected"' : '';?>>Ẩn</option>   
-                                        </select>
+                                        value="<?php if(isset($color['name'])) echo($color['name']);?>">
                                     </fieldset>
                                 </div>
                             </div>
@@ -78,7 +70,7 @@ if(isset($_POST["update"])){
                 </div>
                 <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit" name="update">Xác
                         nhận</button>
-                <a href="#"> <button class="btn btn-secondary btn-min-width mr-0 mb-0"
+                <a href="/TechStorePHP/admin/color.php"> <button class="btn btn-secondary btn-min-width mr-0 mb-0"
                         >Hủy</button></a>
                 <!-- </section> -->
             </form>

@@ -150,7 +150,7 @@
         <!-- Block2 -->
         <div class="block2">
           <div class="block2-pic hov-img0">
-            <img src="images/product-02.png" alt="IMG-PRODUCT">
+            <img src="images/product/product-02.png" alt="IMG-PRODUCT">
 
             <a href="#"
               class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
@@ -160,7 +160,7 @@
 
           <div class="block2-txt flex-w flex-t p-t-14">
             <div class="block2-txt-child1 flex-col-l ">
-              <a href="product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+              <a href="product/product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                 Tên sản phẩm
               </a>
 
@@ -177,7 +177,7 @@
         <!-- Block2 -->
         <div class="block2">
           <div class="block2-pic hov-img0">
-            <img src="images/product-03.png" alt="IMG-PRODUCT">
+            <img src="images/product/product-03.png" alt="IMG-PRODUCT">
 
             <a href="#"
               class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
@@ -187,7 +187,7 @@
 
           <div class="block2-txt flex-w flex-t p-t-14">
             <div class="block2-txt-child1 flex-col-l ">
-              <a href="product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+              <a href="product/product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                 Tên sản phẩm
               </a>
 
@@ -204,7 +204,7 @@
         <!-- Block2 -->
         <div class="block2">
           <div class="block2-pic hov-img0">
-            <img src="images/product-04.png" alt="IMG-PRODUCT">
+            <img src="images/product/product-04.png" alt="IMG-PRODUCT">
 
             <a href="#"
               class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
@@ -214,7 +214,7 @@
 
           <div class="block2-txt flex-w flex-t p-t-14">
             <div class="block2-txt-child1 flex-col-l ">
-              <a href="product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+              <a href="product/product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                 Tên sản phẩm
               </a>
 
@@ -231,7 +231,7 @@
         <!-- Block2 -->
         <div class="block2">
           <div class="block2-pic hov-img0">
-            <img src="images/product-05.png" alt="IMG-PRODUCT">
+            <img src="images/product/product-05.png" alt="IMG-PRODUCT">
 
             <a href="#"
               class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
@@ -241,7 +241,7 @@
 
           <div class="block2-txt flex-w flex-t p-t-14">
             <div class="block2-txt-child1 flex-col-l ">
-              <a href="product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+              <a href="product/product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                 Tên sản phẩm
               </a>
 

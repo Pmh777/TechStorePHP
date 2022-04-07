@@ -1,5 +1,15 @@
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/product.class.php"); ?>
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/brand.class.php"); ?>
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/category.class.php"); ?>
 <!-- Header -->
-<?php include_once("./inc/header-admin.php"); ?>
+<?php include_once("./inc/header-admin.php");
+$product = Product::list_product();
+?>
+<?php $brand = Brand::list_brand(); ?>
+<?php  $category = Category::list_category(); ?>
+
+
+
 <!-- Navbar -->
 <?php include_once("./inc/navbar-admin.php"); ?>
 <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -32,7 +42,7 @@
                             </br>
                             <a href="add-product.php"> <button class="btn btn-primary btn-min-width mr-0 mb-0"
                                     type="submit">Thêm mới</button></a>
-                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                         
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
                                     <li>
@@ -55,33 +65,27 @@
                                 <table class="table">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Tên</th>
-                                            <th scope="col">Thể loại</th>
+                                            <th scope="col">ID</th>
                                             <th scope="col">Thương hiệu</th>
-                                            <th scope="col">Màu sắc</th>
-                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col">Loại sản phẩm</th>
+                                            <th scope="col">Tên sản phẩm</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ( $product as $item) : ?>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Iphone 13 Pro Max</td>
-                                            <td>Điện thoại</td>
-                                            <td>Apple</td>
-                                            <td>Đen</td>
-                                            <td>Hiển thị</td>
+                                            <th scope="row"><?php echo $item["product_id"]; ?></th>
+                                            <td><?php echo $item["category_id"]; ?></td>
+                                            <td><?php echo $item["brand_id"]; ?></td>
+                                            <td><?php echo $item["name"]; ?></td>
+                                            
                                             <td>
-                                                <a href="product-detail.php">
-                                                    <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
-                                                        <i class="ft-info"></i>
-                                                    </button></a>
-                                                <a href="edit-product.php">
+                                                <a href="edit-product.php?product_id=<?php echo $item["product_id"]; ?>">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-edit"></i>
                                                     </button></a>
-                                                <a href="remove-product.php">
+                                                <a href="delete-product.php?product_id=<?php echo $item["product_id"]; ?>">
                                                     <button type="button"
                                                         class="btn btn-danger btn-min-width mr-1 mb-1">
                                                         <i class="ft-delete"></i>
@@ -90,7 +94,7 @@
                                             </td>
 
                                         </tr>
-
+                                    <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
