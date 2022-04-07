@@ -21,7 +21,7 @@ class Banner
   public static function list_banner()
   {
     $db = new Db();
-    $sql = "SELECT * FROM banner";
+    $sql = "SELECT * FROM banner where status = 1";
     $result = $db->select_to_array($sql);
     return $result;
   }

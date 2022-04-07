@@ -62,7 +62,6 @@ $banner = Banner::list_banner();
                                             <th scope="col">ID</th>
                                             <th scope="col">Tiêu đề</th>
                                             <th scope="col">Nội dung</th>
-                                            <th scope="col">Ảnh</th>
                                             <th scope="col">Trạng thái</th>
                                             <th scope="col"></th>
                                         </tr>
@@ -73,9 +72,6 @@ $banner = Banner::list_banner();
                                         <th scope="row"><?php echo $item["id"]; ?></th>
                                             <td><?php echo $item["caption"]; ?></td>
                                             <td><?php echo $item["content"]; ?></td>
-                                            <td>
-                                            <img src="/techstorePHP/admin/theme-assets/images/slider/<?php echo $item["photo"]?>" alt="image">
-                                            </td>
                                             <td>
                                             <?php if($item["status"] == 1) echo 'Hiển thị';
                                                 elseif($item["status"] == 0) echo 'Ẩn';
