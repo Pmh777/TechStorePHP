@@ -24,11 +24,13 @@ class Product
     $db = new Db();
     // $sql = "SELECT * FROM product";
     $sql = "select p.product_id as product_id, p.name as product_name, c.category_id as category_id, b.brand_id as brand_id, 
-    b.name as brand_name, c.name as category_name, s.price as price, s.image as image from 
+    b.name as brand_name, c.name as category_name, s.price as price, s.image as image, co.color_id as color_id, co.name as color_name
+    from 
     product p 
     INNER JOIN category c on p.category_id = c.category_id 
     INNER JOIN storehouse s on p.product_id = s.product_id 
-    INNER JOIN brand b on p.brand_id = b.brand_id";
+    INNER JOIN brand b on p.brand_id = b.brand_id
+    INNER JOIN color co on s.color_id = co.color_id";
     $result = $db->select_to_array($sql);
     return $result;
   }
@@ -72,11 +74,13 @@ class Product
   {
     $db = new Db();
     $sql = "select  p.name as product_name, c.category_id as category_id, b.brand_id as brand_id, 
-    b.name as brand_name, c.name as category_name, s.price as price, s.image as image, s.description as description from 
-    product p 
+    b.name as brand_name, c.name as category_name, s.price as price, s.image as image, s.description as description,co.color_id as color_id, co.name as color_name
+    from product p 
     INNER JOIN category c on p.category_id = c.category_id 
     INNER JOIN storehouse s on p.product_id = s.product_id 
-    INNER JOIN brand b on p.brand_id = b.brand_id WHERE p.product_id='$product_id'";
+    INNER JOIN brand b on p.brand_id = b.brand_id 
+    INNER JOIN color co on s.color_id = co.color_id
+    WHERE p.product_id='$product_id'";
     $result = $db->select_to_object($sql);
     return $result;
   }

@@ -1,4 +1,8 @@
 <?php
+session_start();
+// echo '<pre>';
+// var_dump($_SESSION["user_id"]);
+// echo '</pre>';
 ?>
 
 <!DOCTYPE php>
@@ -85,9 +89,19 @@
               data-notify="2">
               <i class="zmdi zmdi-shopping-cart"></i>
             </div>
-
-            <a href="login.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
-              <i class="zmdi zmdi-face"></i>
+            <?php 
+            
+            if (isset($_SESSION["user_id"])) {
+								echo '<a href="info-user.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
+                <i class="zmdi zmdi-face"></i>
+              </a>';
+            }
+								else{
+                  echo '<a href="login.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
+                  <i class="zmdi zmdi-face"></i>
+                </a>';
+                }
+							 ?>
             </a>
           </div>
         </nav>

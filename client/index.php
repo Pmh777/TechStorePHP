@@ -1,5 +1,10 @@
+
 <?php require_once("/xampp/htdocs/TechStorePHP/entities/banner.class.php");
 $banner = Banner::list_banner();
+// session_start();
+// echo '<pre>';
+// var_dump($_SESSION["user_id"]);
+// echo '</pre>';
 ?>
 <?php include_once("include/header.php"); ?>
 
@@ -12,6 +17,7 @@ $banner = Banner::list_banner();
 <section class="section-slide">
   <div class="wrap-slick1">
     <div class="slick1">
+      
     <?php foreach ( $banner as $item) : ?>
       <div class="item-slick1" style="background-image: url(images/<?php echo $item["photo"]; ?>);">
         <div class="container h-full">

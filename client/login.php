@@ -1,14 +1,13 @@
 <?php
 require_once("/xampp/htdocs/TechStorePHP/entities/customer.class.php");
- session_start();
 
  if (isset($_POST["submit"]) && $_POST["email"] != '' && $_POST["password"] != '') {
     $email = $_POST["email"];
      $password = $_POST["password"];
      $encryptPassword = md5($password);
-     $user = Customer::checkAccount($email,$encryptPassword);
+     $user = Customer::checkAccount($email,$password);
      if ($user > 0) {
-         $_SESSION["user"] = $user;
+         $_SESSION["user_id"] = $user.customer_id;
          header("location:index.php");
      } else {
          $_SESSION["notification"] = "Thông tin đăng nhập không chính xác!";
@@ -58,6 +57,9 @@ require_once("/xampp/htdocs/TechStorePHP/entities/customer.class.php");
               placeholder="Password">
             <img class="how-pos4 pointer-none" src="images/icons/icon-password.png" alt="ICON">
           </div>
+          <div class=" m-b-20 how-pos4-parent">
+          <p>Bạn chưa có tài khoản? <a href="/techstorephp/client/register.php">Đăng ký</a></p>
+            </div>
           <input type="submit" name="submit" value="Đăng nhập" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
          
         </form>

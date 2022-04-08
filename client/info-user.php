@@ -6,7 +6,7 @@
 
 
 <!-- Title page -->
-<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.png');">
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
   <h2 class="ltext-105 cl0 txt-center">
     Thông tin tài khoản
   </h2>
@@ -29,6 +29,9 @@
           <a class="nav-link stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" id="v-pills-messages-tab"
             data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
             aria-selected="false">Đổi mật khẩu</a>
+            <a class="nav-link stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" id="v-pills-messages-tab"
+             href="logout.php" 
+            >Đăng xuất</a>
         </div>
       </div>
       <div class="col-10 bor16">
@@ -41,7 +44,7 @@
                   <label for="staticEmail" class="col col-form-label"> <b>Họ và Tên:</b>
                   </label>
                   <div class="col-6">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="Trần Văn A">
+                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="">
                   </div>
                 </div>
                 <div class="row">

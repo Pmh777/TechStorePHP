@@ -72,9 +72,11 @@ $categories = Category::list_category();
               <a href="product-detail.php?product_id=<?php echo $item["product_id"]; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
               <?php echo $item["product_name"]; ?>
               </a>
-
+              <a class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+              <?php echo $item["color_name"]; ?>
+              </a>
               <span class="stext-105 cl3">
-              <?php echo $item["price"]; ?>
+              <?php echo number_format($item["price"], 0, '', ','); ?> VNĐ
               </span>
             </div>
 
