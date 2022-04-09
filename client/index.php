@@ -1,7 +1,7 @@
 
 <?php require_once("/xampp/htdocs/TechStorePHP/entities/banner.class.php");
 $banner = Banner::list_banner();
-// session_start();
+session_start();
 // echo '<pre>';
 // var_dump($_SESSION["user_id"]);
 // echo '</pre>';

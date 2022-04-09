@@ -39,9 +39,9 @@ if (isset($_POST["btnsubmit"])) {
             <div class="content-header-left col-md-4 col-12 mb-2">
                 <?php
                 if (isset($_GET["inserted"])) {
-                    echo "<h2>Thêm khách hàng thành công</h2>";
+                    echo "<h2>Thêm nhân viên thành công</h2>";
                 } else if (isset($_GET["failure"])) {
-                echo "<h2>Thêm khách hàng thất bại</h2>";
+                echo "<h2>Thêm nhân viên thất bại</h2>";
                 }
                 ?>
                 <h3 class="content-header-title"></h3>

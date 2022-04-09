@@ -1,6 +1,6 @@
 <?php require_once("/xampp/htdocs/TechStorePHP/entities/product.class.php");
 require_once("/xampp/htdocs/TechStorePHP/entities/category.class.php");
-$products = Product::list_product();
+$products = Product::list_product_show_in_product_page();
 $categories = Category::list_category();
 ?>
 <!-- Header -->

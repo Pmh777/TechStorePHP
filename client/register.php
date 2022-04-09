@@ -1,6 +1,5 @@
 <?php require_once("/xampp/htdocs/TechStorePHP/entities/customer.class.php"); 
- session_start();
-if (isset($_POST["submit"]) && $_POST["email"] != '' && $_POST["password"] != '' && $_POST["name"] != '' && $_POST["address"] != '') {
+if (isset($_POST["btnsubmit"])) {
     $customer_id = "";
     $name = $_POST["name"];
     $phone = $_POST["phone"];
@@ -13,17 +12,19 @@ if (isset($_POST["submit"]) && $_POST["email"] != '' && $_POST["password"] != ''
     $created_at = "";
 
 
-    $check = Customer::checkRegister($email);
-    if(check > 0){
-      $_SESSION["notification"] = "Email đã được đăng ký!";
-      header("Location: register.php/fail");
+    $check = Customer::checkRegister($email,$phone);
+    if(count($check) > 0){
+      $_SESSION["notification"] = "Email hoặc số điện thoại đã được đăng ký!";
+      header("Location:register.php");
     }else{
       $newCustomer = new Customer($customer_id,$name, $phone, $birthday, $gender, $email, $address,$password,$status,$created_at);
       $result = $newCustomer->createCustomer();
       if (!$result) {
-          header("Location: register.php");
+          header("Location:register.php");
       } else {
-          header("Location: index.php");
+          header("Location:index.php");
+          $customer = Customer::findCustomerByPhone($phone);
+          $_SESSION["customer_id"] = $customer["customer_id"];
       }
     }
    
@@ -58,36 +59,39 @@ if (isset($_POST["submit"]) && $_POST["email"] != '' && $_POST["password"] != ''
 							} ?></p>
                     <div class="bor8 m-b-20 how-pos4-parent">
                         <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="name"
-                            placeholder="Họ Tên">
+                            placeholder="Họ Tên" required>
                         <img class="how-pos4 pointer-none" src="images/icons/icon-user.png" alt="ICON">
                     </div>
                     <div class="bor8 m-b-20 how-pos4-parent">
-                        <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="phone"
-                            placeholder="Số điện thoại">
+                        <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="number" name="phone"
+                            placeholder="Số điện thoại" required>
                         <img class="how-pos4 pointer-none" src="images/icons/icon-user.png" alt="ICON">
                     </div>
                     <div class="bor8 m-b-20 how-pos4-parent">
                         <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="address"
-                            placeholder="Địa chỉ">
+                            placeholder="Địa chỉ" required>
                         <img class="how-pos4 pointer-none" src="images/icons/icon-user.png" alt="ICON">
                     </div>
                     <div class="bor8 m-b-20 how-pos4-parent">
                         <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="email" name="email"
-                            placeholder="Email">
+                            placeholder="Email" required>
                         <img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
                     </div>
 
                     <div class="bor8 m-b-20 how-pos4-parent">
                         <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="password" name="password"
-                            placeholder="Mật khẩu">
+                            placeholder="Mật khẩu" required>
                         <img class="how-pos4 pointer-none" src="images/icons/icon-password.png" alt="ICON">
                     </div>
                     <div class="bor8 m-b-20 how-pos4-parent">
-                        <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="password" name="password"
-                            placeholder="Nhập lại mật khẩu">
+                        <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="password" name="repassword"
+                            placeholder="Nhập lại mật khẩu" required>
                         <img class="how-pos4 pointer-none" src="images/icons/icon-password.png" alt="ICON">
                     </div>
-                    <input class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit" name="btbsubmit"
+                    <div class=" m-b-20 how-pos4-parent">
+          <p>Bạn đã có tài khoản? <a href="/techstorephp/client/login.php">Đăng nhập</a></p>
+            </div>
+                    <input class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit" name="btnsubmit"
                     value="Đăng ký"  >
                    
                 </form>

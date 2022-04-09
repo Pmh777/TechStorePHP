@@ -46,7 +46,7 @@ if(isset($_POST["update"])){
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item active">Cập nhật thương hiệu
+                            <li class="breadcrumb-item active">Cập nhật sản phẩm
                             </li>
                         </ol>
                     </div>
@@ -60,7 +60,7 @@ if(isset($_POST["update"])){
                     <div class="col-lg-6 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Cập nhật loại sản phấm</h4>
+                                <h4 class="card-title">Cập nhật sản phấm</h4>
                             </div>
                             <div class="card-block">
                                 <div class="card-body">
@@ -97,8 +97,7 @@ if(isset($_POST["update"])){
                 </div>
                 <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit" name="update">Xác
                         nhận</button>
-                <a href="/TechStorePHP/admin/product.php"> <button class="btn btn-secondary btn-min-width mr-0 mb-0"
-                        >Hủy</button></a>
+                <a href="/TechStorePHP/admin/product.php" class="btn btn-secondary btn-min-width mr-0 mb-0">Hủy</a>
                 <!-- </section> -->
             </form>
         </div>

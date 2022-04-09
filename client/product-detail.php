@@ -87,7 +87,7 @@ if (isset($_GET["product_id"])) {
                                         </div>
 
                                         <input class="mtext-104 cl3 txt-center num-product" type="number"
-                                            name="number" min='1' max='10' value="1">
+                                            name="quantity" min='1' max='10' value="1">
 
                                         <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
                                             <i class="fs-16 zmdi zmdi-plus"></i>
@@ -95,10 +95,13 @@ if (isset($_GET["product_id"])) {
                                     </div>
                                     <input
                                         class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-                                        type="submit" name="addcart" value="Đặt hàng">
-                                    <input type="hidden" name="name" value="điện thoại">
-                                    <input type="hidden" name="price" value="100">
-                                    <input type="hidden" name="img" value="product-detail-02.png">
+                                        type="submit" name="addcart" value="Thêm vào giỏ">
+                                        <input type="hidden" name="product_id" value=" <?php echo $_GET['product_id']; ?>">
+                                    <input type="hidden" name="product_name" value=" <?php echo $product["product_name"]; ?>">
+                                    <input type="hidden" name="price" value=" <?php echo $product["price"]; ?>">
+                                    <input type="hidden" name="color_id" value=" <?php echo $product["color_id"]; ?>">
+                                    <input type="hidden" name="color_name" value="<?php echo $product["color_name"]; ?>">
+                                    <!-- <input type="hidden" name="quantity" value="<?php echo $_POST["quantity"]; ?>"> -->
                                 </div>
                             </div>
                         </form>

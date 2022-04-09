@@ -2,7 +2,20 @@
 require_once("/xampp/htdocs/TechStorePHP/entities/color.class.php"); 
 $colors = Color::list_color();
 if (isset($_POST["btnsubmit"])) {
-   
+   $product_id = $_GET["product_id"];
+    $color_id = $_POST["color_id"];
+   $quantity = $_POST["quantity"];
+    $price = $_POST["price"];
+    $image = $_POST["image"];
+    $description = $_POST["description"];
+    $create_at = '';
+    $storehouse = new Storehouse($product_id , $color_id, $price, $quantity, $image, $description, $create_at);
+    $result = $storehouse->import_stohouse();
+    if (!$result) {
+        header("Location: import-products.php?failure");
+    } else {
+        header("Location: import-products.php?imported");
+    }
 }
 ?>
 <!-- Header -->
@@ -65,6 +78,21 @@ if (isset($_POST["btnsubmit"])) {
                                         <input type="number" class="form-control" id="basicInput" name="quantity"
                                         value="<?php echo isset($_POST["quantity"]) ? $_POST["quantity"] : "0"; ?>">
                                     </fieldset>
+                                    <h5 class="mt-2">Giá</h5>
+                                    <fieldset class="form-group">
+                                        <input type="number" class="form-control" id="basicInput" name="price"
+                                        value="<?php echo isset($_POST["quantity"]) ? $_POST["quantity"] : "0"; ?>">
+                                    </fieldset>
+                                    <h5 class="mt-2">Mô tả</h5>
+                                    <fieldset class="form-group">
+                                        <input type="text" class="form-control" id="basicInput" name="description"
+                                        value="<?php echo isset($_POST["description"]) ? $_POST["description"] : ""; ?>">
+                                    </fieldset>
+                                    <h5 class="mt-2">Ảnh</h5>
+                                    <fieldset class="form-group">
+                                        <input type="file" class="form-control" id="basicInput" name="image"
+                                        value="<?php echo isset($_POST["image"]) ? $_POST["image"] : ""; ?>">
+                                    </fieldset>
 
                                 </div>
                             </div>
@@ -74,8 +102,7 @@ if (isset($_POST["btnsubmit"])) {
                 </div>
                 <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit" name="btnsubmit">Xác
                         nhận</button>
-                <a href="/TechStorePHP/admin/category.php"> <button class="btn btn-secondary btn-min-width mr-0 mb-0"
-                        >Hủy</button></a>
+                <a href="/TechStorePHP/admin/storehouse.php" class="btn btn-secondary btn-min-width mr-0 mb-0"> Hủy</a>
                 <!-- </section> -->
             </form>
         </div>

@@ -53,7 +53,7 @@ if (isset($_POST["btnsubmit"])) {
                     <div class="col-lg-6 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Thêm thương hiệu</h4>
+                                <h4 class="card-title">Thêm màu sắc</h4>
                             </div>
                             <div class="card-block">
                                 <div class="card-body">

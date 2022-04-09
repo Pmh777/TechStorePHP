@@ -68,6 +68,13 @@ class Customer
     $result = $db->select_to_object($sql);
     return $result;
   }
+  public static function findCustomerByPhone(int $phone)
+  {
+    $db = new Db();
+    $sql = "SELECT * FROM customer WHERE phone='$phone'";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
   public static function checkAccount(string $email, string $password)
   {
     $db = new Db();
@@ -76,11 +83,11 @@ class Customer
     return $result;
   }
 
-  public static function checkRegister(string $email)
+  public static function checkRegister(string $email, string $phone)
   {
     $db = new Db();
-    $sql = "SELECT * FROM customer WHERE email='$email'";
-    $result = $db->select_to_object($sql);
+    $sql = "SELECT * FROM customer WHERE email='$email' or phone='$phone'";
+    $result = $db->select_to_array($sql);
     return $result;
   }
 }

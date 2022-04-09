@@ -1,7 +1,8 @@
 <?php
-session_start();
+//session_start();
 // echo '<pre>';
-// var_dump($_SESSION["user_id"]);
+// //var_dump($_SESSION["user_id"]);
+// print_r($_SESSION);
 // echo '</pre>';
 ?>
 
