@@ -1,6 +1,8 @@
 <?php
+require_once("/xampp/htdocs/TechStorePHP/entities/orders.class.php"); 
+require_once("/xampp/htdocs/TechStorePHP/entities/orderdetail.class.php"); 
   session_start();
-  
+  //cart
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart']=[];
   }
@@ -40,14 +42,16 @@
        // var_dump($_SESSION['cart']);
       }
   }
-    
+
   function showCart(){
     if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
     {
             $total_bill= 0;
+            $_SESSION["total_bill"] = 0;
             for ($i=0; $i < sizeof($_SESSION['cart']) ; $i++) { 
               $total = $_SESSION['cart'][$i][2] *$_SESSION['cart'][$i][3];
               $total_bill +=$total;
+              $_SESSION["total_bill"]  +=$total;
               echo '
               
               <tr class="table_row">
@@ -80,7 +84,47 @@
     }
       
   }
+  //end cart
+//check out
 
+if (isset($_POST['btnCheckout'])) {
+        $others_id = "";
+        $customer_id = $_SESSION["user_login"]["customer_id"];
+        $address = $_POST["address"];
+        $note = $_POST["note"];
+        $total = $_SESSION["total_bill"];
+        $order_code = "";
+        $status = 1;
+        $employee_id = "";
+        $created_at = "";
+
+        $newOrder = new Orders($others_id,$customer_id,$address,$note,$total,$order_code,$status,$created_at,$employee_id);
+        $result = $newOrder->createOrder();
+
+
+        $recentOrder = Orders::getRecentOrder();  
+       
+        if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
+        {
+            for ($i=0; $i < sizeof($_SESSION['cart']) ; $i++) {
+                $product_id = $_SESSION['cart'][$i][0];
+                $orders_id = $recentOrder["orders_id"];
+                $color_id = $_SESSION['cart'][$i][4];
+                $quantity = $_SESSION['cart'][$i][3]; 
+                $newOrderdetail = new Orderdetail($product_id, $orders_id, $color_id, $quantity);
+                $result2 = $newOrderdetail->createOrderdetail();
+            }
+        }
+       // $newOrderdetail = new Orderdetai($product_id, $orders_id, $color_id, $quantity);
+    if (!$result2) {
+        echo "<script>alert('Đặt hàng thất bại!');</script>";
+        //header("Location: order-success.php?failure");
+    } else {
+        echo "<script>alert('Đặt hàng thành công!');</script>";
+        //header("Location: order-success.php?successed");
+    }
+  }
+//end checkout
 ?>
 
 
@@ -88,7 +132,7 @@
 <?php include_once("include/header.php"); ?>
 
 <!-- Cart -->
-<?php include_once("include/cart.php"); ?>
+
 
 
 <!-- breadcrumb -->
@@ -107,7 +151,7 @@
 
 
 <!-- Shoping Cart -->
-<form class="bg0 p-t-75 p-b-85" action="bill.php" method="post">
+<form class="bg0 p-t-75 p-b-85" method="post">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -178,7 +222,7 @@
                         <div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
                             <div class="bor8 bg0 m-b-12">
                                 <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" value="<?php if (isset( $_SESSION["user_login"])) echo $_SESSION["user_login"]["address"];?>"
-                                   >
+                                  required >
                             </div>
                         </div>
                     </div>

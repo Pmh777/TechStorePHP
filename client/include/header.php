@@ -86,10 +86,8 @@
               <i class="zmdi zmdi-search"></i>
             </div>
 
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-              data-notify="2">
-              <i class="zmdi zmdi-shopping-cart"></i>
-            </div>
+            <a href="shopping-cart.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart">
+              <i class="zmdi zmdi-shopping-cart"></i></a>
             <?php 
             
             if (isset($_SESSION["user_login"])) {
@@ -122,10 +120,10 @@
           <i class="zmdi zmdi-search"></i>
         </div>
 
-        <div ref="/shoping-cart.php"
-          class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+        <a href="shoping-cart.php"
+          class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti ">
           <i class="zmdi zmdi-shopping-cart"></i>
-        </div>
+              </a>
 
         <a href="login.php" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti">
           <i class="zmdi zmdi-face"></i>

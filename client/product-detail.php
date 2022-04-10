@@ -11,7 +11,7 @@ if (isset($_GET["product_id"])) {
 <?php include_once("include/header.php"); ?>
 
 <!-- Cart -->
-<?php include_once("include/cart.php"); ?>
+
 
 
 <!-- breadcrumb -->
