@@ -25,6 +25,13 @@ class Orders
     $this->created_at = $create_at;
     $this->employee_id = $employee_id;
   }
+  public static function list_orders()
+  {
+    $db = new Db();
+    $sql = "SELECT * FROM orders";
+    $result = $db->select_to_array($sql);
+    return $result;
+  }
   
   public function createOrder()
   {

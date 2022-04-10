@@ -51,24 +51,18 @@
                                     <thead class="thead-dark">
                                         <tr>
                                             <th class="text-center" scope="col">#</th>
-                                            <th class="text-center" scope="col">Khách hàng</th>
-                                            <th class="text-center" scope="col">Địa chỉ</th>
-                                            <th class="text-center" scope="col">Ngày vận</th>
-                                            <th class="text-center" scope="col">Số lượng</th>
                                             <th class="text-center" scope="col">Tổng tiền</th>
-                                            <th class="text-center" scope="col">Ghi chú</th>
+                                            <th class="text-center" scope="col">Mã vận đơn</th>
+                                            <th class="text-center" scope="col">Trạng thái</th>
                                             <th class="text-center" scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <th class="text-center" scope="row">1</th>
-                                            <td class="text-center">Duy Nguyen</td>
-                                            <td class="text-center">Bình Thạnh</td>
-                                            <td class="text-center">29/03/2022</td>
-                                            <td class="text-center">5</td>
-                                            <td class="text-center">9.000.000vnđ</td>
-                                            <td class="text-center">Gọi trước khi giao</td>
+                                            <td class="text-center">233333</td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center">Đợi xác nhận</td>
                                             <td>
                                                 <a href="accept-order.php">
                                                     <button type="button"
