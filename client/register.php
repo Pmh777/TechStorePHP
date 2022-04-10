@@ -24,7 +24,7 @@ if (isset($_POST["btnsubmit"])) {
       } else {
           header("Location:index.php");
           $customer = Customer::findCustomerByPhone($phone);
-          $_SESSION["customer_id"] = $customer["customer_id"];
+          $_SESSION["user_login"] = $customer;
       }
     }
    

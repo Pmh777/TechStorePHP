@@ -1,5 +1,5 @@
 <?php require_once("/xampp/htdocs/TechStorePHP/entities/product.class.php");
-
+session_start();
 if (isset($_GET["product_id"])) {
     $product_id = $_GET['product_id'];
 
@@ -93,9 +93,16 @@ if (isset($_GET["product_id"])) {
                                             <i class="fs-16 zmdi zmdi-plus"></i>
                                         </div>
                                     </div>
-                                    <input
+                                    <?php 
+                                    if(isset($_SESSION["user_login"]) == null){
+                                        echo '<a href="login.php" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">Thêm vào giỏ</a>';
+                                    }else{
+                                        echo '<input
                                         class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-                                        type="submit" name="addcart" value="Thêm vào giỏ">
+                                        type="submit" name="addcart" value="Thêm vào giỏ">';
+                                        
+                                    }
+                                    ?>
                                         <input type="hidden" name="product_id" value=" <?php echo $_GET['product_id']; ?>">
                                     <input type="hidden" name="product_name" value=" <?php echo $product["product_name"]; ?>">
                                     <input type="hidden" name="price" value=" <?php echo $product["price"]; ?>">
@@ -180,12 +187,8 @@ if (isset($_GET["product_id"])) {
                                                     Tên reviewer
                                                 </span>
 
-                                                <span class="fs-18 cl11">
-                                                    <i class="zmdi zmdi-star"></i>
-                                                    <i class="zmdi zmdi-star"></i>
-                                                    <i class="zmdi zmdi-star"></i>
-                                                    <i class="zmdi zmdi-star"></i>
-                                                    <i class="zmdi zmdi-star-half"></i>
+                                                <span class="fs-18 cl13">
+                                                    <p>Hài lòng</p>
                                                 </span>
                                             </div>
 
@@ -200,51 +203,14 @@ if (isset($_GET["product_id"])) {
                                         <h5 class="mtext-108 cl2 p-b-7">
                                             Thêm đánh giá
                                         </h5>
-
-                                        <p class="stext-102 cl6">
-                                            Địa chỉ email của bạn sẽ không được công khai. Các trường bắt buộc được đánh
-                                            dấu *
-                                        </p>
-
-                                        <div class="flex-w flex-m p-t-50 p-b-23">
-                                            <span class="stext-102 cl3 m-r-16">
-                                                Xếp hạng của bạn
-                                            </span>
-
-                                            <span class="wrap-rating fs-18 cl11 pointer">
-                                                <i class="item-rating pointer zmdi zmdi-star-outline"></i>
-                                                <i class="item-rating pointer zmdi zmdi-star-outline"></i>
-                                                <i class="item-rating pointer zmdi zmdi-star-outline"></i>
-                                                <i class="item-rating pointer zmdi zmdi-star-outline"></i>
-                                                <i class="item-rating pointer zmdi zmdi-star-outline"></i>
-                                                <input class="dis-none" type="number" name="rating">
-                                            </span>
-                                        </div>
-
                                         <div class="row p-b-25">
                                             <div class="col-12 p-b-5">
                                                 <label class="stext-102 cl3" for="review">Đánh giá của bạn</label>
                                                 <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10"
                                                     id="review" name="review"></textarea>
                                             </div>
-
-                                            <div class="col-sm-6 p-b-5">
-                                                <label class="stext-102 cl3" for="name">Tên</label>
-                                                <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="name" type="text"
-                                                    name="name">
-                                            </div>
-
-                                            <div class="col-sm-6 p-b-5">
-                                                <label class="stext-102 cl3" for="email">Email</label>
-                                                <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="email"
-                                                    type="text" name="email">
-                                            </div>
                                         </div>
-
-                                        <button
-                                            class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
-                                            Gửi
-                                        </button>
+                                        <input name="btnFeedback" value="Gửi" type ="submit" class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">   
                                     </form>
                                 </div>
                             </div>

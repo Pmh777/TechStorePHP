@@ -68,5 +68,11 @@ class Employee
     $result = $db->select_to_object($sql);
     return $result;
   }
-
+  public static function checkAccount(string $email, string $password)
+  {
+    $db = new Db();
+    $sql = "SELECT * FROM employee WHERE email='$email' and password='$password' ";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
 }

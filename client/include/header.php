@@ -55,7 +55,7 @@
         <nav class="limiter-menu-desktop container">
 
           <!-- Logo desktop -->
-          <a href="#" class="logo">
+          <a href="index.php" class="logo">
             <img src="images/icons/logo-01.png" alt="IMG-LOGO">
           </a>
 
@@ -92,7 +92,7 @@
             </div>
             <?php 
             
-            if (isset($_SESSION["user_id"])) {
+            if (isset($_SESSION["user_login"])) {
 								echo '<a href="info-user.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
                 <i class="zmdi zmdi-face"></i>
               </a>';

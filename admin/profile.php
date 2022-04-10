@@ -1,12 +1,7 @@
 <!-- Header -->
 <?php require_once("/xampp/htdocs/TechStorePHP/entities/employee.class.php"); ?>
 <?php
-if (isset($_GET["employee_id"])) {
-  $employee_id = $_GET['employee_id'];
-
-  $employee = Employee::findEmployee($employee_id);
-
-}
+session_start();
 ?>
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->
@@ -63,13 +58,13 @@ if (isset($_GET["employee_id"])) {
                                         <div class="card-text">
                                             <dl class="row">
                                                 <dt class="col-sm-3">Họ và tên</dt>
-                                                <dd class="col-sm-9"><?php if(isset($employee['name'])) echo($employee['name']);?></dd>
+                                                <dd class="col-sm-9"><?php if (isset( $_SESSION["emp_login"])) echo $_SESSION["emp_login"]["name"];?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Giới tính</dt>
                                                 <dd class="col-sm-9"> 
-                                                <?php if($employee["gender"] == 1) echo 'Nam';
-                                                elseif($employee["gender"] == 2) echo 'Nữ';
+                                                <?php if((int)$_SESSION["emp_login"]["gender"] == 1) echo 'Nam';
+                                                elseif((int)$_SESSION["emp_login"]["gender"] == 2) echo 'Nữ';
                                                 else echo 'Khác';
                                                 ?>
                                                 </dd>
@@ -79,21 +74,21 @@ if (isset($_GET["employee_id"])) {
                                             <dl class="row">
                                                 <dt class="col-sm-3">Ngày sinh</dt>
                                                 
-                                                <dd class="col-sm-9"><?php if(isset($employee['birthday'])) echo(date_format(date_create($employee['birthday']) , 'd/m/Y'));?></dd>
+                                                <dd class="col-sm-9"><?php if(isset($_SESSION["emp_login"])) echo(date_format(date_create($_SESSION["emp_login"]["birthday"]) , 'd/m/Y'));?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Điện thoại</dt>
-                                                <dd class="col-sm-9"><?php if(isset($employee['phone'])) echo($employee['phone']);?></dd>
+                                                <dd class="col-sm-9"><?php if (isset($_SESSION["emp_login"])) echo($_SESSION["emp_login"]["phone"]);?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Email</dt>
-                                                <dd class="col-sm-9"><?php if(isset($employee['email'])) echo($employee['email']);?>@gmail.com</dd>
+                                                <dd class="col-sm-9"><?php if (isset($_SESSION["emp_login"])) echo($_SESSION["emp_login"]["email"]);?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Chức vụ</dt>
                                                 <dd class="col-sm-9">
-                                                <?php if($employee["role_id"] == 1) echo 'Admin';
-                                                elseif($employee["role_id"] == 2) echo 'Nhân viên';
+                                                <?php if($_SESSION["emp_login"]["role_id"] == 1) echo 'Nhân viên';
+                                                elseif($_SESSION["emp_login"]["role_id"] == 2) echo 'Admin';
                                                 ?>
                                                 </dd>
                                             </dl>

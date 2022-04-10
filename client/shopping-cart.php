@@ -4,19 +4,15 @@
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart']=[];
   }
-  //xoa gio hang
+  //delete cart
   if(isset($_GET['delcart'])&&($_GET['delcart']==1)) unset($_SESSION['cart']);
-    //xóa sp trong giỏ hàng
+    //delete product in cart
     if(isset($_GET['delid'])&&($_GET['delid']>=0)){
         array_splice($_SESSION['cart'],$_GET['delid'],1);
      }
-  //lay data
+  //get data
   if(isset($_POST['addcart'])&&($_POST['addcart']))
   { 
-    //   $img = $_POST['img'];
-    //   $name = $_POST['name'];
-    //   $price = $_POST['price'];
-    //   $munber = $_POST['number'];
 
     $product_id = $_POST['product_id'];
     $product_name  = $_POST['product_name'];
@@ -25,7 +21,7 @@
     $color_id = $_POST['color_id'];
     $color_name = $_POST['color_name'];
       
-    //kiem tra sp co trung trong gio hang khong?
+    //check exist product in cart by product_id and color_id
       $fl=0; 
       for ($i=0; $i < sizeof($_SESSION['cart']); $i++) { 
           
@@ -40,7 +36,6 @@
       if( $fl==0)
       {
         $product = [$product_id,$product_name, $price, $quantity,$color_id,$color_name];
-       // $_SESSION['cart'][]=$product;
         array_push($_SESSION['cart'], $product);
        // var_dump($_SESSION['cart']);
       }
@@ -152,7 +147,7 @@
                         </div>
                         <div class="size-209">
                         <div class="bor8 bg0 m-b-12">
-                                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="customer_name"
+                                <input readonly class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="customer_name" value="<?php if (isset( $_SESSION["user_login"])) echo $_SESSION["user_login"]["name"];?>"
                                     >
                             </div>
                         </div>
@@ -168,7 +163,7 @@
 
                         <div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
                             <div class="bor8 bg0 m-b-12">
-                                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="number" name="phone"
+                                <input readonly class="stext-111 cl8 plh3 size-111 p-lr-15" type="number" name="phone" value="<?php if (isset( $_SESSION["user_login"])) echo $_SESSION["user_login"]["phone"];?>"
                                    >
                             </div>
                         </div>
@@ -182,7 +177,7 @@
 
                         <div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
                             <div class="bor8 bg0 m-b-12">
-                                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address"
+                                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" value="<?php if (isset( $_SESSION["user_login"])) echo $_SESSION["user_login"]["address"];?>"
                                    >
                             </div>
                         </div>

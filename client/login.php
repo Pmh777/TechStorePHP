@@ -7,7 +7,7 @@ session_start();
      $encryptPassword = md5($password);
      $user = Customer::checkAccount($email,$encryptPassword);
      if ($user > 0) {
-        $_SESSION["user_id"] = 0;
+        $_SESSION["user_login"] = $user;
          header("location:index.php");
      } else {
          $_SESSION["notification"] = "Tài khoản hoặc mật khẩu không đúng!";
