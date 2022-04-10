@@ -1,3 +1,13 @@
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/orderdetail.class.php");
+if (isset($_GET["orders_id"])) {
+    $orders_id = $_GET['orders_id'];
+    $orders_info = Orderdetail::findOrderdetail($orders_id);
+    
+       
+    
+
+}
+?>
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->

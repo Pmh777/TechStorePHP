@@ -31,4 +31,11 @@ class Orderdetail
     $result = $db->select_to_object($sql);
     return $result;
   }
+  public static function findOrderdetail(int $orders_id)
+  {
+    $db = new Db();
+    $sql = "";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
 }

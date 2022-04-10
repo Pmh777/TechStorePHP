@@ -50,4 +50,13 @@ class Orders
     $result = $db->select_to_object($sql);
     return $result;
   }
+  public static function confirmOrder(int $orders_id, string $order_code)
+  {
+    $db = new Db();
+    $sql = "UPDATE orders
+            SET order_code='$order_code', status='2'
+            WHERE orders_id='$orders_id'";
+    $result = $db->query_execute($sql);
+    return $result;
+  }
 }

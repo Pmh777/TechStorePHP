@@ -1,3 +1,6 @@
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/orders.class.php");
+$orders = Orders::list_orders();
+?>
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->
@@ -58,23 +61,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ( $orders as $item) : ?>
                                         <tr>
-                                            <th class="text-center" scope="row">1</th>
-                                            <td class="text-center">233333</td>
-                                            <td class="text-center"></td>
-                                            <td class="text-center">Đợi xác nhận</td>
+                                            <th class="text-center" scope="row"><?php echo $item["orders_id"]; ?></th>
+                                            <td class="text-center"><?php echo number_format($item["total"], 0, '', ',').' VNĐ'; ?></td>
+                                            <td class="text-center"><?php if($item["order_code"] != 0) echo $item["order_code"]; else echo "Chưa có" ?></td>
+                                            <td class="text-center"><?php if($item["status"] == 2) echo 'Đã xác nhận';
+                                                elseif($item["status"] == 1) echo 'Đợi xác nhận';
+                                                ?></td>
                                             <td>
-                                                <a href="accept-order.php">
+                                                <?php if($item["status"] == 1) :?>
+                                                <a href="confirm-order.php?orders_id=<?php echo $item["orders_id"]; ?>">
                                                     <button type="button"
                                                         class="btn btn-success btn-min-width mr-1 mb-1">
                                                         <i class="ft-check"></i>
                                                     </button></a>
-                                                <a href="order-detail.php">
+                                                    <?php endif; ?>
+                                                <a href="order-detail.php?orders_id=<?php echo $item["orders_id"]; ?>">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-eye"></i>
                                                     </button></a>
 
-                                                <a href="remove-order.php">
+                                                <a href="remove-order.php?orders_id=<?php echo $item["orders_id"]; ?>">
                                                     <button type="button"
                                                         class="btn btn-danger btn-min-width mr-1 mb-1">
                                                         <i class="ft-delete"></i>
@@ -83,7 +91,7 @@
                                             </td>
 
                                         </tr>
-
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

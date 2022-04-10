@@ -1,8 +1,9 @@
-<?php require_once("/xampp/htdocs/TechStorePHP/entities/product.class.php"); ?>
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/product.class.php");
+$product = Product::list_product();
+?>
 
 <!-- Header -->
 <?php include_once("./inc/header-admin.php");
-$product = Product::list_product();
 ?>
 
 
