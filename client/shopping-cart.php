@@ -1,6 +1,7 @@
 <?php
 require_once("/xampp/htdocs/TechStorePHP/entities/orders.class.php"); 
 require_once("/xampp/htdocs/TechStorePHP/entities/orderdetail.class.php"); 
+require_once("/xampp/htdocs/TechStorePHP/entities/storehouse.class.php"); 
   session_start();
   //cart
   if (!isset($_SESSION['cart'])) {
@@ -57,8 +58,8 @@ require_once("/xampp/htdocs/TechStorePHP/entities/orderdetail.class.php");
               <tr class="table_row">
                 <td class="column-1">'.($i+1).'</td> 
                 <td class="column-2">'.$_SESSION['cart'][$i][1].' '.$_SESSION['cart'][$i][5].' x '.$_SESSION['cart'][$i][3].'</td>
-                <td class="column-3">'.$_SESSION['cart'][$i][2].'</td>
-                <td class="column-4">'.$total.'</td>
+                <td class="column-3"  style="width: 200px;">'.number_format($_SESSION['cart'][$i][2], 0, '', ',').' VNĐ'.'</td>
+                <td class="column-4"  style="width: 200px;">'.number_format($total, 0, '', ',').' VNĐ'.'</td>
                 <td class="column-5">
                 <a href="shopping-cart.php?delid='.$i.'"> Xoá </a>
                 </td>
@@ -71,7 +72,7 @@ require_once("/xampp/htdocs/TechStorePHP/entities/orderdetail.class.php");
                                 <th class="column-2"> </th>
                                 <th class="column-3"> </th>
                                 <th class="column-4">Tổng tiền </th>
-                                <th class="column-5">'.$total_bill.'</th>
+                                <th class="column-5"  style="width: 200px;">'.number_format($total_bill, 0, '', ',').' VNĐ'.'</th>
                             </tr>
             ';             
     }
@@ -101,28 +102,56 @@ if (isset($_POST['btnCheckout'])) {
         $newOrder = new Orders($others_id,$customer_id,$address,$note,$total,$order_code,$status,$created_at,$employee_id);
         $result = $newOrder->createOrder();
 
+        if(is_bool($result)){
+            $recentOrder = Orders::getRecentOrder();  
+            if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
+            {
+                for ($i=0; $i < sizeof($_SESSION['cart']) ; $i++) {
+                    $product_id = (int) $_SESSION['cart'][$i][0];
+                    $orders_id = (int) $recentOrder["orders_id"];
+                    $color_id = (int) $_SESSION['cart'][$i][4];
+                    $quantity = $_SESSION['cart'][$i][3]; 
 
-        $recentOrder = Orders::getRecentOrder();  
-       
-        if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
-        {
-            for ($i=0; $i < sizeof($_SESSION['cart']) ; $i++) {
-                $product_id = $_SESSION['cart'][$i][0];
-                $orders_id = $recentOrder["orders_id"];
-                $color_id = $_SESSION['cart'][$i][4];
-                $quantity = $_SESSION['cart'][$i][3]; 
-                $newOrderdetail = new Orderdetail($product_id, $orders_id, $color_id, $quantity);
-                $result2 = $newOrderdetail->createOrderdetail();
+                    //check quantity in storehouse
+                    $total_storehouse = Storehouse::getTotalQuantityProduct($product_id,$color_id);
+                   
+                    $total_orderdetail = Orderdetail::getTotalQuantityProduct($product_id,$color_id);
+                    
+                    if($total_orderdetail != null && $total_storehouse != null){
+                        $total_quantity_in_storehouse = $total_storehouse["total_quantity"];
+                        $total_quantity_in_orderdetail = $total_orderdetail["total_quantity"];
+                        if($total_quantity_in_storehouse > $total_quantity_in_orderdetail){
+                            //add to db
+                            $newOrderdetail = new Orderdetail($product_id, $orders_id, $color_id, $quantity);
+                            //var_dump($newOrderdetail);
+                            $result2 = $newOrderdetail->createOrderdetail();
+                        }else{
+                            echo "<script>alert('Số lượng sản phẩm vượt quá số lượng trong kho!');</script>";
+                        }
+                    }else{
+                            //add to db
+                            $newOrderdetail = new Orderdetail($product_id, $orders_id, $color_id, $quantity);
+                            //var_dump($newOrderdetail);
+                            $result2 = $newOrderdetail->createOrderdetail();
+
+                            if (!$result2) {
+                                echo "<script>alert('Đặt hàng thất bại!');</script>";
+                                //header("Location: order-success.php?failure");
+                            } else {
+                                echo "<script>alert('Cảm ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ xác nhận trong vài ngày tới!');</script>";
+                                //header("Location: order-success.php?successed");
+                            }
+                    }
+                    //end check quantity in storehouse
+                    
+                }
             }
+            
+        }else {
+            echo "<script>alert('Đặt hàng thất bại!');</script>";
         }
-       // $newOrderdetail = new Orderdetai($product_id, $orders_id, $color_id, $quantity);
-    if (!$result2) {
-        echo "<script>alert('Đặt hàng thất bại!');</script>";
-        //header("Location: order-success.php?failure");
-    } else {
-        echo "<script>alert('Đặt hàng thành công!');</script>";
-        //header("Location: order-success.php?successed");
-    }
+        
+        
   }
 //end checkout
 ?>

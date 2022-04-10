@@ -4,6 +4,17 @@
 // //var_dump($_SESSION["user_id"]);
 // print_r($_SESSION);
 // echo '</pre>';
+function showquantity(){
+  $total_quantity = 0;
+  if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
+    {
+      for ($i=0; $i < sizeof($_SESSION['cart']) ; $i++) { 
+        $total_quantity += $_SESSION['cart'][$i][3];
+      }
+      echo $total_quantity;
+    }else
+    echo 0;
+}
 ?>
 
 <!DOCTYPE php>
@@ -86,7 +97,7 @@
               <i class="zmdi zmdi-search"></i>
             </div>
 
-            <a href="shopping-cart.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart">
+            <a href="shopping-cart.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="<?php showquantity(); ?>">
               <i class="zmdi zmdi-shopping-cart"></i></a>
             <?php 
             

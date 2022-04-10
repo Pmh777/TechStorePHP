@@ -87,7 +87,7 @@ if (isset($_GET["product_id"])) {
                                         </div>
 
                                         <input class="mtext-104 cl3 txt-center num-product" type="number"
-                                            name="quantity" min='1' max='10' value="1">
+                                            name="quantity" min='1' max='1000' value="1">
 
                                         <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
                                             <i class="fs-16 zmdi zmdi-plus"></i>

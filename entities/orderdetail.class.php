@@ -25,4 +25,10 @@ class Orderdetail
     $result = $db->query_execute($sql);
     return $result;
   }
+  public static function getTotalQuantityProduct($product_id,$color_id){
+    $db = new DB();
+    $sql="SELECT SUM(quantity) as total_quantity FROM orderdetail WHERE product_id = '$product_id' and color_id = '$color_id'";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
 }
