@@ -75,4 +75,11 @@ class Orders
     $result = $db->query_execute($sql);
     return $result;
   }
+  public static function countOrder()
+  {
+    $db = new Db();
+    $sql = "SELECT count(*) as total FROM orders where status = 1 ";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
 }
