@@ -71,7 +71,7 @@ class Orders
   public static function deleteOrder(int $order_id)
   {
     $db = new Db();
-    $sql = "DELETE FROM orders WHERE order_id='$order_id'";
+    $sql = "DELETE FROM orders WHERE orders_id='$order_id'";
     $result = $db->query_execute($sql);
     return $result;
   }
