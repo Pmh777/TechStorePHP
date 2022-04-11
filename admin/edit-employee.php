@@ -107,8 +107,8 @@ if(isset($_POST["update"])){
   
                                             </select>
                                         </fieldset>
-                                        <h5 class="mt-2">Mật khẩu</h5>
-                                        <fieldset class="form-group">
+                                        <h5 class="mt-2" hidden>Mật khẩu</h5>
+                                        <fieldset class="form-group" hidden>
                                             <input type="text" class="form-control" id="basicInput" name="password" value="<?php if(isset($employee['password'])) echo($employee['password']);?>">
                                         </fieldset>
                                     </div>
@@ -117,7 +117,7 @@ if(isset($_POST["update"])){
                         </div>
                     </div>
                     <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit" name="update">Cập nhật</button>
-                    <a href="/employee.php"> <button class="btn btn-secondary btn-min-width mr-0 mb-0">Hủy</button></a>
+                    <a href="/TechStorePHP/admin/employee.php"> <button class="btn btn-secondary btn-min-width mr-0 mb-0">Hủy</button></a>
                     <!-- </section> -->
             </form>
         </div>

@@ -33,9 +33,9 @@ if (isset($_POST["btnsubmit"])) {
             <div class="content-header-left col-md-4 col-12 mb-2">
                 <?php
                 if (isset($_GET["inserted"])) {
-                    echo "<h2>Thêm thương hiệu thành công</h2>";
+                    echo "<h2>Thêm thành công</h2>";
                 } else if (isset($_GET["failure"])) {
-                echo "<h2>Thêm thương hiệu thất bại</h2>";
+                echo "<h2>Thêm thất bại</h2>";
                 }
             ?>
                 <h3 class="content-header-title"></h3>
@@ -46,7 +46,7 @@ if (isset($_POST["btnsubmit"])) {
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item active">Thêm thương hiệu
+                            <li class="breadcrumb-item active">Thêm sản phẩm
                             </li>
                         </ol>
                     </div>
@@ -60,7 +60,7 @@ if (isset($_POST["btnsubmit"])) {
                     <div class="col-lg-6 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Thêm Loại sản phẩm</h4>
+                                <h4 class="card-title">Thêm sản phẩm</h4>
                             </div>
                             <div class="card-block">
                                 <div class="card-body"> 

@@ -1,4 +1,20 @@
 <?php
+//session_start();
+// echo '<pre>';
+// //var_dump($_SESSION["user_id"]);
+// print_r($_SESSION);
+// echo '</pre>';
+function showquantity(){
+  $total_quantity = 0;
+  if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
+    {
+      for ($i=0; $i < sizeof($_SESSION['cart']) ; $i++) { 
+        $total_quantity += $_SESSION['cart'][$i][3];
+      }
+      echo $total_quantity;
+    }else
+    echo 0;
+}
 ?>
 
 <!DOCTYPE php>
@@ -50,7 +66,7 @@
         <nav class="limiter-menu-desktop container">
 
           <!-- Logo desktop -->
-          <a href="#" class="logo">
+          <a href="index.php" class="logo">
             <img src="images/icons/logo-01.png" alt="IMG-LOGO">
           </a>
 
@@ -81,13 +97,21 @@
               <i class="zmdi zmdi-search"></i>
             </div>
 
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-              data-notify="2">
-              <i class="zmdi zmdi-shopping-cart"></i>
-            </div>
-
-            <a href="login.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
-              <i class="zmdi zmdi-face"></i>
+            <a href="shopping-cart.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="<?php showquantity(); ?>">
+              <i class="zmdi zmdi-shopping-cart"></i></a>
+            <?php 
+            
+            if (isset($_SESSION["user_login"])) {
+								echo '<a href="info-user.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
+                <i class="zmdi zmdi-face"></i>
+              </a>';
+            }
+								else{
+                  echo '<a href="login.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
+                  <i class="zmdi zmdi-face"></i>
+                </a>';
+                }
+							 ?>
             </a>
           </div>
         </nav>
@@ -107,10 +131,10 @@
           <i class="zmdi zmdi-search"></i>
         </div>
 
-        <div ref="/shoping-cart.php"
-          class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+        <a href="shoping-cart.php"
+          class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti ">
           <i class="zmdi zmdi-shopping-cart"></i>
-        </div>
+              </a>
 
         <a href="login.php" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti">
           <i class="zmdi zmdi-face"></i>

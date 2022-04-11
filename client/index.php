@@ -1,3 +1,11 @@
+
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/banner.class.php");
+$banner = Banner::list_banner();
+session_start();
+// echo '<pre>';
+// var_dump($_SESSION["user_id"]);
+// echo '</pre>';
+?>
 <?php include_once("include/header.php"); ?>
 
 <!-- Cart -->
@@ -9,18 +17,28 @@
 <section class="section-slide">
   <div class="wrap-slick1">
     <div class="slick1">
-      <div class="item-slick1" style="background-image: url(images/slide1.jpg);">
+      
+    <?php foreach ( $banner as $item) : ?>
+      <div class="item-slick1" style="background-image: url(images/<?php echo $item["photo"]; ?>);">
         <div class="container h-full">
           <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
             <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
               <span class="ltext-101 cl2 respon2">
+<<<<<<< HEAD
                 Sản phẩm độc đáo
+=======
+              <?php echo $item["content"]; ?>
+>>>>>>> 5025c942823329789cb63436156e3a3927346c7c
               </span>
             </div>
 
             <div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
               <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
+<<<<<<< HEAD
                 Chất lượng hàng đầu
+=======
+              <?php echo $item["caption"]; ?>
+>>>>>>> 5025c942823329789cb63436156e3a3927346c7c
               </h2>
             </div>
 
@@ -32,6 +50,7 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
 
       <div class="item-slick1" style="background-image: url(images/slide2.jpg);">
         <div class="container h-full">
@@ -80,10 +99,14 @@
           </div>
         </div>
       </div>
+=======
+      <?php endforeach; ?>    
+>>>>>>> 5025c942823329789cb63436156e3a3927346c7c
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 <!--===============================================================================================-->
 <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -184,3 +207,8 @@ $('.js-pscroll').each(function() {
 </script>
 <!--===============================================================================================-->
 <script src="js/main.js"></script>
+=======
+
+<!-- Footer -->
+<?php include_once("include/footer.php"); ?>
+>>>>>>> 5025c942823329789cb63436156e3a3927346c7c

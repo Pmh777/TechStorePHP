@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
-<?php require_once("/xampp/htdocs/TechStorePHP/entities/employee.class.php"); ?>
-<?php
-if (isset($_GET["employee_id"])) {
-  $employee_id = $_GET['employee_id'];
 
-  $employee = Employee::findEmployee($employee_id);
-
-}
-?>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -70,10 +62,6 @@ if (isset($_GET["employee_id"])) {
                     alt="avatar" /><i></i></span></a>
               <div class="dropdown-menu dropdown-menu-right">
                 <div class="arrow_box_right">
-                  <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img
-                        src="theme-assets/images/logo/avt.jpg" alt="avatar" /><span
-                        class="user-name text-bold-700 ml-1"></a>
-                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="profile.php"><i class="ft-user"></i>Thông tin của tôi</a>
                   <a class="dropdown-item" href=""><i class="ft-user"></i>Cập nhật thông tin</a>
                   <a class="dropdown-item" href="#"><i class="ft-power"></i> Đăng xuất</a>
@@ -122,13 +110,9 @@ if (isset($_GET["employee_id"])) {
                     alt="avatar" /><i></i></span></a>
               <div class="dropdown-menu dropdown-menu-right">
                 <div class="arrow_box_right">
-                  <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img
-                        src="theme-assets/images/logo/avt.jpg" alt="avatar" /><span
-                        class="user-name text-bold-700 ml-1"><?php if(isset($employee['name'])) echo($employee['name']);?></span></span></span></span></a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="profile.php?employee_id=<?php if(isset($employee['employee_id'])) echo($employee['employee_id']);?>">Thông tin của tôi</a>
-                  <a class="dropdown-item" href="edit-employee.php?employee_id=<?php if(isset($employee['employee_id'])) echo($employee['employee_id']);?>">Cập nhật thông tin</a>
-                    <a class="dropdown-item" href="#">Đăng xuất</a>
+                  <a class="dropdown-item" href="profile.php">Thông tin của tôi</a>
+                  <a class="dropdown-item" href="edit-profile.php">Cập nhật thông tin</a>
+                    <a class="dropdown-item" href="logout.php">Đăng xuất</a>
                 </div>
               </div>
             </li>

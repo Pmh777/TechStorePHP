@@ -43,11 +43,11 @@ class Customer
     $result = $db->query_execute($sql);
     return $result;
   }
-  public static function updateCustomer(int $id, string $name, string $phone, string $birthday, string $gender, string $email, string $address, string $password, string $status)
+  public static function updateCustomer(int $id, string $name, string $phone, string $birthday, string $gender, string $email, string $address,  string $status)
   {
     $db = new Db();
     $sql = "UPDATE customer
-            SET name='$name', phone='$phone', birthday='$birthday', gender='$gender', email='$email', address='$address', password='$password', status='$status'
+            SET name='$name', phone='$phone', birthday='$birthday', gender='$gender', email='$email', address='$address', status='$status'
             WHERE customer_id='$id'";
     $result = $db->query_execute($sql);
     return $result;
@@ -68,5 +68,42 @@ class Customer
     $result = $db->select_to_object($sql);
     return $result;
   }
+  public static function findCustomerByPhone(int $phone)
+  {
+    $db = new Db();
+    $sql = "SELECT * FROM customer WHERE phone='$phone'";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
+  public static function checkAccount(string $email, string $password)
+  {
+    $db = new Db();
+    $sql = "SELECT * FROM customer WHERE email='$email' and password='$password' ";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
+  public static function checkPassword(string $customer_id, string $password)
+  {
+    $db = new Db();
+    $sql = "SELECT * FROM customer WHERE customer_id='$customer_id' and password='$password' ";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
 
+  public static function checkRegister(string $email, string $phone)
+  {
+    $db = new Db();
+    $sql = "SELECT * FROM customer WHERE email='$email' or phone='$phone'";
+    $result = $db->select_to_array($sql);
+    return $result;
+  }
+  public static function changePass(int $id, string $password)
+  {
+    $db = new Db();
+    $sql = "UPDATE customer
+            SET  password='$password'
+            WHERE customer_id='$id'";
+    $result = $db->query_execute($sql);
+    return $result;
+  }
 }

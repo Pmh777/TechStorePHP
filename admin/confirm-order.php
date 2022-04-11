@@ -1,17 +1,20 @@
-<?php require_once("/xampp/htdocs/TechStorePHP/entities/color.class.php"); 
-if (isset($_POST["btnsubmit"])) {
-    $color_id = "";
-    $name = $_POST["name"];
-    $code = "";
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/orders.class.php"); 
+if (isset($_GET["orders_id"])) {
+    $orders_id = $_GET['orders_id'];
 
-    $newColor = new Color($color_id,$name, $code);
-    $result = $newColor->createColor();
-    if (!$result) {
-        header("Location: add-color.php?failure");
-    } else {
-        header("Location: add-color.php?inserted");
+    if (isset($_POST["btnsubmit"])) {
+        $order_code = $_POST["order_code"];
+        $result = Orders::confirmOrder($orders_id,  $order_code);
+        if ($result) {
+            echo "<script>window.location.href='/TechStorePHP/admin/order.php';</script>";
+        } else {
+            echo "<script>window.location.href='/TechStorePHP/admin/order.php';</script>";
+        }
     }
+
 }
+
+
 ?>
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
@@ -26,9 +29,9 @@ if (isset($_POST["btnsubmit"])) {
             <div class="content-header-left col-md-4 col-12 mb-2">
             <?php
                 if (isset($_GET["inserted"])) {
-                    echo "<h2>Thêm màu sắc thành công</h2>";
+                    echo "<h2>Thêm thương hiệu thành công</h2>";
                 } else if (isset($_GET["failure"])) {
-                echo "<h2>Thêm màu sắc thất bại</h2>";
+                echo "<h2>Thêm thương hiệu thất bại</h2>";
                 }
             ?>
                 <h3 class="content-header-title"></h3>
@@ -39,7 +42,7 @@ if (isset($_POST["btnsubmit"])) {
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item active">Thêm màu sắc
+                            <li class="breadcrumb-item active">Xác nhận đơn
                             </li>
                         </ol>
                     </div>
@@ -53,15 +56,18 @@ if (isset($_POST["btnsubmit"])) {
                     <div class="col-lg-6 col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Thêm màu sắc</h4>
+                                <h4 class="card-title">Xác nhận đơn</h4>
                             </div>
                             <div class="card-block">
                                 <div class="card-body">
-                                    <h5 class="mt-2">Tên</h5>
+                                    <h5 class="mt-2">Mã vận đơn</h5>
                                     <fieldset class="form-group">
-                                        <input type="text" class="form-control" id="basicInput" name="name"
-                                        value="<?php echo isset($_POST["name"]) ? $_POST["name"] : ""; ?>">
+                                        <input type="text" class="form-control" id="basicInput" name="order_code"
+                                         required>
                                     </fieldset>
+                                   
+                                    
+
                                 </div>
                             </div>
                         </div>
@@ -70,8 +76,8 @@ if (isset($_POST["btnsubmit"])) {
                 </div>
                 <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit" name="btnsubmit">Xác
                         nhận</button>
-                <a href="/TechStorePHP/admin/color.php"> <button class="btn btn-secondary btn-min-width mr-0 mb-0"
-                        >Hủy</button></a>
+                <a href="/TechStorePHP/admin/order.php" class="btn btn-secondary btn-min-width mr-0 mb-0"> 
+                        Hủy</a>
                 <!-- </section> -->
             </form>
         </div>

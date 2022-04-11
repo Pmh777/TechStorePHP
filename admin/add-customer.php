@@ -86,7 +86,7 @@ if (isset($_POST["btnsubmit"])) {
                                         </fieldset>
                                         <h5 class="mt-2">Số điện thoại</h5>
                                         <fieldset class="form-group">
-                                            <input type="tel" class="form-control" name="txtphone" required pattern="[0-9]{9}"
+                                            <input type="tel" class="form-control" name="txtphone" required 
                                             value="<?php echo isset($_POST["txtphone"]) ? $_POST["txtphone"] : ""; ?>" id="basicInput" 
                                             >
                                         </fieldset>
