@@ -89,18 +89,18 @@ require_once("/xampp/htdocs/TechStorePHP/entities/storehouse.class.php");
 //check out
 
 if (isset($_POST['btnCheckout'])) {
-        $orders_id = "";
+        $orders_id = '';
         $customer_id = $_SESSION["user_login"]["customer_id"];
         $address = $_POST["address"];
         $note = $_POST["note"];
         $total = $_SESSION["total_bill"];
-        $order_code = '';
+        $order_code = 0;
         $status = 1;
         $employee_id = "";
         $created_at = "";
 
         $newOrder = new Orders($orders_id,$customer_id,$address,$note,$total,$order_code,$status,$created_at,$employee_id);
-        var_dump($newOrder);
+        //var_dump($newOrder);
         $result = $newOrder->createOrder();
 
         if(!$result){
@@ -120,7 +120,7 @@ if (isset($_POST['btnCheckout'])) {
                    
                     $total_orderdetail = Orderdetail::getTotalQuantityProduct($product_id,$color_id);
                     
-                    if($total_orderdetail != null && $total_storehouse != null){
+                    if($total_orderdetail != null  && $total_storehouse != null){
                         $total_quantity_in_storehouse = $total_storehouse["total_quantity"];
                         $total_quantity_in_orderdetail = $total_orderdetail["total_quantity"];
                         if($total_quantity_in_storehouse > $total_quantity_in_orderdetail){
@@ -128,10 +128,21 @@ if (isset($_POST['btnCheckout'])) {
                             $newOrderdetail = new Orderdetail($product_id, $orders_id, $color_id, $quantity);
                             //var_dump($newOrderdetail);
                             $result2 = $newOrderdetail->createOrderdetail();
+
+                            if (!$result2) {
+                                echo "<script>alert('Đặt hàng thất bại!');</script>";
+                            } else {
+                                
+                                //remove cart cookies
+                                unset($_SESSION['cart']);
+                                //end remove cart cookies
+                                header("location:order-success-notification.php");
+                                //echo "<script>alert('Cảm ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ xác nhận trong vài ngày tới!');</script>";
+                            }
                         }else{
                             echo "<script>alert('Số lượng sản phẩm vượt quá số lượng trong kho!');</script>";
                         }
-                    }else{
+                    }else if($total_storehouse != null){
                             //add to db
                             $newOrderdetail = new Orderdetail($product_id, $orders_id, $color_id, $quantity);
                             //var_dump($newOrderdetail);
@@ -139,10 +150,13 @@ if (isset($_POST['btnCheckout'])) {
 
                             if (!$result2) {
                                 echo "<script>alert('Đặt hàng thất bại!');</script>";
-                                //header("Location: order-success.php?failure");
                             } else {
-                                echo "<script>alert('Cảm ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ xác nhận trong vài ngày tới!');</script>";
-                                //header("Location: order-success.php?successed");
+                                
+                                //remove cart cookies
+                                unset($_SESSION['cart']);
+                                //end remove cart cookies
+                                header("location:order-success-notification.php");
+                               // echo "<script>alert('Cảm ơn bạn đã đặt hàng, chúng tôi sẽ liên hệ xác nhận trong vài ngày tới!');</script>";
                             }
                     }
                     //end check quantity in storehouse

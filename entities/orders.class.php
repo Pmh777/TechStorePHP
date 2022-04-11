@@ -39,7 +39,8 @@ class Orders
     $date = date("Y-m-d H:i:s");
     $db = new Db();
     $sql = "INSERT INTO orders (customer_id, address, note, total, order_code, status, created_at, employee_id) 
-    VALUES ('$this->customer_id', '$this->address','$this->note','$this->total','$this->order_code',1,'$date','$this->employee_id')";
+    VALUES ('$this->customer_id', '$this->address','$this->note','$this->total','$this->order_code',1,'$date',null)";
+    
     $result = $db->query_execute($sql);
     return $result;
   }
