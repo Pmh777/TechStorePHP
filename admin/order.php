@@ -82,7 +82,7 @@ $orders = Orders::list_orders();
                                                         <i class="ft-eye"></i>
                                                     </button></a>
 
-                                                <a href="remove-order.php?orders_id=<?php echo $item["orders_id"]; ?>">
+                                                <a href="delete-order.php?orders_id=<?php echo $item["orders_id"]; ?>">
                                                     <button type="button"
                                                         class="btn btn-danger btn-min-width mr-1 mb-1">
                                                         <i class="ft-delete"></i>

@@ -2,7 +2,7 @@
 require_once('/xampp/htdocs/TechStorePHP/config/db.class.php');
 class Orders
 {
-  public $others_id ;
+  public $orders_id ;
   public $customer_id;
   public $address;
   public $note;
@@ -10,19 +10,19 @@ class Orders
   public $total;
   public $order_code;
   public $status;
-  public $create_at;
+  public $created_at;
   public $employee_id;
 
-  public function __construct($others_id,$customer_id,$address,$note,$total,$order_code,$status,$create_at,$employee_id)
+  public function __construct($orders_id,$customer_id,$address,$note,$total,$order_code,$status,$created_at,$employee_id)
   {
-    $this->others_id = $others_id;
+    $this->orders_id = $orders_id;
     $this->customer_id = $customer_id;
     $this->address = $address;
     $this->note = $note;
     $this->total = $total;
     $this->order_code = $order_code;
     $this->status = $status;
-    $this->created_at = $create_at;
+    $this->created_at = $created_at;
     $this->employee_id = $employee_id;
   }
   public static function list_orders()
@@ -56,6 +56,21 @@ class Orders
     $sql = "UPDATE orders
             SET order_code='$order_code', status='2'
             WHERE orders_id='$orders_id'";
+    $result = $db->query_execute($sql);
+    return $result;
+  }
+  public static function findInforCustomer(int $orders_id)
+  {
+    $db = new Db();
+    $sql = "select o.order_code as order_code, c.name, c.phone, o.address, o.note, o.total, o.status, o.created_at from orders o
+    INNER JOIN customer c on c.customer_id = o.customer_id where o.orders_id = '$orders_id'";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
+  public static function deleteOrder(int $order_id)
+  {
+    $db = new Db();
+    $sql = "DELETE FROM orders WHERE order_id='$order_id'";
     $result = $db->query_execute($sql);
     return $result;
   }

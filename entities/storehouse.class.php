@@ -48,5 +48,11 @@ class Storehouse
     $result = $db->select_to_object($sql);
     return $result;
   }
+  public static function findPriceOfProduct(int $product_id, int $color_id){
+    $db = new Db();
+    $sql = "select max(price) as price from storehouse where color_id = '$color_id' and product_id = '$product_id'";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
 
 }

@@ -89,20 +89,23 @@ require_once("/xampp/htdocs/TechStorePHP/entities/storehouse.class.php");
 //check out
 
 if (isset($_POST['btnCheckout'])) {
-        $others_id = "";
+        $orders_id = "";
         $customer_id = $_SESSION["user_login"]["customer_id"];
         $address = $_POST["address"];
         $note = $_POST["note"];
         $total = $_SESSION["total_bill"];
-        $order_code = "";
+        $order_code = '';
         $status = 1;
         $employee_id = "";
         $created_at = "";
 
-        $newOrder = new Orders($others_id,$customer_id,$address,$note,$total,$order_code,$status,$created_at,$employee_id);
+        $newOrder = new Orders($orders_id,$customer_id,$address,$note,$total,$order_code,$status,$created_at,$employee_id);
+        var_dump($newOrder);
         $result = $newOrder->createOrder();
 
-        if(is_bool($result)){
+        if(!$result){
+            echo "<script>alert('Đặt hàng thất bại!');</script>";
+        }else {
             $recentOrder = Orders::getRecentOrder();  
             if(isset($_SESSION['cart'])&&(is_array($_SESSION['cart'])))
             {
@@ -146,9 +149,6 @@ if (isset($_POST['btnCheckout'])) {
                     
                 }
             }
-            
-        }else {
-            echo "<script>alert('Đặt hàng thất bại!');</script>";
         }
         
         
