@@ -1,3 +1,30 @@
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/banner.class.php"); 
+if (isset($_GET["id"])) {
+    $id = $_GET['id'];
+
+    $banner = Banner::findBanner($id);
+
+}
+if(isset($_POST["update"])){
+    $id = $_GET["id"];
+    $caption = $_POST["caption"];
+    $content = $_POST["content"];
+    $photo = "";
+    $status = "";
+    $create_at = "";
+
+    $result = Banner::updateBanner($id,  $caption,  $content,  $photo,  $status,  $create_at);
+    if ($result) {
+        echo "<script>alert('Update thành công');</script>";
+        echo "<script>window.location.href='/TechStorePHP/admin/banner.php';</script>";
+    } else {
+        echo "<script>alert('Update thất bại');</script>";
+        echo "<script>window.location.href='/TechStorePHP/admin/banner.php';</script>";
+    }
+}
+?>
+
+
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->
@@ -25,7 +52,7 @@
             </div>
         </div>
         <div class="content-body">
-            <form action="welcome.php" method="post">
+            <form action="edit-banner.php?id=<?php echo $_GET["id"]; ?>" method="post">
                 <!-- <section class="textarea-select"> -->
                 <div class="row match-height">
                     <div class="col-lg-6 col-md-12">
@@ -37,20 +64,14 @@
                                 <div class="card-body">
                                     <h5 class="mt-2">Tiêu đề</h5>
                                     <fieldset class="form-group">
-                                        <input type="text" class="form-control" id="basicInput">
+                                        <input type="text" class="form-control" id="basicInput" name="caption"
+                                        value="<?php if(isset($banner['caption'])) echo($banner['caption']);?>">
                                     </fieldset>
                                     <h5 class="mt-2">Nội dung</h5>
                                     <fieldset class="form-group">
-                                        <textarea class="form-control" id="basicTextarea" rows="3"></textarea>
-                                    </fieldset>
-                                    <h5 class="mt-2">Trạng thái</h5>
-                                    <fieldset class="form-group">
-                                        <select class="custom-select" id="customSelect">
-                                            <option selected="">Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                        </select>
-                                    </fieldset>
+                                        <input class="form-control" id="basicTextarea" rows="3"  type="text" name="content"
+                                        value="<?php if(isset($banner['content'])) echo($banner['content']);?>"></input>
+                                    </fieldset>      
                                 </div>
                             </div>
                         </div>
@@ -62,10 +83,6 @@
                             </div>
                             <div class="card-block">
                                 <div class="card-body">
-                                    <h5 class="mt-2">Vị trí</h5>
-                                    <fieldset class="form-group">
-                                        <input type="number" class="form-control" id="basicInput">
-                                    </fieldset>
                                     <h5 class="mt-2">Ảnh</h5>
                                     <fieldset class="form-group">
                                         <input type="file" class="form-control" id="basicInput">
@@ -75,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit">Xác
+                <button class="btn btn-primary btn-min-width mr-0 mb-0" type="submit" name="update">Xác
                     nhận</button>
                 <a href="#"> <button class="btn btn-secondary btn-min-width mr-0 mb-0">Hủy</button></a>
                 <!-- </section> -->

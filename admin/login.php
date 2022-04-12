@@ -1,3 +1,20 @@
+<?php
+require_once("/xampp/htdocs/TechStorePHP/entities/employee.class.php");
+session_start();
+ if (isset($_POST["submit"])) {
+    $email = $_POST["email"];
+     $password = $_POST["password"];
+     $encryptPassword = md5($password);
+     $emp = Employee::checkAccount($email,$encryptPassword);
+     if ($emp > 0) {
+        $_SESSION["emp_login"] = $emp;
+         header("location:dashboard.php");
+     } else {
+         $_SESSION["notification"] = "Tài khoản hoặc mật khẩu không đúng!";
+         header("location:login.php");
+     }
+ }
+?>
 <!-- Style -->
 <style>
 html {
@@ -299,6 +316,7 @@ input[type=text]:placeholder {
   max-width: 100px;
 }
 </style>
+
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 <!-- Content page -->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -313,10 +331,10 @@ input[type=text]:placeholder {
     </div>
     <!-- Login Form -->
 
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Tên đăng nhập">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="Mật khẩu">
-      <input type="submit" class="fadeIn fourth" value="Đăng nhập">
+    <form method="post">
+      <input type="text" id="login" class="fadeIn second" name="email" placeholder="Tên đăng nhập" required>
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="Mật khẩu" required>
+      <input type="submit" name="submit" class="fadeIn fourth" value="Đăng nhập">
     </form>
 
   </div>

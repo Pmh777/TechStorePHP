@@ -1,9 +1,12 @@
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/employee.class.php"); ?>
 <!-- Header -->
-<?php include_once("./inc/header-admin.php"); ?>
+<?php include_once("./inc/header-admin.php"); 
+$employee = Employee::list_employee();
+?>
+
 <!-- Navbar -->
 <?php include_once("./inc/navbar-admin.php"); ?>
 <!-- ////////////////////////////////////////////////////////////////////////////-->
-<!-- body -->
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-wrapper-before"></div>
@@ -23,7 +26,7 @@
             </div>
         </div>
         <div class="content-body">
-            <!-- Table head options start -->
+            <!-- Striped rows start -->
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -53,40 +56,49 @@
                         <div class="card-content collapse show">
                             <div class="table-responsive">
                                 <table class="table">
-                                    <thead class="thead-dark">
+                                <thead class="thead-dark">
                                         <tr>
-                                            <th scope="col">STT</th>
-                                            <th scope="col">Họ và tên</th>
-                                            <th scope="col">Giới tính</th>
-                                            <th scope="col">Ngày sinh</th>
+                                        <th scope="col">ID</th>
+                                            <th scope="col">Họ và Tên</th>
                                             <th scope="col">Số điện thoại</th>
+                                            <th scope="col">Ngày sinh</th>
+                                            <th scope="col">Giới tính</th>
                                             <th scope="col">Email</th>
-                                            <th scope="col">Trạng thái</th>
                                             <th scope="col">Quyền</th>
-                                            <th scope="col">#</th>
+                                            <th scope="col"></th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ( $employee as $item) : ?>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Nhân viên 1</td>
-                                            <td>Nam</td>
-                                            <td>20/1/2000</td>
-                                            <td>012394575</td>
-                                            <td>nhanvien1@gmail.com</td>
-                                            <td>Hoạt động</td>
-                                            <td>nhân viên</td>
+                                            <th scope="row"><?php echo $item["employee_id"]; ?></th>
+                                            <td><?php echo $item["name"]; ?></td>
+                                            <td><?php echo $item["phone"]; ?></td>
+                                            <td><?php echo (date_format(date_create($item['birthday']) , 'd/m/Y')); ?></td>
+                                            <td>
+                                                <?php if($item["gender"] == 1) echo 'Nam';
+                                                elseif($item["gender"] == 2) echo 'Nữ';
+                                                else echo 'Khác';
+                                                ?>
+                                            </td>
+                                            <td><?php echo $item["email"]; ?></td>
+                                            <td>
+                                            <?php if($item["role_id"] == 1) echo 'Admin';
+                                                elseif($item["role_id"] == 2) echo 'Nhân viên';
+                                            ?>
+                                            </td>
 
                                             <td class="inline-block">
                                                 <!-- <a href="detail-product.php">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-info"></i>
                                                     </button></a> -->
-                                                <a href="edit-employee.php">
+                                                <a href="edit-employee.php?employee_id=<?php echo $item["employee_id"]; ?>">
                                                     <button type="button" class="btn btn-info btn-min-width mr-1 mb-1">
                                                         <i class="ft-edit"></i>
                                                     </button></a>
-                                                <a href="remove-product.php">
+                                                <a href="delete-employee.php?employee_id=<?php echo $item["employee_id"]; ?>">
                                                     <button type="button"
                                                         class="btn btn-danger btn-min-width mr-1 mb-1">
                                                         <i class="ft-delete"></i>
@@ -95,7 +107,7 @@
                                             </td>
 
                                         </tr>
-
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -103,10 +115,11 @@
                     </div>
                 </div>
             </div>
-            <!-- Table head options end -->
+            <!-- Striped rows end -->
+
+
         </div>
     </div>
 </div>
-<!-- end body -->
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 <?php include_once("./inc/footer-admin.php"); ?>

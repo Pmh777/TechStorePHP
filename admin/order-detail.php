@@ -1,3 +1,17 @@
+<?php 
+require_once("/xampp/htdocs/TechStorePHP/entities/orderdetail.class.php");
+require_once("/xampp/htdocs/TechStorePHP/entities/storehouse.class.php");
+require_once("/xampp/htdocs/TechStorePHP/entities/orders.class.php");
+if (isset($_GET["orders_id"])) {
+    $orders_id = $_GET['orders_id'];
+    $order_info = Orderdetail::findOrderdetail($orders_id);
+    $customer_info = Orders::findInforCustomer($orders_id);
+    function findPrice(int $product_id,int $color_id){
+        $result = Storehouse::findPriceOfProduct($product_id,$color_id);
+        echo $result["price"];
+    }
+}
+?>
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->
@@ -53,42 +67,44 @@
                                                 <dt class="col-sm-3">Mã đơn</dt>
                                                 <dd class="col-sm-9">
                                                     <dl class="row">
-                                                        <dt class="col-sm-12">94383838383</dt>
+                                                        <dt class="col-sm-12"><?php if($customer_info["order_code"] != 0) echo $customer_info["order_code"]; else echo "(Chưa có)"; ?></dt>
                                                     </dl>
                                                 </dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Họ và tên</dt>
-                                                <dd class="col-sm-9">Lê Văn A</dd>
+                                                <dd class="col-sm-9"><?php echo $customer_info["name"] ?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Số điện thoại</dt>
-                                                <dd class="col-sm-9">0983993838</dd>
+                                                <dd class="col-sm-9"><?php echo $customer_info["phone"] ?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Địa chỉ</dt>
-                                                <dd class="col-sm-9">12 Lê Lai, P.12, Q1</dd>
+                                                <dd class="col-sm-9"><?php echo $customer_info["address"] ?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Ghi chú</dt>
-                                                <dd class="col-sm-9">Giao vào buổi tối</dd>
+                                                <dd class="col-sm-9"><?php if($customer_info["note"] != '') echo $customer_info["note"]; else echo "(Trống)"; ?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Tổng tiền</dt>
-                                                <dd class="col-sm-9">23.000.000</dd>
+                                                <dd class="col-sm-9"><?php echo number_format($customer_info["total"], 0, '', ',').' VNĐ'; ?></dd>
                                             </dl>
 
                                             <dl class="row">
                                                 <dt class="col-sm-3">Trạng thái</dt>
                                                 <dd class="col-sm-9">
                                                     <dl class="row">
-                                                        <dt class="col-sm-12">Đã xác nhận</dt>
+                                                        <dt class="col-sm-12"><?php if($customer_info["status"] == 2) echo 'Đã xác nhận';
+                                                elseif($customer_info["status"] == 1) echo 'Đợi xác nhận';
+                                                ?></dt>
                                                     </dl>
                                                 </dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Ngày tạo</dt>
-                                                <dd class="col-sm-9">23/11/2022</dd>
+                                                <dd class="col-sm-9"><?php echo $customer_info["created_at"] ?></dd>
                                             </dl>
                                         </div>
                                     </div>
@@ -138,15 +154,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ( $order_info as $item) : ?>
                                         <tr>
-                                            <th class="text-center" scope="row">1</th>
-                                            <td class="text-center">Iphone 13 pro max</td>
-                                            <td class="text-center">1</td>
-                                            <td class="text-center">23.000.000</td>
-
-
+                                            <th class="text-center" scope="row"><?php echo $item["product_id"]; ?></th>
+                                            <td class="text-center"><?php echo $item["product_name"].' '.$item["color_name"]; ?></td>
+                                            <td class="text-center"><?php echo $item["quantity"]; ?></td>
+                                            <td class="text-center"><?php
+                                            $price = findPrice($item["product_id"],$item["color_id"]);
+                                            echo number_format($price, 0, '', ',').' VNĐ'; ?></td>
                                         </tr>
-
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

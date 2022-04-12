@@ -62,13 +62,8 @@
                     alt="avatar" /><i></i></span></a>
               <div class="dropdown-menu dropdown-menu-right">
                 <div class="arrow_box_right">
-                  <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img
-                        src="theme-assets/images/logo/avt.jpg" alt="avatar" /><span
-                        class="user-name text-bold-700 ml-1">Tên User</span></span></a>
-                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="profile.php"><i class="ft-user"></i>Thông tin của tôi</a>
-                  <a class="dropdown-item" href="profile.php"><i class="ft-user"></i>Cập nhật thông tin</a>
-                  <a class="dropdown-item" href="profile.php"><i class="ft-user"></i>Đổi mật khẩu</a>
+                  <a class="dropdown-item" href=""><i class="ft-user"></i>Cập nhật thông tin</a>
                   <a class="dropdown-item" href="#"><i class="ft-power"></i> Đăng xuất</a>
                 </div>
               </div>
@@ -115,14 +110,9 @@
                     alt="avatar" /><i></i></span></a>
               <div class="dropdown-menu dropdown-menu-right">
                 <div class="arrow_box_right">
-                  <a class="dropdown-item" href="#"><span class="avatar avatar-online"><img
-                        src="theme-assets/images/logo/avt.jpg" alt="avatar" /><span
-                        class="user-name text-bold-700 ml-1">Tên User</span></span></a>
-                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="profile.php">Thông tin của tôi</a>
                   <a class="dropdown-item" href="edit-profile.php">Cập nhật thông tin</a>
-                  <a class="dropdown-item" href="change-password.php">Đổi mật khẩu</a>
-                    <a class="dropdown-item" href="#">Đăng xuất</a>
+                    <a class="dropdown-item" href="logout.php">Đăng xuất</a>
                 </div>
               </div>
             </li>

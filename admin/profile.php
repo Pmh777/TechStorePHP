@@ -1,4 +1,8 @@
 <!-- Header -->
+<?php require_once("/xampp/htdocs/TechStorePHP/entities/employee.class.php"); ?>
+<?php
+session_start();
+?>
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->
 <?php include_once("./inc/navbar-admin.php"); ?>
@@ -54,30 +58,38 @@
                                         <div class="card-text">
                                             <dl class="row">
                                                 <dt class="col-sm-3">Họ và tên</dt>
-                                                <dd class="col-sm-9">Lê Văn A</dd>
+                                                <dd class="col-sm-9"><?php if (isset( $_SESSION["emp_login"])) echo $_SESSION["emp_login"]["name"];?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Giới tính</dt>
-                                                <dd class="col-sm-9">Nam</dd>
+                                                <dd class="col-sm-9"> 
+                                                <?php if((int)$_SESSION["emp_login"]["gender"] == 1) echo 'Nam';
+                                                elseif((int)$_SESSION["emp_login"]["gender"] == 2) echo 'Nữ';
+                                                else echo 'Khác';
+                                                ?>
+                                                </dd>
+                                            </select>
+                                                </dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Ngày sinh</dt>
-                                                <dd class="col-sm-9">02/11/2000</dd>
+                                                
+                                                <dd class="col-sm-9"><?php if(isset($_SESSION["emp_login"])) echo(date_format(date_create($_SESSION["emp_login"]["birthday"]) , 'd/m/Y'));?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Điện thoại</dt>
-                                                <dd class="col-sm-9">0983884737</dd>
+                                                <dd class="col-sm-9"><?php if (isset($_SESSION["emp_login"])) echo($_SESSION["emp_login"]["phone"]);?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Email</dt>
-                                                <dd class="col-sm-9">levana@gmail.com</dd>
+                                                <dd class="col-sm-9"><?php if (isset($_SESSION["emp_login"])) echo($_SESSION["emp_login"]["email"]);?></dd>
                                             </dl>
                                             <dl class="row">
                                                 <dt class="col-sm-3">Chức vụ</dt>
                                                 <dd class="col-sm-9">
-                                                    <dl class="row">
-                                                        <dt class="col-sm-12">Quản trị viên</dt>
-                                                    </dl>
+                                                <?php if($_SESSION["emp_login"]["role_id"] == 1) echo 'Nhân viên';
+                                                elseif($_SESSION["emp_login"]["role_id"] == 2) echo 'Admin';
+                                                ?>
                                                 </dd>
                                             </dl>
                                         </div>
