@@ -39,7 +39,8 @@ class Orders
     $date = date("Y-m-d H:i:s");
     $db = new Db();
     $sql = "INSERT INTO orders (customer_id, address, note, total, order_code, status, created_at, employee_id) 
-    VALUES ('$this->customer_id', '$this->address','$this->note','$this->total','$this->order_code',1,'$date','$this->employee_id')";
+    VALUES ('$this->customer_id', '$this->address','$this->note','$this->total','$this->order_code',1,'$date',null)";
+    
     $result = $db->query_execute($sql);
     return $result;
   }
@@ -70,8 +71,15 @@ class Orders
   public static function deleteOrder(int $order_id)
   {
     $db = new Db();
-    $sql = "DELETE FROM orders WHERE order_id='$order_id'";
+    $sql = "DELETE FROM orders WHERE orders_id='$order_id'";
     $result = $db->query_execute($sql);
+    return $result;
+  }
+  public static function countOrder()
+  {
+    $db = new Db();
+    $sql = "SELECT count(*) as total FROM orders where status = 1 ";
+    $result = $db->select_to_object($sql);
     return $result;
   }
 }

@@ -1,4 +1,12 @@
+<?php 
+  require_once("/xampp/htdocs/TechStorePHP/entities/product.class.php");
+  require_once("/xampp/htdocs/TechStorePHP/entities/customer.class.php");
+  require_once("/xampp/htdocs/TechStorePHP/entities/orders.class.php");
+  $count_product = Product::countProduct();
+  $count_order = Orders::countOrder();
+  $count_customer = Customer::countCustomer();
 
+?>
 <!-- Header -->
 <?php include_once("./inc/header-admin.php"); ?>
 <!-- Navbar -->
@@ -26,7 +34,7 @@
         <div class="col-xl-4 col-lg-6 col-md-12">
           <div class="card pull-up ecom-card-1 bg-white">
             <div class="card-content ecom-card2 height-180">
-              <h5 class="text-muted danger position-absolute p-1">Khách hàng</h5>
+              <h5 class="text-muted danger position-absolute p-1"><?php echo $count_customer["total"] ?> Khách hàng</h5>
               <div>
                 <i class="ft-pie-chart danger font-large-1 float-right p-1"></i>
               </div>
@@ -40,7 +48,7 @@
         <div class="col-xl-4 col-lg-6 col-md-12">
           <div class="card pull-up ecom-card-1 bg-white">
             <div class="card-content ecom-card2 height-180">
-              <h5 class="text-muted info position-absolute p-1">Sản phẩm</h5>
+              <h5 class="text-muted info position-absolute p-1"><?php echo $count_product["total"] ?> Sản phẩm</h5>
               <div>
                 <i class="ft-activity info font-large-1 float-right p-1"></i>
               </div>
@@ -54,7 +62,7 @@
         <div class="col-xl-4 col-lg-12">
           <div class="card pull-up ecom-card-1 bg-white">
             <div class="card-content ecom-card2 height-180">
-              <h5 class="text-muted warning position-absolute p-1">Đơn hàng mới</h5>
+              <h5 class="text-muted warning position-absolute p-1"><?php echo $count_order["total"] ?> Đơn hàng mới</h5>
               <div>
                 <i class="ft-shopping-cart warning font-large-1 float-right p-1"></i>
               </div>
@@ -69,7 +77,7 @@
       <!--/ eCommerce statistic -->
 
       <!-- Statistics -->
-      <div class="row match-height">
+      <!-- <div class="row match-height">
 
         <div class="col-xl-4 col-lg-12">
           <div class="card">
@@ -456,7 +464,7 @@
         </div>
 
 
-      </div>
+      </div> -->
       <!--/ Statistics -->
     </div>
   </div>

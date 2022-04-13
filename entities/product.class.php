@@ -96,4 +96,11 @@ class Product
     $result = $db->select_to_object($sql);
     return $result;
   }
+  public static function countProduct()
+  {
+    $db = new Db();
+    $sql = "SELECT count(*) as total FROM product";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
 }

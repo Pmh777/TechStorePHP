@@ -44,7 +44,7 @@ class Orderdetail
   public static function deleteOrderdetail(int $order_id)
   {
     $db = new Db();
-    $sql = "DELETE * FROM orderdetail WHERE order_id='$order_id'";
+    $sql = "DELETE FROM orderdetail WHERE orders_id='$order_id'";
     $result = $db->query_execute($sql);
     return $result;
   }

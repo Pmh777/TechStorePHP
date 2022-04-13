@@ -1,3 +1,53 @@
+<?php
+require_once("/xampp/htdocs/jiraphp/entities/feedback.class.php");
+require_once("/xampp/htdocs/jiraphp/entities/comment.class.php");
+require_once("/xampp/htdocs/jiraphp/entities/customer.class.php");
+require_once("/xampp/htdocs/jiraphp/entities/employee.class.php");
+require_once("/xampp/htdocs/jiraphp/entities/liked.class.php");
+session_start();
+$feedbacks = Feedback::list_feedback();
+//var_dump($feedbacks);
+function checkLiked($feedback_id, $customer_id){
+  $arrFeedbackLiked = Liked::findLiked($customer_id);
+ //var_dump( $arrFeedbackLiked);
+  foreach($arrFeedbackLiked as $item){
+    if($item["feedback_id"] == $feedback_id){
+      return true;
+    return false;
+  }
+}
+}
+
+if (isset($_POST['btnCmtSubmit'])) {
+  $feedback_id = $_POST['txtFeedback_id'];
+  $content = $_POST['txtComment'];
+  if (isset($_SESSION["user_login"])) {
+    $customer_id = $_SESSION["user_login"]["customer_id"];
+
+    $newComment = new Comment($customer_id, null, $feedback_id, $content, '');
+    $result = $newComment->createComment();
+    if (!$result) {
+      echo "failed";
+      header("Location: about.php");
+    } else {
+      echo "ok";
+      header("Location: about.php");
+    }
+  } elseif (isset($_SESSION["emp_login"])) {
+    $employee_id = $_SESSION["emp_login"]["employee_id"];
+    $newComment = new Comment(null, $employee_id, $feedback_id, $content, '');
+    $result = $newComment->createComment();
+    if (!$result) {
+      echo "failed";
+      header("Location: about.php");
+    } else {
+      echo "ok";
+      header("Location: about.php");
+    }
+  }
+}
+
+?>
 <?php include_once("include/header.php"); ?>
 
 <!-- Cart -->
@@ -116,6 +166,97 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="bor10 m-t-50 p-t-43 p-b-40">
+      <div class="row">
+        <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+          <div class="p-b-30 m-lr-15-sm">
+            <?php foreach ($feedbacks as $item) : ?>
+            <!-- Review -->
+            <div class="flex-w flex-t p-b-68">
+              <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
+                <img src="images/1024px-User-avatar.svg.png" alt="AVATAR">
+              </div>
+              <div class="size-207">
+                <div class="flex-w flex-sb-m p-b-17">
+                  <span class="mtext-107 cl2 p-r-20">
+                    <?php echo $item["customer_name"] ?>
+                  </span>
+                  <span class="d-inline-flex">
+                    <p class="fs-18 cl13 d-block"><?php echo $item["caption"] ?></p>
+                  </span>
+
+                </div>
+                <p class="stext-102 cl6">
+                  <?php echo $item["content"] ?>
+                </p>
+                <div class="flex-r m-t-20 d-block">
+                <?php if(checkLiked($item["feedback_id"],$_SESSION['user_login']["customer_id"]) == true) : ?>
+                                  <a class=" reply-comment"
+                                  style="color: #75BEFF; font-style:italic;margin-right: 10px;" id="liked" href="unlike.php?feedback_id=<?php echo $item["feedback_id"]; ?>">
+                                       Đã thích
+                                    </a>
+                                  <?php  else: ?>
+                                   <a class=" reply-comment" style="color: #75BEFF; font-style:italic;margin-right: 10px;" id="liked" href="like.php?feedback_id=<?php echo $item["feedback_id"]; ?> ">
+                                        Thích
+                                    </a>
+                                    <?php endif ?>
+                  <button onclick="myFunction()" class=" reply-comment" style="color: #75BEFF; font-style:italic;">Bình
+                    luận</button>
+                  <!-- show comment -->
+                  <?php $comements = Comment::findComment($item["feedback_id"]);
+                    // var_dump($comements);
+                    foreach ($comements  as $itemCmt) :
+                    ?>
+                  <div class="m-t-20">
+                    <div class="wrap-pic-s size-109 bor0 of-hidden " style="float:left">
+                      <img src="images/1024px-User-avatar.svg.png" alt="AVATAR">
+                    </div>
+                    <span class="mtext-107 cl2 ">
+                      <?php
+                          if ($itemCmt["customer_id"] != 0) {
+                            $customer = Customer::findCustomer($itemCmt["customer_id"]);
+                            echo $customer["name"];
+                          } elseif ($itemCmt["employee_id"] != 0) {
+                            $employee = Employee::findEmployee($itemCmt["employee_id"]);
+                            echo $employee["name"];
+                          }
+                          ?>
+                    </span>
+                    <span style="display: grid;margin-top:10px">
+                      <p>
+                        <?php echo $itemCmt["content"]; ?>
+                      </p>
+                    </span>
+                  </div>
+                  <?php endforeach; ?>
+                </div>
+
+                <!-- end show comment -->
+                <form style="display:none; margin-top: 30px" id="reply-form" class="w-500" method="post">
+                  <div class="row p-b-25">
+                    <div class="col-12 p-b-5">
+                      <label class="stext-102 cl3" for="review">Bình luận của bạn</label>
+                      <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10" id="review"
+                        name="txtComment"></textarea>
+                      <input name="txtFeedback_id" value="<?php echo $item["feedback_id"] ?>" hidden />
+                    </div>
+                  </div>
+                  <button name="btnCmtSubmit" type="submit"
+                    class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">Gửi</button>
+                </form>
+              </div>
+
+            </div>
+            <?php endforeach; ?>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 </section>
 
 
@@ -140,6 +281,20 @@
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 <script src="vendor/select2/select2.min.js"></script>
+<script>
+function change_text() {
+  document.getElementById("liked").innerHTML = "Đã thích";
+}
+
+function myFunction() {
+  var x = document.getElementById("reply-form");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
 <script>
 $(".js-select2").each(function() {
   $(this).select2({

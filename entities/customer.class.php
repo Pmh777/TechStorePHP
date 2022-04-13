@@ -106,4 +106,11 @@ class Customer
     $result = $db->query_execute($sql);
     return $result;
   }
+  public static function countCustomer()
+  {
+    $db = new Db();
+    $sql = "SELECT count(*) as total FROM customer where status = 1";
+    $result = $db->select_to_object($sql);
+    return $result;
+  }
 }

@@ -67,7 +67,7 @@ if (isset($_GET["orders_id"])) {
                                                 <dt class="col-sm-3">Mã đơn</dt>
                                                 <dd class="col-sm-9">
                                                     <dl class="row">
-                                                        <dt class="col-sm-12"><?php if($customer_info["order_code"] != '') echo $customer_info["order_code"]; else echo "(Chưa có)"; ?></dt>
+                                                        <dt class="col-sm-12"><?php if($customer_info["order_code"] != 0) echo $customer_info["order_code"]; else echo "(Chưa có)"; ?></dt>
                                                     </dl>
                                                 </dd>
                                             </dl>

@@ -17,7 +17,7 @@
             }
             
         }else{
-            echo "<script>alert('Xóa od thất bại');</script>";
+            echo "<script>alert('Xóa thất bại');</script>";
             echo "<script>window.location.href='/TechStorePHP/admin/order.php';</script>";
         }
         
